@@ -121,6 +121,7 @@ Class RegController extends BaseController
         if(!$uid) {
             $this->return['code'] = 1005;
             $this->return['message'] = L('reg_error');
+            $this->goJson($this->return);
         } else {
             $language_info['uid'] = $uid;
             $language_info['lid'] = $post['lid'];
@@ -129,12 +130,51 @@ Class RegController extends BaseController
             D('userLanguage')->add($language_info);
             /*$location = explode('/', $post['location']);
             $info = array('uid'=>$uid, 'uname'=>$post['uname'], 'mobile'=>$post['mobile'], 'sex'=>$post['sex'], 'country'=>$post['country'], 'province'=>$post['province'], 'city'=>$post['city'], 'country_name'=>$location[0], 'province_name'=>$location[1], 'city_name'=>$location[2]);*/
+            $this->createSubAccount('yujia'.$uid, $uid);
             $this->return['message'] = L('reg_success');
             $this->return['data'] = $info;
         }
-        $this->goJson($this->return);
+        
     }
     
+    /**
+     * 注册容联子账号
+     * @param  [type] $friendlyName [description]
+     * @return [type]               [description]
+     */
+    private function createSubAccount($friendlyName, $uid) 
+    {
+        import("Common.Util.CCPRestSDK");
+        // 初始化REST SDK
+        $rest = new \REST(C('smsServerIP'), C('smsServerPort'), C('smsSoftVersion'));
+        $rest->setAccount(C('smsAccountSid'), C('smsAccountToken'));
+        $rest->setAppId(C('smsAppId'));
+        
+        $result = $rest->CreateSubAccount($friendlyName);
+        if($result == NULL ) {
+            $this->return['code'] = 1006;
+            $this->return['message'] = L('regSubAccount_error');
+            $this->goJson($this->return);
+        }
+        if($result->statusCode!=0) {
+            $this->return['code'] = $result->statusCode;
+            $this->return['message'] = $result->statusMsg;
+            $this->goJson($this->return);
+        }else {
+            
+            // 获取返回信息 把云平台子帐号信息存储在您的服务器上
+            $subaccount = $result->SubAccount;
+            $info["subAccountid"] = $subaccount->subAccountSid;
+            $info["subToken"] = $subaccount->subToken;
+            $info["dateCreated"] = $subaccount->dateCreated;
+            $info["voipAccount"] = $subaccount->voipAccount;
+            $info["voipPwd"] = $subaccount->voipPwd;
+            D('userinfo')->where('uid='.$uid)->save($info);
+
+            $this->return['message'] = L('reg_success');
+            $this->goJson($this->return);
+        }      
+    }
 
     /**
      * 检测手机号是否已经注册过

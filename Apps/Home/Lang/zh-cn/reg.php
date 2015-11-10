@@ -7,6 +7,7 @@
 		'pwd_null'		=> '密码不能为空',
 		'reg_error'		=> '注册失败',
 		'reg_success' 	=> '注册成功',
+		'regSubAccount_error' => '容联注册失败',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
 	);
 ?>
