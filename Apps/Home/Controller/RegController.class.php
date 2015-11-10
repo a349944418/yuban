@@ -122,8 +122,14 @@ Class RegController extends BaseController
             $this->return['code'] = 1005;
             $this->return['message'] = L('reg_error');
         } else {
-            $location = explode('/', $post['location']);
-            $info = array('uid'=>$uid, 'uname'=>$post['uname'], 'mobile'=>$post['mobile'], 'sex'=>$post['sex'], 'country'=>$post['country'], 'province'=>$post['province'], 'city'=>$post['city'], 'country_name'=>$location[0], 'province_name'=>$location[1], 'city_name'=>$location[2]);
+            $language_info['uid'] = $uid;
+            $language_info['lid'] = $post['lid'];
+            $language_info['type'] = 1;
+            $language_info['self_level'] = $post['self_level'];
+            D('userLanguage')->add($language_info);
+            /*$location = explode('/', $post['location']);
+            $info = array('uid'=>$uid, 'uname'=>$post['uname'], 'mobile'=>$post['mobile'], 'sex'=>$post['sex'], 'country'=>$post['country'], 'province'=>$post['province'], 'city'=>$post['city'], 'country_name'=>$location[0], 'province_name'=>$location[1], 'city_name'=>$location[2]);*/
+            $this->return['message'] = L('reg_success');
             $this->return['data'] = $info;
         }
         $this->goJson($this->return);

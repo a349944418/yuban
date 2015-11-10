@@ -6,6 +6,7 @@
 		'uname_null'    => '昵称不能为空',
 		'pwd_null'		=> '密码不能为空',
 		'reg_error'		=> '注册失败',
+		'reg_success' 	=> '注册成功',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
 	);
 ?>
