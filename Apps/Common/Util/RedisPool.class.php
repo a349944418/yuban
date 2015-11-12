@@ -2,7 +2,7 @@
 /**
  * redis 静态类
  */
-Class RedisPool()
+Class RedisPool
 {
 	private static $connect = '';
 
