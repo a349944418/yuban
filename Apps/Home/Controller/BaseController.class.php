@@ -11,7 +11,7 @@ Class BaseController extends Controller
     public function _initialize()
     {
         import("Common.Util.RedisPool");
-        $this->redis = \RedisPool::getconnect();
+        $this->redis = RedisPool::getconnect();
     }
 
     /**

@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 class IndexController extends BaseController {
+	
     public function index(){
     	$this->redis->SET('uname', 'zimu');
     	$this->redis->GET('uname');
