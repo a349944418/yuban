@@ -8,7 +8,7 @@ Class BaseController extends Controller
 	protected $return = array('code'=>0,'message'=>'','data'=>array());
 	protected $redis = '';
 
-    public function _init()
+    public function _initialize()
     {
         import("Common.Util.RedisPool");
         $this->redis = \RedisPool::getconnect();
