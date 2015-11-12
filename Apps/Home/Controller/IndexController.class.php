@@ -1,8 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends Controller {
-    public function index(){
+
+class IndexController extends Controller 
+{
+    public function index()
+    {
     	import("Common.Util.RedisPool");
     	$redis = RedisPool::getConnect();
     	$redis->SET('uname', 'zimu');
