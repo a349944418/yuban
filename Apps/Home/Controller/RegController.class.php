@@ -1,6 +1,5 @@
 <?php
 namespace Home\Controller;
-use Home\Controller;
 
 Class RegController extends BaseController 
 {
@@ -131,8 +130,6 @@ Class RegController extends BaseController
             /*$location = explode('/', $post['location']);
             $info = array('uid'=>$uid, 'uname'=>$post['uname'], 'mobile'=>$post['mobile'], 'sex'=>$post['sex'], 'country'=>$post['country'], 'province'=>$post['province'], 'city'=>$post['city'], 'country_name'=>$location[0], 'province_name'=>$location[1], 'city_name'=>$location[2]);*/
             $this->createSubAccount('yujia'.$uid, $uid);
-            $this->return['message'] = L('reg_success');
-            $this->return['data'] = $info;
         }
         
     }
@@ -157,18 +154,19 @@ Class RegController extends BaseController
             $this->goJson($this->return);
         }
         if($result->statusCode!=0) {
-            $this->return['code'] = $result->statusCode;
-            $this->return['message'] = $result->statusMsg;
+            $result = (array) $result;
+            $this->return['code'] = $result['statusCode'];
+            $this->return['message'] = $result['statusMsg'];
             $this->goJson($this->return);
         }else {
             
             // 获取返回信息 把云平台子帐号信息存储在您的服务器上
-            $subaccount = $result->SubAccount;
-            $info["subAccountid"] = $subaccount->subAccountSid;
-            $info["subToken"] = $subaccount->subToken;
-            $info["dateCreated"] = $subaccount->dateCreated;
-            $info["voipAccount"] = $subaccount->voipAccount;
-            $info["voipPwd"] = $subaccount->voipPwd;
+            $subaccount = (array) $result->SubAccount;
+            $info["subAccountid"] = $subaccount['subAccountSid'];
+            $info["subToken"] = $subaccount['subToken'];
+            $info["dateCreated"] = $subaccount['dateCreated'];
+            $info["voipAccount"] = $subaccount['voipAccount'];
+            $info["voipPwd"] = $subaccount['voipPwd'];
             D('userinfo')->where('uid='.$uid)->save($info);
 
             $this->return['message'] = L('reg_success');
@@ -187,19 +185,5 @@ Class RegController extends BaseController
         return $uid;
     }
 
-    /**
-     * 获取母语语言列表
-     * @return [type] [description]
-     */
-    public function getBaseLanguage() {
-        $this->return['data'] = F('baseLanguage');
-
-        if(!$this->return['data']) {
-            $this->return['data'] = D('language')->where('type=1')->field('lid, language_name')->select();
-            F('baseLanguage', $this->return['data']);
-        }
-
-        $this->goJson($this->return);
-    }
 }
 ?>
