@@ -12,7 +12,7 @@ Class RedisPool
 			$redis = new Redis();
 			$redis->connect('127.0.0.1', 6378);
 			$redis->auth('a7234738');
-			self::connect = $redis
+			self::connect = $redis;
 		}
 		return self::connect;     
 	}
