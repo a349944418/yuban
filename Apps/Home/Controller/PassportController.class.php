@@ -28,8 +28,8 @@ Class PassportController extends BaseController
         	$this->return['message'] = L('pwd_error');
         	$this->goJson($this->return);
         }
-        $res['token'] = $this->create_unique($res['uid']);
-        $res['language'] = D('user_language')->filed('lid, type, self_level, sys_level') -> select();
+        //$res['token'] = $this->create_unique($res['uid']);
+        $res['language'] = D('user_language')->filed('lid, type, self_level, sys_level')->where('uid='.$res['uid'])->select();
         $this->return['data'] = $res;
         $this->goJson($this->return);
 	}
@@ -42,7 +42,7 @@ Class PassportController extends BaseController
     private function create_unique($uid)
     {
         $data = $_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR'].time().rand().$uid;    
-        return sha1($data);  
+        return sha1($data);
     }
 }
 ?>
