@@ -33,6 +33,7 @@ Class PassportController extends BaseController
         unset($res['search_key']);
         unset($res['login_salt']);
         $res['token'] = $this->create_unique($res['uid']);
+        $this->redis->SETEX('Token:uid'.$res['uid'], 2592000, $res['token']);
         $res['language'] = D('userLanguage')->field('lid, type, self_level, sys_level')->where('uid='.$res['uid'])->select();
         $this->return['data'] = $res;
         $this->goJson($this->return);
