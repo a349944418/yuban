@@ -25,7 +25,7 @@ Class PassportController extends BaseController
             $this->goJson($this->return);
         }
 
-        $res = $this->redis->HGETALL('Userinfo:uid'.$uid)
+        $res = $this->redis->HGETALL('Userinfo:uid'.$uid);
         if(!$res) {
             $res = D('userinfo')->getUserInfo($uid);
             $this->redis->HMSET('Userinfo:uid'.$uid, $res);
