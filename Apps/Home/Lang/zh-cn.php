@@ -9,6 +9,7 @@
 		'reg_success' 	=> '注册成功',
 		'regSubAccount_error' => '容联注册失败',
 		'no_register'	=> '该手机号尚未注册',
+		'pwd_error'		=> '手机号或密码错误',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
 	);
 ?>
