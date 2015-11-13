@@ -84,7 +84,7 @@ Class PassportController extends BaseController
 
         $uid = D('userinfo')->getUid($mobile);
         $login_salt = $this->redis->HGET('Userinfo:uid'.$uid, 'login_salt');
-        $info['pwd'] = md5(md5($pwd).$login_salt);
+        $info['password'] = md5(md5($pwd).$login_salt);
         D('userinfo')->where('uid='.$uid)->save($info);
         $this->redis->HSET('Userinfo:uid'.$uid, 'pwd', $info['pwd']);
         $this->goJson($this->return);
