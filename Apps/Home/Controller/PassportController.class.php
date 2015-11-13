@@ -25,7 +25,8 @@ Class PassportController extends BaseController
         	$this->return['message'] = L('no_register');
         	$this->goJson($this->return);
         }
-        if(md5(md5(I('post.pwd')).$res['login_salt']) != $res['password']) {
+        //if(md5(md5(I('post.pwd')).$res['login_salt']) != $res['password']) {
+        if(md5(md5($pwd).$res['login_salt']) != $res['password']) {
         	$this->return['code'] = 1003;
         	$this->return['message'] = L('pwd_error');
         	$this->goJson($this->return);
