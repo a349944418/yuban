@@ -124,7 +124,7 @@ Class RegController extends BaseController
         } else {
             $language_info['uid'] = $uid;
             $language_info['lid'] = $post['lid'];
-            $language_info['type'] = 1;
+            $language_info['type'] = 4;
             $language_info['self_level'] = $post['self_level'];
             D('userLanguage')->add($language_info);
             /*$location = explode('/', $post['location']);

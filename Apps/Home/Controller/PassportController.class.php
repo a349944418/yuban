@@ -17,7 +17,7 @@ Class PassportController extends BaseController
             $this->return['message'] = L('mobile_error');
             $this->goJson($this->return);
         }
-
+        
         $res = D('userinfo')->where('mobile="'.$mobile.'"')->find();
         if(!$res) {
         	$this->return['code'] = 1002;
@@ -29,6 +29,7 @@ Class PassportController extends BaseController
         	$this->return['message'] = L('pwd_error');
         	$this->goJson($this->return);
         }
+        $this->redis->HMSET('Userinfo:uid'.$res['uid'], $res);
         unset($res['password']);
         unset($res['search_key']);
         unset($res['login_salt']);
