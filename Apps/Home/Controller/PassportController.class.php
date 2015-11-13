@@ -18,18 +18,25 @@ Class PassportController extends BaseController
             $this->goJson($this->return);
         }
 
-        $res = D('userinfo')->where('mobile="'.$mobile.'"')->find();
-        if(!$res) {
-        	$this->return['code'] = 1002;
-        	$this->return['message'] = L('no_register');
-        	$this->goJson($this->return);
+        $uid = D('userinfo')->getUid($mobile);
+        if(!$uid) {
+            $this->return['code'] = 1002;
+            $this->return['message'] = L('no_register');
+            $this->goJson($this->return);
         }
+
+        $res = $this->redis->HGETALL('Userinfo:uid'.$uid)
+        if(!$res) {
+            $res = D('userinfo')->getUserInfo($uid);
+            $this->redis->HMSET('Userinfo:uid'.$uid, $res);
+        }
+
         if(md5(md5(I('post.pwd')).$res['login_salt']) != $res['password']) {
         	$this->return['code'] = 1003;
         	$this->return['message'] = L('login_error');
         	$this->goJson($this->return);
         }
-        $this->redis->HMSET('Userinfo:uid'.$res['uid'], $res);
+        
         unset($res['password']);
         unset($res['search_key']);
         unset($res['login_salt']);
@@ -75,7 +82,7 @@ Class PassportController extends BaseController
             $this->goJson($this->return);
         }
 
-        $uid = D('userinfo')->where('mobile="'.$mobile.'"')->getField('uid');
+        $uid = D('userinfo')->getUid($mobile);
         $login_salt = $this->redis->HGET('Userinfo:uid'.$uid, 'login_salt');
         $info['pwd'] = md5(md5($pwd).$login_salt);
         D('userinfo')->where('uid='.$uid)->save($info);
