@@ -9,8 +9,9 @@ Class PassportController extends BaseController
 	 */
 	public function login()
 	{
-		$mobile = I('post.mobile');
-		$mobile = intval( I('post.mobile') );
+		//$mobile = I('post.mobile');
+		//$mobile = intval( I('post.mobile') );
+        $mobile = 18643627216;
         if(strlen($mobile) != 11) {
             $this->return['code'] = 1001;
             $this->return['message'] = L('mobile_error');
