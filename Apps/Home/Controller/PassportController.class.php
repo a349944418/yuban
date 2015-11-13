@@ -31,8 +31,8 @@ Class PassportController extends BaseController
         	$this->return['message'] = L('pwd_error');
         	$this->goJson($this->return);
         }
-        //$res['token'] = $this->create_unique($res['uid']);
-        $res['language'] = D('userLanguage')->filed('lid, type, self_level, sys_level')->where('uid='.$res['uid'])->select();
+        $res['token'] = $this->create_unique($res['uid']);
+        $res['language'] = D('userLanguage')->fileds('lid, type, self_level, sys_level')->where('uid='.$res['uid'])->select();
         $this->return['data'] = $res;
         $this->goJson($this->return);
 	}
