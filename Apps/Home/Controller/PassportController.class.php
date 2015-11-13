@@ -9,10 +9,9 @@ Class PassportController extends BaseController
 	 */
 	public function login()
 	{
-		//$mobile = I('post.mobile');
-		//$mobile = intval( I('post.mobile') );
-        $mobile = 18643627216;
-        $pwd = 'a7234738';
+		$mobile = I('post.mobile');
+		$mobile = intval( I('post.mobile') );
+        
         if(strlen($mobile) != 11) {
             $this->return['code'] = 1001;
             $this->return['message'] = L('mobile_error');
@@ -25,8 +24,7 @@ Class PassportController extends BaseController
         	$this->return['message'] = L('no_register');
         	$this->goJson($this->return);
         }
-        //if(md5(md5(I('post.pwd')).$res['login_salt']) != $res['password']) {
-        if(md5(md5($pwd).$res['login_salt']) != $res['password']) {
+        if(md5(md5(I('post.pwd')).$res['login_salt']) != $res['password']) {
         	$this->return['code'] = 1003;
         	$this->return['message'] = L('pwd_error');
         	$this->goJson($this->return);
