@@ -17,7 +17,7 @@ Class PassportController extends BaseController
             $this->return['message'] = L('mobile_error');
             $this->goJson($this->return);
         }
-        
+
         $res = D('userinfo')->where('mobile="'.$mobile.'"')->find();
         if(!$res) {
         	$this->return['code'] = 1002;
@@ -26,7 +26,7 @@ Class PassportController extends BaseController
         }
         if(md5(md5(I('post.pwd')).$res['login_salt']) != $res['password']) {
         	$this->return['code'] = 1003;
-        	$this->return['message'] = L('pwd_error');
+        	$this->return['message'] = L('login_error');
         	$this->goJson($this->return);
         }
         $this->redis->HMSET('Userinfo:uid'.$res['uid'], $res);
@@ -49,6 +49,38 @@ Class PassportController extends BaseController
     {
         $data = $_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR'].time().rand().$uid;    
         return sha1($data);
+    }
+
+    /**
+     * 修改密码
+     * @return [type] [description]
+     */
+    public function changePwd()
+    {
+        $mobile = I('post.mobile');
+        $mobile = intval( I('post.mobile') );
+        
+        if(strlen($mobile) != 11) {
+            $this->return['code'] = 1001;
+            $this->return['message'] = L('mobile_error');
+            $this->goJson($this->return);
+        }
+
+        $pwd = I('post.pwd');
+        $repwd = I('post.repwd');
+        if($pwd != $repwd || $pwd == '')
+        {
+            $this->return['code'] = 1002;
+            $this->return['message'] = L('pwd_error');
+            $this->goJson($this->return);
+        }
+
+        $uid = D('userinfo')->where('mobile="'.$mobile.'"')->getField('uid');
+        $login_salt = $this->redis->HGET('Userinfo:uid'.$uid, 'login_salt');
+        $info['pwd'] = md5(md5($pwd).$login_salt);
+        D('userinfo')->where('uid='.$uid)->save($info);
+        $this->redis->HSET('Userinfo:uid'.$uid, 'pwd', $info['pwd']);
+        $this->goJson($this->return);
     }
 }
 ?>
