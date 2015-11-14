@@ -1,0 +1,1 @@
+a:4:{s:9:"baseParam";a:7:{s:10:"appVersion";s:1:"1";s:8:"deviceId";s:40:"ab428f006e7532d04e0042fbe1e08074a1c7770b";s:11:"deviceModel";s:6:"iPhone";s:9:"osVersion";s:3:"9.1";s:8:"platform";s:3:"iOS";s:7:"screenH";s:4:"1136";s:7:"screenW";s:3:"640";}s:6:"mobile";s:11:"18612951006";s:9:"timestamp";s:10:"1447484183";s:5:"token";s:32:"50A5A245D198948A8EDA44E63EF0DD16";}

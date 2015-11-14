@@ -10,16 +10,17 @@ Class RegController extends BaseController
      * @Auth : zbq  2015.11.04
      **/
     public function getMobileCode()
-    {
-        
+    {	
         $mobile = intval( I('post.mobile') );
         if(strlen($mobile) != 11) {
             $this->return['code'] = 1001;
             $this->return['message'] = L('mobile_error');
+	    $this->return['data']['mobile'] = $mobile;
+            $this->return['data']['len'] = strlen($mobile);
             $this->goJson($this->return);
         }
         $server_token = md5('yj+' . I('post.timestamp') . 'hash');
-        if ( $server_token != I('post.token') ) {
+        if ( strtolower($server_token) != strtolower(I('post.token')) ) {
             $this->return['code'] = 1002;
             $this->return['message'] = L('token_error');
             $this->goJson($this->return);
@@ -29,7 +30,7 @@ Class RegController extends BaseController
         $datas = array($verify, C('smsTime'));
         $this->return['data']['verify'] = intval( $verify );
         //$mobile = '18601995223';
-        $this->sendTemplateSMS($mobile, $datas, 9081);      
+        $this->sendTemplateSMS($mobile, $datas, 47024);      
     }
 
     /**
