@@ -23,7 +23,7 @@ Class PublicController extends BaseController
         /* 调用文件上传组件上传文件 */
         $File = D('File');
         $file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
-        
+
         $info = $File->upload(
             $_FILES,
             C('DOWNLOAD_UPLOAD'),
@@ -39,7 +39,7 @@ Class PublicController extends BaseController
             $this->return['code'] = 1001;
             $this->return['message'] = $File->getError();
         }
-
+        dump($info);
         /* 返回JSON数据 */
         $this->goJson($this->return);
     }
