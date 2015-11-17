@@ -40,6 +40,7 @@ Class PublicController extends BaseController
             $this->return['message'] = $File->getError();
         }
         dump($info);
+        dump($this->return);
         /* 返回JSON数据 */
         $this->goJson($this->return);
     }
