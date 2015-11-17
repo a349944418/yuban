@@ -43,7 +43,7 @@ Class PublicController extends BaseController
         /* 记录附件信息 */
         if($info){
             $this->return['message'] = L('upload_success');
-            $this->return['data']['path'] = '/Uploads/File/'.$info['savepath'].$info['savename'];
+            $this->return['data']['path'] = '/Uploads/File/'.$info['file']['savepath'].$info['file']['savename'];
             $this->return['data']['fid'] = $info['id'];
         } else {
             $this->return['code'] = 1001;
