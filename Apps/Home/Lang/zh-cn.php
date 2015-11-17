@@ -11,6 +11,8 @@
 		'no_register'	=> '该手机号尚未注册',
 		'login_error'	=> '手机号或密码错误',
 		'pwd_error'		=> '两次密码不一致',
+		'param_error'	=> '参数错误',
+		'upload_success'=> '上传成功',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
 	);
 ?>
