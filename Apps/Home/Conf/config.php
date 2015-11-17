@@ -33,7 +33,7 @@ return array(
 	/* 文件上传相关配置 */
     'DOWNLOAD_UPLOAD' => array(
         'mimes'    => '', //允许上传的文件MiMe类型
-        'maxSize'  => 6*1024*1024, //上传的文件大小限制 (0-不做限制)
+        'maxSize'  => 3*1024*1024, //上传的文件大小限制 (0-不做限制)
         //'exts'     => 'jpg,gif,png,jpeg,zip,rar,tar,gz,7z,doc,docx,txt,xml,mp4', //允许上传的文件后缀
         'exts'     => 'jpg,gif,png,jpeg,mp4',
         'autoSub'  => true, //自动子目录保存文件
