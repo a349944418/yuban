@@ -44,7 +44,7 @@ Class PublicController extends BaseController
         if($info){
             $this->return['message'] = L('upload_success');
             $this->return['data']['path'] = '/Uploads/File/'.$info['file']['savepath'].$info['file']['savename'];
-            $this->return['data']['fid'] = $info['id'];
+            $this->return['data']['fid'] = $info['file']['id'];
         } else {
             $this->return['code'] = 1001;
             $this->return['message'] = $File->getError();
