@@ -7,6 +7,8 @@
  * @return {Boolean}        [description]
  */
 function is_login($uid, $token, $redis) {
+    dump($redis);
+    dump($uid);
 	$server_token = $redis->GET('Token:uid:'.$uid);
     if(!$server_token) {
     	$return['error'] = 1;
