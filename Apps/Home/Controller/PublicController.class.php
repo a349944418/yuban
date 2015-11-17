@@ -58,7 +58,6 @@ Class PublicController extends BaseController
      * @author huajie <banhuajie@163.com>
      */
     public function uploadPicture(){
-        dump(I('post.'));
         //TODO: 用户登录检测
         $flag = is_login(I('post.uid'), I('post.token'), $this->redis);
         if( $flag['error'] ) {

@@ -10,15 +10,15 @@ function is_login($uid, $token, $redis) {
     dump($redis);
     dump($uid);
 	$server_token = $redis->GET('Token:uid:'.$uid);
+    dump($server_token);
     if(!$server_token) {
     	$return['error'] = 1;
         $return['code'] = 1001;
         $return['message'] = L('token_lose');
-    }
-    if(!$server_token != $token) {
+    }elseif($server_token != $token) {
     	$return['error'] = 1;
         $return['code'] = 1002;
-        $retufn['message'] = L('token_error');
+        $return['message'] = L('token_error');
     }
     return $return;
 }
