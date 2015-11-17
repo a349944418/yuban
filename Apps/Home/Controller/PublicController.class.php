@@ -34,13 +34,12 @@ Class PublicController extends BaseController
         /* 记录附件信息 */
         if($info){
             $this->return['message'] = L('upload_success');
-            $this->return['data']['info'] = $info['download'];
+            $this->return['data']['path'] = '/Uploads/File/'.$info['savepath'].$info['savename'];
+            $this->return['data']['fid'] = $info['id'];
         } else {
             $this->return['code'] = 1001;
             $this->return['message'] = $File->getError();
         }
-        dump($info);
-        dump($this->return);
         /* 返回JSON数据 */
         $this->goJson($this->return);
     }
@@ -66,7 +65,8 @@ Class PublicController extends BaseController
         if($info){
             $this->return['code'] = 0;
             $this->return['message'] = L('upload_success');
-            $this->return['data']['info'] = $info['download'];
+            $this->return['data']['path'] = '/Uploads/Picture/'.$info['savepath'].$info['savename'];
+            $this->return['data']['pid'] = $info['id'];
         } else {
             $return['code'] = 1001;
             $this->return['message'] = $File->getError();
