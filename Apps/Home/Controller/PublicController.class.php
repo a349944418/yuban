@@ -63,11 +63,10 @@ Class PublicController extends BaseController
 
         /* 记录图片信息 */
         if($info){
-            dump($info);
             $this->return['code'] = 0;
             $this->return['message'] = L('upload_success');
-            $this->return['data']['path'] = '/Uploads/Picture/'.$info['savepath'].$info['savename'];
-            $this->return['data']['pid'] = $info['id'];
+            $this->return['data']['path'] = $info['file']['path'];
+            $this->return['data']['pid'] = $info['file']['id'];
         } else {
             $return['code'] = 1001;
             $this->return['message'] = $Picture->getError();
