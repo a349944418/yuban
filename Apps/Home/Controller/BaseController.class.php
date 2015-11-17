@@ -20,7 +20,7 @@ Class BaseController extends Controller
      * @return [type]      [description]
      */
     protected function goJson( $arr ) {
-	echo json_encode($arr);
+	    echo json_encode($arr, JSON_UNESCAPED_UNICODE);
         die();
     }
 }
