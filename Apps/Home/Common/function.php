@@ -8,7 +8,7 @@
  */
 function is_login($uid, $token, $redis) {
 	$server_token = $redis->GET('Token:uid'.$uid);
-    dump($server_token);
+    $return['error'] = 0;
     if(!$server_token) {
     	$return['error'] = 1;
         $return['code'] = 1001;
