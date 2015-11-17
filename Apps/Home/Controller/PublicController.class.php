@@ -69,7 +69,7 @@ Class PublicController extends BaseController
             $this->return['data']['pid'] = $info['id'];
         } else {
             $return['code'] = 1001;
-            $this->return['message'] = $File->getError();
+            $this->return['message'] = $Picture->getError();
         }
 
         /* 返回JSON数据 */
