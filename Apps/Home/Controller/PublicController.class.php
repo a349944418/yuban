@@ -23,7 +23,7 @@ Class PublicController extends BaseController
         /* 调用文件上传组件上传文件 */
         $File = D('File');
         $file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
-        dump(11);
+        dump($File);
         die();
         $info = $File->upload(
             $_FILES,
