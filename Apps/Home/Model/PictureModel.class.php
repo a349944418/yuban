@@ -7,7 +7,7 @@
 // | Author: huajie <banhuajie@163.com>
 // +----------------------------------------------------------------------
 
-namespace Admin\Model;
+namespace Home\Model;
 use Think\Model;
 use Think\Upload;
 

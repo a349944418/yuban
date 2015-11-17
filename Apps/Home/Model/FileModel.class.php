@@ -7,7 +7,7 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
 // +----------------------------------------------------------------------
 
-namespace Admin\Model;
+namespace Home\Model;
 use Think\Model;
 use Think\Upload;
 
@@ -42,15 +42,12 @@ class FileModel extends Model{
      * @return array           文件上传成功后的信息
      */
     public function upload($files, $setting, $driver = 'Local', $config = null){
-        dump(1);
-        die();
         /* 上传文件 */
         $setting['callback'] = array($this, 'isFile');
 		$setting['removeTrash'] = array($this, 'removeTrash');
         $Upload = new Upload($setting, $driver, $config);
         $info   = $Upload->upload($files);
-        dump(2);
-        die();
+        
         /* 设置文件保存位置 */
 		$this->_auto[] = array('location', 'ftp' === strtolower($driver) ? 1 : 0, self::MODEL_INSERT);
 
