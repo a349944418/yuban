@@ -43,6 +43,7 @@ class FileModel extends Model{
      */
     public function upload($files, $setting, $driver = 'Local', $config = null){
         dump(1);
+        die();
         /* 上传文件 */
         $setting['callback'] = array($this, 'isFile');
 		$setting['removeTrash'] = array($this, 'removeTrash');
