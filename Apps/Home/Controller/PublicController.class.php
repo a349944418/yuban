@@ -9,7 +9,8 @@ Class PublicController extends BaseController
         if(!in_array(ACTION_NAME, $arr)){
             //TODO: 用户登录检测
             $uid = I('post.uid');
-            $server_token = $this->redis->get('Token:uid:'.$uid);
+            dump($this->redis);
+            $server_token = $this->redis->GET('Token:uid:'.$uid);
             if(!$server_token) {
                 $this->return['code'] = 1001;
                 $this->return['message'] = L('token_lose');
