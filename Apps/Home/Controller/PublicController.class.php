@@ -3,26 +3,6 @@ namespace Home\Controller;
 
 Class PublicController extends BaseController 
 {
-    public function _initialize()
-    {
-        $arr = array('getBaseLanguage');
-        if(!in_array(ACTION_NAME, $arr)){
-            //TODO: 用户登录检测
-            $uid = I('post.uid');
-            dump($this->redis);
-            $server_token = $this->redis->GET('Token:uid:'.$uid);
-            if(!$server_token) {
-                $this->return['code'] = 1001;
-                $this->return['message'] = L('token_lose');
-                $this->goJson($this->return);
-            }
-            if(!$server_token != I('post.token')) {
-                $this->return['code'] = 1002;
-                $this->retufn['message'] = L('token_error');
-                $this->goJson($this->return);
-            }
-        }
-    }
 
     /**
      * 获取母语语言列表
@@ -41,6 +21,14 @@ Class PublicController extends BaseController
 
     /* 文件上传 */
     public function upload(){
+        //TODO: 用户登录检测
+        $flag = is_login(I('post.uid'), I('post.token'), $this->redis);
+        if( $flag['error'] ) {
+            unset($flag['error']);
+            $this->return = $flag;
+            $this->goJson($this->return);
+        }
+        
         /* 调用文件上传组件上传文件 */
         $File = D('File');
         $file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
@@ -70,7 +58,14 @@ Class PublicController extends BaseController
      * @author huajie <banhuajie@163.com>
      */
     public function uploadPicture(){
-        
+        //TODO: 用户登录检测
+        $flag = is_login(I('post.uid'), I('post.token'), $this->redis);
+        if( $flag['error'] ) {
+            unset($flag['error']);
+            $this->return = $flag;
+            $this->goJson($this->return);
+        }
+
         /* 调用文件上传组件上传文件 */
         $Picture = D('Picture');
         $pic_driver = C('PICTURE_UPLOAD_DRIVER');
