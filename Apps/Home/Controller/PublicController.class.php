@@ -28,7 +28,7 @@ Class PublicController extends BaseController
             $this->return = $flag;
             $this->goJson($this->return);
         }
-        
+
         /* 调用文件上传组件上传文件 */
         $File = D('File');
         $file_driver = C('DOWNLOAD_UPLOAD_DRIVER');
@@ -58,6 +58,7 @@ Class PublicController extends BaseController
      * @author huajie <banhuajie@163.com>
      */
     public function uploadPicture(){
+        echo $this->redis->GET('Token:uid1');
         //TODO: 用户登录检测
         $flag = is_login(I('post.uid'), I('post.token'), $this->redis);
         if( $flag['error'] ) {
