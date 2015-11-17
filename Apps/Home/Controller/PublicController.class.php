@@ -3,6 +3,26 @@ namespace Home\Controller;
 
 Class PublicController extends BaseController 
 {
+    public function _initialize()
+    {
+        $arr = array('getBaseLanguage');
+        if(!in_array(ACTION_NAME, $arr)){
+            //TODO: 用户登录检测
+            $uid = I('post.uid');
+            $server_token = $this->redis->get('Token:uid:'.$uid);
+            if(!$server_token) {
+                $this->return['code'] = 1001;
+                $this->return['message'] = L('token_lose');
+                $this->goJson($this->return);
+            }
+            if(!$server_token != I('post.token')) {
+                $this->return['code'] = 1002;
+                $this->retufn['message'] = L('token_error');
+                $this->goJson($this->return);
+            }
+        }
+    }
+
     /**
      * 获取母语语言列表
      * @return [type] [description]
@@ -49,8 +69,7 @@ Class PublicController extends BaseController
      * @author huajie <banhuajie@163.com>
      */
     public function uploadPicture(){
-        //TODO: 用户登录检测
-
+        
         /* 调用文件上传组件上传文件 */
         $Picture = D('Picture');
         $pic_driver = C('PICTURE_UPLOAD_DRIVER');
@@ -68,7 +87,7 @@ Class PublicController extends BaseController
             $this->return['data']['path'] = $info['file']['path'];
             $this->return['data']['pid'] = $info['file']['id'];
         } else {
-            $return['code'] = 1001;
+            $return['code'] = 1003;
             $this->return['message'] = $Picture->getError();
         }
 

@@ -13,6 +13,8 @@
 		'pwd_error'		=> '两次密码不一致',
 		'param_error'	=> '参数错误',
 		'upload_success'=> '上传成功',
+		'token_lose'	=> 'token过期',
+		'token_error'	=> 'token错误',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
 	);
 ?>
