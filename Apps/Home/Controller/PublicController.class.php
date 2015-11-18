@@ -39,7 +39,6 @@ Class PublicController extends BaseController
             C('DOWNLOAD_UPLOAD_DRIVER'),
             C("UPLOAD_{$file_driver}_CONFIG")
         );
-        dump($info);
         /* 记录附件信息 */
         if($info){
             if(!$info['file']) {

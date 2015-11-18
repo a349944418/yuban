@@ -12,6 +12,12 @@ Class BaseController extends Controller
     {
         import("Common.Util.RedisPool");
         $this->redis = \RedisPool::getconnect();
+        /*geo 保存
+        if(I('post.position') && I('post.token') && I('post.uid')) {
+            if(I('post.token') = $this->redis->get('Token:uid'.I('post.uid')) ) {
+                $this->redis->sadd();
+            }
+        }*/
     }
 
     /**
