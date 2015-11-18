@@ -18,6 +18,28 @@ Class BaseController extends Controller
                 $this->redis->sadd();
             }
         }*/
+
+        //TODO: 用户登录检测
+        $not_login = array(
+            'Index'     => array('index'=>1),
+            'Public'    => array('getBaseLanguage'=>1, 'getTags'=>1),
+            'Passport'  => array('login'=>1, 'changePwd'=>1),
+            'Reg'       => array('getMobileCode'=>1, 'Register'=>1),
+        );
+        if(!$not_login[CONTROLLER_NAME][ACTION_NAME]) {
+            $uid = I('post.uid');
+            $token = I('post.token');
+            $server_token = $this->redis->GET('Token:uid'.$uid);
+            if(!$server_token) {
+                $this->return['code'] = 1001;
+                $this->return['message'] = L('token_lose');
+                $this->goJson($this->return);
+            }elseif($server_token != $token) {
+                $this->return['code'] = 1002;
+                $this->return['message'] = L('token_error');
+                $this->goJson($this->return);
+            }            
+        }
     }
 
     /**

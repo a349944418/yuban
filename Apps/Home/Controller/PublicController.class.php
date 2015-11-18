@@ -19,15 +19,22 @@ Class PublicController extends BaseController
         $this->goJson($this->return);
     }
 
+    /**
+     * 获取标签
+     * @return [type] [description]
+     */
+    public function getTags() {
+        $this->return['data']['tags'] = F('tags');
+        if(!$this->return['data']['tags']) {
+            $this->return['data']['tags'] = D('tags')->field('tid, tags_name')->select();
+            F('tags', $this->return['data']['tags']);
+        }
+
+        $this->goJson($this->return);
+    }
+
     /* 文件上传 */
     public function upload(){
-        //TODO: 用户登录检测
-        $flag = is_login(I('post.uid'), I('post.token'), $this->redis);
-        if( $flag['error'] ) {
-            unset($flag['error']);
-            $this->return = $flag;
-            $this->goJson($this->return);
-        }
 
         /* 调用文件上传组件上传文件 */
         $File = D('File');
@@ -63,13 +70,6 @@ Class PublicController extends BaseController
      * @author huajie <banhuajie@163.com>
      */
     public function uploadPicture(){
-        //TODO: 用户登录检测
-        $flag = is_login(I('post.uid'), I('post.token'), $this->redis);
-        if( $flag['error'] ) {
-            unset($flag['error']);
-            $this->return = $flag;
-            $this->goJson($this->return);
-        }
 
         /* 调用文件上传组件上传文件 */
         $Picture = D('Picture');

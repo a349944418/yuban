@@ -1,0 +1,771 @@
+[ 2015-11-18T11:56:39+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+
+[ 2015-11-18T11:58:32+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-11-18T12:00:03+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T13:11:40+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-11-18T13:12:21+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T13:12:57+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T13:13:18+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T13:14:01+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 28 行.
+
+[ 2015-11-18T13:14:24+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 28 行.
+
+[ 2015-11-18T13:14:33+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 28 行.
+
+[ 2015-11-18T13:18:22+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 28 行.
+
+[ 2015-11-18T13:18:57+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 28 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yj_picture` WHERE `md5` = '346df5df6033f35d08d634d95497db1b' AND `sha1` = 'ecfedda381622f7921ec59366a44f064eb7ffa0f' LIMIT 1   [ RunTime:0.0240s ]
+NOTIC: [8] Undefined index: validate D:\Apache\htdocs\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Apache\htdocs\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `yj_picture` (`md5`,`sha1`,`path`,`status`,`create_time`) VALUES ('346df5df6033f35d08d634d95497db1b','ecfedda381622f7921ec59366a44f064eb7ffa0f','/Uploads/Picture/2015-11-18/564c0a415dd3b.jpg','1','1447823937') [ RunTime:0.0060s ]
+
+[ 2015-11-18T16:27:06+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2015-11-18T16:27:52+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2015-11-18T16:29:17+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-11-18T16:31:50+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0080s ]
+
+[ 2015-11-18T16:33:08+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0110s ]
+
+[ 2015-11-18T16:34:35+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0120s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0160s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0180s ]
+SQL: SELECT `lid`,`language_name` FROM `yj_language`  [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 17 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 49 行.
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0190s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0110s ]
+SQL: SELECT `tid`,`tags_name` FROM `yj_tags`  [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\TagsModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\TagsModel.class.php 第 17 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\TagsModel.class.php 第 17 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 58 行.
+
+[ 2015-11-18T16:35:44+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0260s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 49 行.
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0060s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 58 行.
+
+[ 2015-11-18T16:37:02+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0150s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined variable: all D:\Apache\htdocs\yuban\Apps\Home\Model\LanguageModel.class.php 第 14 行.
+SQL: SELECT `lid`,`language_name` FROM `yj_language`  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0080s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined variable: all D:\Apache\htdocs\yuban\Apps\Home\Model\TagsModel.class.php 第 14 行.
+SQL: SELECT `tid`,`tags_name` FROM `yj_tags`  [ RunTime:0.0070s ]
+
+[ 2015-11-18T16:39:53+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0160s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0110s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0110s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0080s ]
+
+[ 2015-11-18T16:41:15+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Index D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 28 行.
+
+[ 2015-11-18T16:41:50+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.026002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.026002s ]
+
+[ 2015-11-18T16:43:02+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0160s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0090s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0090s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0120s ]
+
+[ 2015-11-18T16:43:07+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-18T16:52:41+08:00 ] ::1 /yuban/index.php/Home/Public/getTags
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0060s ]
+ERR: 1054:Unknown column 'tag_name' in 'field list'
+ [ SQL语句 ] : SELECT `tid`,`tag_name` FROM `yj_tags` 
+ERR: 1054:Unknown column 'tag_name' in 'field list'
+ [ SQL语句 ] : SELECT `tid`,`tag_name` FROM `yj_tags` 
+
+[ 2015-11-18T16:52:50+08:00 ] ::1 /yuban/index.php/Home/Public/getTags
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0090s ]
+ERR: 1054:Unknown column 'tag_name' in 'field list'
+ [ SQL语句 ] : SELECT `tid`,`tag_name` FROM `yj_tags` 
+ERR: 1054:Unknown column 'tag_name' in 'field list'
+ [ SQL语句 ] : SELECT `tid`,`tag_name` FROM `yj_tags` 
+
+[ 2015-11-18T16:53:27+08:00 ] ::1 /yuban/index.php/Home/Public/getTags
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0090s ]
+SQL: SELECT `tid`,`tags_name` FROM `yj_tags`  [ RunTime:0.0150s ]
+
+[ 2015-11-18T17:39:55+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+NOTIC: [8] Undefined index: headimg D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0220s ]
+ERR: 1054:Unknown column 'pid' in 'where clause'
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( pid=4 ) LIMIT 1  
+ERR: 1054:Unknown column 'pid' in 'where clause'
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( pid=4 ) LIMIT 1  
+
+[ 2015-11-18T17:40:59+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+NOTIC: [8] Undefined index: headimg D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0120s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: photo D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 26 行.
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [2] Missing argument 1 for PinYin::Pinyin(), called in D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php on line 48 and defined D:\Apache\htdocs\yuban\Apps\Common\Util\PinYin.class.php 第 10 行.
+NOTIC: [8] Undefined variable: _String D:\Apache\htdocs\yuban\Apps\Common\Util\PinYin.class.php 第 59 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 60 行.
+NOTIC: [8] Undefined index: video_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 63 行.
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 69 行.
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: UPDATE `yj_userinfo` SET `headimg`='4',`photo`='2,3',`uname`='子越',`first_letter`='Z',`search_key`='子越 ziyue',`intro`='我是个演员',`video_profile`='2',`audio_profile`='3',`province`='241',`city`='372',`location`='中国/北京/东城' WHERE ( uid=1 ) [ RunTime:0.1170s ]
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 98 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 100 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0110s ]
+SQL: UPDATE `yj_user_language` SET `lid`='5',`self_level`='3.5' WHERE ( uid=1 ) [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0130s ]
+SQL: INSERT INTO `yj_user_tags` (`uid`,`tid`) VALUES ('1','2') [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0100s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid )  [ RunTime:0.0130s ]
+
+[ 2015-11-18T17:41:11+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T17:42:50+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0550s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0220s ]
+SQL: UPDATE `yj_userinfo` SET `photo`='2,3' WHERE ( uid=1 ) [ RunTime:0.0330s ]
+
+[ 2015-11-18T17:42:53+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-11-18T17:44:16+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+
+[ 2015-11-18T17:44:22+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-18T17:44:38+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T17:46:22+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+
+[ 2015-11-18T17:48:55+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+
+[ 2015-11-18T17:49:24+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+
+[ 2015-11-18T17:50:20+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 104 行.
+
+[ 2015-11-18T17:50:29+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T17:52:09+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 105 行.
+
+[ 2015-11-18T17:53:37+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: UPDATE `yj_userinfo` SET `audio_profile`='2' WHERE ( uid=1 ) [ RunTime:0.0280s ]
+NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 104 行.
+
+[ 2015-11-18T17:53:41+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T18:08:09+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0120s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0330s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined variable: post D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 55 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( id= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( id= ) LIMIT 1  
+
+[ 2015-11-18T18:09:50+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0210s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0070s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[{"pid":"2" ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( id=[{"pid":"2" ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[{"pid":"2" ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( id=[{"pid":"2" ) LIMIT 1  
+
+[ 2015-11-18T18:11:07+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0150s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0120s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0120s ]
+
+[ 2015-11-18T18:14:27+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0160s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0090s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0120s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[{"pid":"2" ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( id=[{"pid":"2" ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[{"pid":"2" ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `path` FROM `yj_picture` WHERE ( id=[{"pid":"2" ) LIMIT 1  
+
+[ 2015-11-18T18:16:00+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0150s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0140s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0180s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0110s ]
+NOTIC: [8] Undefined variable: zflag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0110s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0090s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0130s ]
+
+[ 2015-11-18T18:22:12+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0240s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined variable: zflag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0090s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0110s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0110s ]
+
+[ 2015-11-18T18:22:17+08:00 ] ::1 /yuban/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-18T18:24:01+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.2600s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0420s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0480s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `photo` FROM `yj_userinfo` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0080s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0130s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0120s ]
+
+[ 2015-11-18T18:24:48+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0060s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0240s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0100s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0400s ]
+SQL: SELECT `photo` FROM `yj_userinfo` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0160s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0070s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0060s ]
+
+[ 2015-11-18T18:34:16+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0300s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18810319717" ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0090s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SELECT `photo` FROM `yj_userinfo` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0120s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0070s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0080s ]
+

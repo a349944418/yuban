@@ -11,7 +11,7 @@ Class RegController extends BaseController
      **/
     public function getMobileCode()
     {	
-        $mobile = intval( I('post.mobile') );
+        $mobile = I('post.mobile');
         if(strlen($mobile) != 11) {
             $this->return['code'] = 1001;
             $this->return['message'] = L('mobile_error');
@@ -76,7 +76,7 @@ Class RegController extends BaseController
     {
         $post = I('post.');
         // 验证手机号
-        $mobile = intval( I('post.mobile') );
+        $mobile = I('post.mobile');
         if(strlen($mobile) != 11) {
             $this->return['code'] = 1001;
             $this->return['message'] = L('mobile_error');
