@@ -10,7 +10,7 @@ Class RedisPool
 	{
 		if(!self::$connect){
 			$redis = new Redis();
-			$redis->connect('127.0.0.1', 6378);
+			$redis->connect('182.92.66.243', 6378);
 			$redis->auth('a7234738');
 			self::$connect = $redis;
 		}

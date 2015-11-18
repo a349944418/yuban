@@ -39,12 +39,18 @@ Class PublicController extends BaseController
             C('DOWNLOAD_UPLOAD_DRIVER'),
             C("UPLOAD_{$file_driver}_CONFIG")
         );
-
+        dump($info);
         /* 记录附件信息 */
         if($info){
+            if(!$info['file']) {
+                foreach($info as $v){
+                    $this->return['data']['file'][] = array('path'=>'/Uploads/File/'.$v['savepath'].$v['savename'], 'fid'=>$v['id']);
+
+                }
+            } else {
+                $this->return['data']['file'][] = array('path'=>'/Uploads/File/'.$info['file']['savepath'].$info['file']['savename'], 'fid'=>$info['file']['id']);
+            }
             $this->return['message'] = L('upload_success');
-            $this->return['data']['path'] = '/Uploads/File/'.$info['file']['savepath'].$info['file']['savename'];
-            $this->return['data']['fid'] = $info['file']['id'];
         } else {
             $this->return['code'] = 1001;
             $this->return['message'] = $File->getError();
@@ -75,13 +81,17 @@ Class PublicController extends BaseController
             C('PICTURE_UPLOAD_DRIVER'),
             C("UPLOAD_{$pic_driver}_CONFIG")
         ); //TODO:上传到远程服务器
-
         /* 记录图片信息 */
         if($info){
-            $this->return['code'] = 0;
-            $this->return['message'] = L('upload_success');
-            $this->return['data']['path'] = $info['file']['path'];
-            $this->return['data']['pid'] = $info['file']['id'];
+            if(!$info['file']){
+                foreach($info as $v){
+                    $this->return['data']['pic'][] = array('path'=>$v['path'], 'pid'=>$v['id']);
+
+                }
+            } else {
+                $this->return['data']['pic'][] = array('path'=>$info['file']['path'], 'pid'=>$info['file']['id']);
+            }
+            $this->return['message'] = L('upload_success');          
         } else {
             $return['code'] = 1003;
             $this->return['message'] = $Picture->getError();

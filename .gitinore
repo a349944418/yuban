@@ -1,0 +1,8 @@
+# windows:
+Thumbs.db
+Desktop.ini
+
+_runtime/
+Uploads/
+Apps/Common/Conf/config.php
+Apps/Common/Util/RedisPool.class.php
