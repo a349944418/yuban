@@ -2,7 +2,7 @@
 Thumbs.db
 Desktop.ini
 
-/Uploads/
+/Uploads
 /Apps/Common/Conf/config.php
 /Apps/Common/Util/RedisPool.class.php
-/Apps/Common/Runtime/*
+/Apps/Common/Runtime
