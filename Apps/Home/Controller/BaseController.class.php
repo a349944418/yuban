@@ -24,7 +24,7 @@ Class BaseController extends Controller
             'Index'     => array('index'=>1),
             'Public'    => array('getBaseLanguage'=>1, 'getTags'=>1),
             'Passport'  => array('login'=>1, 'changePwd'=>1),
-            'Reg'       => array('getMobileCode'=>1, 'Register'=>1),
+            'Reg'       => array('getMobileCode'=>1, 'register'=>1),
         );
         if(!$not_login[CONTROLLER_NAME][ACTION_NAME]) {
             $uid = I('post.uid');
