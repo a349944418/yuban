@@ -40,6 +40,18 @@ Class BaseController extends Controller
                 $this->goJson($this->return);
             }            
         }
+
+        //更新经纬度
+        if(I('post.uid')) {            
+            $data['lati'] = I('post.lati');
+            $data['longi'] = I('post.longi');
+            if($data['lati'] && $data['longi']) {               
+                D('userinfo')->where('uid='.I('post.uid'))->save($data);
+                import("Common.Util.LBS");
+                $this->lbs = new \LBS($this->redis);
+                $this->lbs->upinfo('Userinfo:uid'.I('post.uid'), $data['lati'], $data['longi'] );
+            }
+        }
     }
 
     /**
