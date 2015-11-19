@@ -6,6 +6,17 @@ namespace Home\Controller;
 
 Class UserController extends BaseController
 {
+	/**
+	 * 获取用户数据Api
+	 * @return [type] [description]
+	 */
+	public function getUserinfo()
+	{
+		$uid = I('post.to_uid');
+		$res = $this->getUserinfoData($uid);
+        $this->return['data'] = $res;
+        $this->goJson($this->return);
+	}
 
 	/**
 	 * 保存用户信息
@@ -23,7 +34,7 @@ Class UserController extends BaseController
 			$info['headimg_src'] = D('picture')->where('id='.$post['headimg'])->getField('path');
 		}
 		//其它相册
-		$o_photo = json_decode($o_info['photo']) ? json_decode($o_info['photo']) : array();
+		$o_photo = json_decode($o_info['photo'], true) ? json_decode($o_info['photo'], true) : array();
 		$o_photo_ids = getSubByKey($o_photo, 'pid');
 		$o_photo_str = $o_photo_ids ? implode(',', $o_photo_ids) : '';
 		if($o_photo_str != $post['photo']) {
@@ -95,7 +106,7 @@ Class UserController extends BaseController
 		}
 
 		//语言 更改
-		$o_language = json_decode($o_info['language']) ? (array) json_decode($o_info['language']) : array();
+		$o_language = json_decode($o_info['language'], true) ? json_decode($o_info['language'], true) : array();
 		if($post['language']['lid'] != $o_language['lid'])
 			$language['lid'] = $post['language']['lid'];
 		if($post['language']['self_level'] != $o_language['self_level'])
@@ -109,7 +120,7 @@ Class UserController extends BaseController
 		}
 
 		//标签
-		$o_tags = json_decode($o_info['tags']) ? (array) json_decode($o_info['tags']) : array();
+		$o_tags = json_decode($o_info['tags']) ? json_decode($o_info['tags'], true) : array();
 		$o_tag_ids = getSubByKey($o_tags, 'tid');
 		$tags_post = explode(',', $post['tags']);
 		if(!count($tags_post)){
@@ -141,6 +152,26 @@ Class UserController extends BaseController
 				$this->redis->HSET('Userinfo:uid'.$post['uid'], 'tags', json_encode($tags_res, JSON_UNESCAPED_UNICODE));
 			}
 		}
+		$this->return['data'] = $this->getUserinfoData($post['uid']);
 		$this->goJson($this->return);
+	}
+
+	/**
+	 * 获取用户数据(不含password)
+	 * @param  [int] $uid [description]
+	 * @return [array]     [description]
+	 */
+	private function getUserinfoData($uid)
+	{
+		$res = $this->redis->HGETALL('Userinfo:uid'.$uid);
+        if(!$res) {
+            $res = D('userinfo')->getUserInfo($uid);
+            $this->redis->HMSET('Userinfo:uid'.$uid, $res);
+        }
+        $res['tags'] = json_decode($res['tags'], true);
+        $res['language'] = json_decode($res['language'], true);
+        $res['photo'] = json_decode($res['photo'], true);
+        unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt']);
+        return $res;
 	}
 }
