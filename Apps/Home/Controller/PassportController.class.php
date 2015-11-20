@@ -35,11 +35,19 @@ Class PassportController extends BaseController
         	$this->return['message'] = L('login_error');
         	$this->goJson($this->return);
         }
-        
+       
         $res['token'] = $this->create_unique($res['uid']);
         $this->redis->SETEX('Token:uid'.$res['uid'], 2592000, $res['token']);
         
         $return = array('uid'=>$uid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile']);
+        
+
+        $this->redis->SADD('Userinfo:online', $uid);    //在线用户列表
+        if($res['sex'] == 1){
+            $this->redis->SADD('Userinfo:sex', $uid);  //男性用户列表 
+        }       
+        $this->redis->SADD('Userinfo:country'.$res['country'], $uid);   //用户国籍列表
+
         unset($res);
         $this->return['data'] = $return;
         $this->goJson($this->return);
@@ -85,6 +93,17 @@ Class PassportController extends BaseController
         $info['password'] = md5(md5($pwd).$login_salt);
         D('userinfo')->where('uid='.$uid)->save($info);
         $this->redis->HSET('Userinfo:uid'.$uid, 'password', $info['password']);
+        $this->goJson($this->return);
+    }
+
+    /**
+     * 退出登录
+     * @return [type] [description]
+     */
+    public function logout()
+    {
+        $this->redis->SREM('Userinfo:online', I('post.uid'));
+        $this->redis->DEL('Token:uid'.I('post.uid'));
         $this->goJson($this->return);
     }
 }
