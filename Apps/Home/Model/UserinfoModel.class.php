@@ -26,18 +26,18 @@ class UserinfoModel extends Model
 		$res = $this->where('uid='.$uid)->find();
 		//音频介绍介绍    
         $audio = D('file')->field('savepath, savename')->where('id='.$res['audio_profile'])->find();
-        $res['audio_profile_src'] = '/Uploads/File/'.$audio['savepath'].$audio['savename'];
+        $res['audio_profile_src'] = C('WEBSITE_URL').'/Uploads/File/'.$audio['savepath'].$audio['savename'];
         //视频介绍地址
         $video = D('file')->field('savepath, savename')->where('id='.$res['video_profile'])->find();
-        $res['video_profile_src'] = '/Uploads/File/'.$video['savepath'].$video['savename'];
+        $res['video_profile_src'] = C('WEBSITE_URL').'/Uploads/File/'.$video['savepath'].$video['savename'];
         //头像原图
-        $res['headimg_src'] = D('picture')->where('id='.$res['headimg'])->getField('path');
+        $res['headimg_src'] = C('WEBSITE_URL').(D('picture')->where('id='.$res['headimg'])->getField('path'));
         //其它头像地址
         $photo_arr = explode(',', $res['photo']);
         foreach($photo_arr as $v) {
             $photo_res = array();
             $photo_res['pid'] = $v;
-            $photo_res['path'] = D('picture')->where('id='.$v)->getField('path');
+            $photo_res['path'] = C('WEBSITE_URL').(D('picture')->where('id='.$v)->getField('path'));
             $photo[] = $photo_res;
         }
         $res['photo'] = json_encode($photo, JSON_UNESCAPED_UNICODE);
