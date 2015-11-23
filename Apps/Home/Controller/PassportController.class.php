@@ -39,7 +39,7 @@ Class PassportController extends BaseController
         $res['token'] = $this->create_unique($res['uid']);
         $this->redis->SETEX('Token:uid'.$res['uid'], 2592000, $res['token']);
         
-        $return = array('uid'=>$uid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile']);
+        $return = array('uid'=>$uid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile'], 'sex'=>$res['sex']);
         
 
         $this->redis->SADD('Userinfo:online', $uid);    //在线用户列表
