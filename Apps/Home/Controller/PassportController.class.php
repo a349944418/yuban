@@ -70,14 +70,6 @@ Class PassportController extends BaseController
      */
     public function changePwd()
     {
-        $mobile = I('post.mobile');
-        
-        if(strlen($mobile) != 11) {
-            $this->return['code'] = 1001;
-            $this->return['message'] = L('mobile_error');
-            $this->goJson($this->return);
-        }
-
         $pwd = I('post.pwd');
         $repwd = I('post.repwd');
         if($pwd != $repwd || $pwd == '')
@@ -86,8 +78,21 @@ Class PassportController extends BaseController
             $this->return['message'] = L('pwd_error');
             $this->goJson($this->return);
         }
+        
+        if(!$this->mid) {
+            $mobile = I('post.mobile');
+        
+            if(strlen($mobile) != 11) {
+                $this->return['code'] = 1001;
+                $this->return['message'] = L('mobile_error');
+                $this->goJson($this->return);
+            }
 
-        $uid = D('userinfo')->getUid($mobile);
+            $uid = D('userinfo')->getUid($mobile);
+        } else {
+            $uid = $this->mid;
+        }
+        
         $login_salt = $this->redis->HGET('Userinfo:uid'.$uid, 'login_salt');
         $info['password'] = md5(md5($pwd).$login_salt);
         D('userinfo')->where('uid='.$uid)->save($info);

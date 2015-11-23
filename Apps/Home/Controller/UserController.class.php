@@ -156,7 +156,19 @@ Class UserController extends BaseController
 				$this->redis->HSET('Userinfo:uid'.$this->mid, 'tags', json_encode($tags_res, JSON_UNESCAPED_UNICODE));
 			}
 		}
-		$this->return['data'] = $this->getUserinfoData($this->mid);
+		//$this->return['data'] = $this->getUserinfoData($this->mid);
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 加关注
+	 * @return [type] [description]
+	 */
+	public function friend()
+	{
+		$uid = I('post.uid');
+		D('friend')->addUser($this->mid, $uid, 2);
+		$this->redis->SADD('Userinfo:friend'.$this->mid, $uid);
 		$this->goJson($this->return);
 	}
 

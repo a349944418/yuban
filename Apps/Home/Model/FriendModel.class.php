@@ -12,10 +12,13 @@ class FriendModel extends Model
 	 */
 	public function addUser($from_id, $to_id, $type)
 	{
-		$info['from_id'] = $from_id;
-		$info['to_id'] = $to_id;
-		$info['type'] = $type;
-		$info['time'] = time();
-		$this->add($info);
+		$res = $this->where('from_id='.$from_id.' and to_id='.$to_id)->getField('id');
+		if(!$res){
+			$info['from_id'] = $from_id;
+			$info['to_id'] = $to_id;
+			$info['type'] = $type;
+			$info['time'] = time();
+			$this->add($info);
+		}		
 	}
 }

@@ -85,7 +85,6 @@ Class PublicController extends BaseController
             if(!$info['file']){
                 foreach($info as $v){
                     $this->return['data']['pic'][] = array('url'=>C('WEBSITE_URL').$v['path'], 'rid'=>$v['id']);
-
                 }
             } else {
                 $this->return['data']['pic'][] = array('url'=>C('WEBSITE_URL').$info['file']['path'], 'rid'=>$info['file']['id']);

@@ -12,16 +12,10 @@ Class BaseController extends Controller
     {
         import("Common.Util.RedisPool");
         $this->redis = \RedisPool::getconnect();
-        /*geo 保存
-        if(I('post.position') && I('post.token') && I('post.uid')) {
-            if(I('post.token') = $this->redis->get('Token:uid'.I('post.uid')) ) {
-                $this->redis->sadd();
-            }
-        }*/
 
         //TODO: 用户登录检测
         $not_login = array(
-            'Index'     => array('index'=>1),
+            'Index'     => array('index'=>1, 'test'=>1),
             'Public'    => array('getBaseLanguage'=>1, 'getTags'=>1),
             'Passport'  => array('login'=>1, 'changePwd'=>1),
             'Reg'       => array('getMobileCode'=>1, 'register'=>1),
