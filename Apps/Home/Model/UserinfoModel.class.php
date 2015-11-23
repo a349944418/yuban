@@ -29,16 +29,20 @@ class UserinfoModel extends Model
             $audio_profile['rid'] = $res['audio_profile'];
             $audio = D('file')->field('savepath, savename')->where('id='.$res['audio_profile'])->find();
             $audio_profile['url'] = C('WEBSITE_URL').'/Uploads/File/'.$audio['savepath'].$audio['savename'];
-            $res['audio_profile'] = json_encode($audio_profile, JSON_UNESCAPED_UNICODE);
-        } 
+        } else {
+            $audio_profile = array();
+        }
+        $res['audio_profile'] = json_encode($audio_profile, JSON_UNESCAPED_UNICODE);
         
         //视频介绍地址
         if($res['video_profile']) {
             $video_profile['rid'] = $res['video_profile'];
             $video = D('file')->field('savepath, savename')->where('id='.$res['video_profile'])->find();
-            $video_profile['url'] = C('WEBSITE_URL').'/Uploads/File/'.$video['savepath'].$video['savename'];
-            $res['video_profile'] = json_encode($video_profile, JSON_UNESCAPED_UNICODE);
+            $video_profile['url'] = C('WEBSITE_URL').'/Uploads/File/'.$video['savepath'].$video['savename']; 
+        }else{
+            $video_profile = array();
         }
+        $res['video_profile'] = json_encode($video_profile, JSON_UNESCAPED_UNICODE);
         //头像原图
         if($res['headimg']) {
             $photo_arr = explode(',', $res['headimg']);
@@ -48,20 +52,23 @@ class UserinfoModel extends Model
                 $photo_res['url'] = C('WEBSITE_URL').(D('picture')->where('id='.$v)->getField('path'));
                 $photo[] = $photo_res;
             }
-            $res['headimg'] = json_encode($photo, JSON_UNESCAPED_UNICODE);
+        }else{
+            $photo = array();
         }
+        $res['headimg'] = json_encode($photo, JSON_UNESCAPED_UNICODE);
 
         //用户语言
         $res['language'] = D('userLanguage')->field('lid, type, self_level, sys_level')->where('uid='.$uid)->select();
         if($res['language']) {            
             $allLanguage = D('language')->getAllLanguage();
-            
             foreach($res['language'] as $k=>$v) {
                 $res['language'][$k]['language_name'] = $allLanguage[ $v['lid'] ];
-            }
-            $res['language'] = json_encode($res['language'], JSON_UNESCAPED_UNICODE);
+            }           
+        }else{
+            $res['language'] = array();
         }
-
+        $res['language'] = json_encode($res['language'], JSON_UNESCAPED_UNICODE);
+        
         //用户标签
         $usertags = D('userTags')->field('tid')->where('uid='.$uid)->select();
         if($usertags){

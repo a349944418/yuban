@@ -9,7 +9,7 @@ class IndexController extends BaseController
     	// import("Common.Util.RedisPool");
     	// $redis = \RedisPool::getConnect();
     	//$redis->SET('uname', 'zimu');
-        //echo $this->redis->FLUSHALL();
+        echo $this->redis->FLUSHALL();
         // echo '<br />';
         // $arr = array('achat_score'=>1, 'vchat_score'=>2);
         // $this->redis->SET('score_setting', json_encode($arr));
