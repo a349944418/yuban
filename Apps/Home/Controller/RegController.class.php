@@ -30,7 +30,9 @@ Class RegController extends BaseController
         $datas = array($verify, C('smsTime'));
         $this->return['data']['verify'] = intval( $verify );
         //$mobile = '18601995223';
-        $this->sendTemplateSMS($mobile, $datas, 47024);      
+        //获取模板id
+        $mobanId = strtolower(I('post.type')) == 'forgotpwd' ? 50642 : 47024;
+        $this->sendTemplateSMS($mobile, $datas, $mobanId);      
     }
 
     /**

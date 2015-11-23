@@ -27,7 +27,7 @@ Class BaseController extends Controller
             'Reg'       => array('getMobileCode'=>1, 'register'=>1),
         );
         if(!$not_login[CONTROLLER_NAME][ACTION_NAME]) {
-            $uid = I('post.uid');
+            $uid = I('post.userId');
             $token = I('post.token');
             $server_token = $this->redis->GET('Token:uid'.$uid);
             if(!$server_token) {
@@ -42,14 +42,15 @@ Class BaseController extends Controller
         }
 
         //更新经纬度
-        if(I('post.uid')) {            
+        if(I('post.userId')) {
+            $this->mid = I('post.userId');         //当前用户id   
             $data['lati'] = I('post.lati');
             $data['longi'] = I('post.longi');
             if($data['lati'] && $data['longi']) {               
-                D('userinfo')->where('uid='.I('post.uid'))->save($data);
+                D('userinfo')->where('uid='.$this->mid)->save($data);
                 import("Common.Util.LBS");
                 $this->lbs = new \LBS($this->redis);
-                $this->lbs->upinfo('Userinfo:uid'.I('post.uid'), $data['lati'], $data['longi'] );
+                $this->lbs->upinfo('Userinfo:uid'.$this->mid, $data['lati'], $data['longi'] );
             }
         }
     }

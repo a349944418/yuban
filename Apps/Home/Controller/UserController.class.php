@@ -12,7 +12,7 @@ Class UserController extends BaseController
 	 */
 	public function getUserinfo()
 	{
-		$uid = I('post.to_uid');
+		$uid = I('post.uid');
 		$res = $this->getUserinfoData($uid);
         $this->return['data'] = $res;
         $this->goJson($this->return);
@@ -25,28 +25,23 @@ Class UserController extends BaseController
 	public function saveInfo() 
 	{
 		$post = I('post.');
-		$o_info = $this->redis->HGETALL('Userinfo:uid'.$post['uid']);
+		$o_info = $this->redis->HGETALL('Userinfo:uid'.$this->mid);
 
 		$info = array();
 		//头像
-		if ($post['headimg'] != $o_info['headimg']) {
-			$info['headimg'] = $post['headimg'];
-			$info['headimg_src'] = D('picture')->where('id='.$post['headimg'])->getField('path');
-		}
-		//其它相册
-		$o_photo = json_decode($o_info['photo'], true) ? json_decode($o_info['photo'], true) : array();
-		$o_photo_ids = getSubByKey($o_photo, 'pid');
-		$o_photo_str = $o_photo_ids ? implode(',', $o_photo_ids) : '';
-		if($o_photo_str != $post['photo']) {
-			$info['photo'] = $post['photo'];
-			$photo_arr = explode(',', $post['photo']);
-			foreach($photo_arr as $v) {
+		$o_headimg = json_decode($o_info['headimg'], true) ? json_decode($o_info['headimg'], true) : array();
+		$o_headimg_ids = getSubByKey($o_photo, 'rid');
+		$o_headimg_str = $o_headimg_ids ? implode(',', $o_headimg_ids) : '';
+		if($o_headimg_str != trim($post['headimg'],',')) {
+			$info['headimg'] = trim($post['headimg'],',');
+			$headimg_arr = explode(',', $info['headimg']);
+			foreach($headimg_arr as $v) {
 				$photo_res = array();
-				$photo_res['pid'] = $v;
-				$photo_res['path'] = D('picture')->where('id='.$v)->getField('path');
+				$photo_res['rid'] = $v;
+				$photo_res['url'] = C('WEBSITE_URL').D('picture')->where('id='.$v)->getField('path');
 				$photo[] = $photo_res;
 			}
-			$this->redis->HSET('Userinfo:uid'.$post['uid'], 'photo', json_encode($photo, JSON_UNESCAPED_UNICODE));
+			$this->redis->HSET('Userinfo:uid'.$this->mid, 'headimg', json_encode($photo, JSON_UNESCAPED_UNICODE));
 		}
 		//昵称
 		if ($post['uname'] != $o_info['uname']) {
@@ -71,16 +66,22 @@ Class UserController extends BaseController
 		if ($post['intro'] != $o_info['intro']) 
 			$info['intro'] = $post['intro'];
 		// 视频介绍
-		if ($post['video_profile'] != $o_info['video_profile']) {
+		$o_info['video_profile'] = json_decode($o_info['video_profile'], true) ? json_decode($o_info['video_profile'], true) : array();
+		if ($post['video_profile'] != $o_info['video_profile']['rid']) {
 			$info['video_profile'] = $post['video_profile'];
 			$video = D('file')->field('savepath, savename')->where('id='.$post['video_profile'])->find();
-			$info['video_profile_src'] = '/Uploads/File/'.$video['savepath'].$video['savename'];
+			$video_profile['rid'] = $post['video_profile'];
+			$video_profile['url'] =  C('WEBSITE_URL').'/Uploads/File/'.$video['savepath'].$video['savename'];
+			$this->redis->HSET('Userinfo:uid'.$this->mid, 'video_profile', json_encode($video_profile, JSON_UNESCAPED_UNICODE));
 		}
 		// 音频介绍
-		if ($post['audio_profile'] != $o_info['audio_profile']) {
+		$o_info['audio_profile'] = json_decode($o_info['audio_profile'], true) ? json_decode($o_info['audio_profile'], true) : array();
+		if ($post['audio_profile'] != $o_info['audio_profile']['rid']) {
 			$info['audio_profile'] = $post['audio_profile'];
 			$audio = D('file')->field('savepath, savename')->where('id='.$post['audio_profile'])->find();
-			$info['audio_profile_src'] = '/Uploads/File/'.$audio['savepath'].$audio['savename'];
+			$audio_profile['rid'] = $post['audio_profile'];
+			$audio_profile['url'] = C('WEBSITE_URL').'/Uploads/File/'.$audio['savepath'].$audio['savename'];
+			$this->redis->HSET('Userinfo:uid'.$this->mid, 'audio_profile', json_encode($audio_profile, JSON_UNESCAPED_UNICODE));
 		}			
 		// 国家,省,城市信息
 		if ($post['country'] != $o_info['country']) {
@@ -98,10 +99,10 @@ Class UserController extends BaseController
 		}
 
 		if(count($info)){
-			D('userinfo')->where('uid='.$post['uid'])->save($info);
-			unset($info['photo']);
+			D('userinfo')->where('uid='.$this->mid)->save($info);
+			unset($info['video_profile'], $info['headimg'], $info['audio_profile']);
 			foreach($info as $k=>$v) {
-				$this->redis->HSET('Userinfo:uid'.$post['uid'] ,$k ,$v);
+				$this->redis->HSET('Userinfo:uid'.$this->mid ,$k ,$v);
 			}
 		}
 
@@ -113,10 +114,13 @@ Class UserController extends BaseController
 			$language['self_level'] = $post['language']['self_level'];
 		
 		if(count($language)) {
-			D('userLanguage')->where('uid='.$post['uid'])->save($language);
+			D('userLanguage')->where('uid='.$this->mid)->save($language);
+			$language = D('userLanguage')->where('uid='.$this->mid)->field('lid, type, sys_level, self_level')->select();
 			$allLanguage = D('language')->getAllLanguage();
-			$language['lname'] = $allLanguage[ $language['lid'] ];
-			$this->redis->HSET('Userinfo:uid'.$post['uid'], 'language', json_encode($language, JSON_UNESCAPED_UNICODE));
+			foreach($language as $k=>$v){
+				$language[$k]['language_name'] = $allLanguage[ $v['lid'] ];
+			}
+			$this->redis->HSET('Userinfo:uid'.$this->mid, 'language', json_encode($language, JSON_UNESCAPED_UNICODE));
 		}
 
 		//标签
@@ -124,9 +128,9 @@ Class UserController extends BaseController
 		$o_tag_ids = getSubByKey($o_tags, 'tid');
 		$tags_post = explode(',', $post['tags']);
 		if(!count($tags_post)){
-			D('userTags')->where('uid='.$post['uid'])->delete();
+			D('userTags')->where('uid='.$this->mid)->delete();
 		} else {
-			$tags['uid'] = $post['uid'];
+			$tags['uid'] = $this->mid;
 			//有新增标签
 			$add_tags = array_diff($tags_post, $o_tag_ids);
 			if(count($add_tags)) {
@@ -139,20 +143,20 @@ Class UserController extends BaseController
 			$delete_tags = array_diff($o_tag_ids, $tags_post);
 			if(count($delete_tags)) {
 				foreach($delete_tags as $v) {
-					D('userTags')->where('uid='.$post['uid'].' and tid='.$v)->delete();
+					D('userTags')->where('uid='.$this->mid.' and tid='.$v)->delete();
 				}
 			}
 			//如果有变化，取出该用户全部标签进行缓存
 			if(count($delete_tags) || count($add_tags)) {
 				$allTags = D('tags')->getAllTags();
-				$tags_res = D('userTags')->field('tid')->where('uid')->select();
+				$tags_res = D('userTags')->field('tid')->where('uid='.$this->mid)->select();
 				foreach($tags_res as $k=>$val) {
-					$tags_res[$k]['tname'] = $allTags[ $val['tid'] ];
+					$tags_res[$k]['tag_name'] = $allTags[ $val['tid'] ];
 				}
-				$this->redis->HSET('Userinfo:uid'.$post['uid'], 'tags', json_encode($tags_res, JSON_UNESCAPED_UNICODE));
+				$this->redis->HSET('Userinfo:uid'.$this->mid, 'tags', json_encode($tags_res, JSON_UNESCAPED_UNICODE));
 			}
 		}
-		$this->return['data'] = $this->getUserinfoData($post['uid']);
+		$this->return['data'] = $this->getUserinfoData($this->mid);
 		$this->goJson($this->return);
 	}
 
@@ -170,8 +174,10 @@ Class UserController extends BaseController
         }
         $res['tags'] = json_decode($res['tags'], true);
         $res['language'] = json_decode($res['language'], true);
-        $res['photo'] = json_decode($res['photo'], true);
-        unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt']);
+        $res['headimg'] = json_decode($res['headimg'], true);
+        $res['video_profile'] = json_decode($res['video_profile'], true);
+        $res['audio_profile'] = json_decode($res['audio_profile'], true);
+        unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt'], $res['datecreated'], $res['lati'], $res['longi']);
         return $res;
 	}
 }

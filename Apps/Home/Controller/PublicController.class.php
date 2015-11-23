@@ -24,9 +24,9 @@ Class PublicController extends BaseController
      * @return [type] [description]
      */
     public function getTags() {
-        $this->return['data']['tags'] = F('tags');
+        //$this->return['data']['tags'] = F('tags');
         if(!$this->return['data']['tags']) {
-            $this->return['data']['tags'] = D('tags')->field('tid, tags_name')->select();
+            $this->return['data']['tags'] = D('tags')->field('tid, tag_name')->select();
             F('tags', $this->return['data']['tags']);
         }
 
@@ -50,11 +50,11 @@ Class PublicController extends BaseController
         if($info){
             if(!$info['file']) {
                 foreach($info as $v){
-                    $this->return['data']['file'][] = array('path'=>'/Uploads/File/'.$v['savepath'].$v['savename'], 'fid'=>$v['id']);
+                    $this->return['data']['file'][] = array('url'=>C('WEBSITE_URL').'/Uploads/File/'.$v['savepath'].$v['savename'], 'rid'=>$v['id']);
 
                 }
             } else {
-                $this->return['data']['file'][] = array('path'=>'/Uploads/File/'.$info['file']['savepath'].$info['file']['savename'], 'fid'=>$info['file']['id']);
+                $this->return['data']['file'][] = array('url'=>C('WEBSITE_URL').'/Uploads/File/'.$info['file']['savepath'].$info['file']['savename'], 'rid'=>$info['file']['id']);
             }
             $this->return['message'] = L('upload_success');
         } else {
@@ -84,11 +84,11 @@ Class PublicController extends BaseController
         if($info){
             if(!$info['file']){
                 foreach($info as $v){
-                    $this->return['data']['pic'][] = array('path'=>$v['path'], 'pid'=>$v['id']);
+                    $this->return['data']['pic'][] = array('url'=>C('WEBSITE_URL').$v['path'], 'rid'=>$v['id']);
 
                 }
             } else {
-                $this->return['data']['pic'][] = array('path'=>$info['file']['path'], 'pid'=>$info['file']['id']);
+                $this->return['data']['pic'][] = array('url'=>C('WEBSITE_URL').$info['file']['path'], 'rid'=>$info['file']['id']);
             }
             $this->return['message'] = L('upload_success');          
         } else {

@@ -15,12 +15,11 @@ Class SquareController extends BaseController
 	{
 		$lati = I('post.lati');
 		$longi = I('post.longi');
-		$uid = I('post.uid');
 		$re = $this->lbs->serach($lati,$longi);
 		//算出实际距离
 		foreach($re as $key=>$val) {
 			$tmp_userinfo = array();
-			if($val == $uid) {
+			if($val == $this->mid) {
 				continue;
 			}
 			$tmp_userinfo = $this->redis->HGETALL('Userinfo:uid'.$val);
