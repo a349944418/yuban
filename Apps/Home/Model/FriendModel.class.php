@@ -17,7 +17,7 @@ class FriendModel extends Model
 			$info['from_id'] = $from_id;
 			$info['to_id'] = $to_id;
 			$info['type'] = $type;
-			$info['time'] = time();
+			$info['ctime'] = time();
 			$this->add($info);
 		}		
 	}

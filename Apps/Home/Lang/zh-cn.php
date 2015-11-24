@@ -16,5 +16,6 @@
 		'token_lose'	=> 'token过期',
 		'token_error'	=> 'token错误',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
+		'follow_me'		=> '不能关注自己',
 	);
 ?>

@@ -167,8 +167,53 @@ Class UserController extends BaseController
 	public function friend()
 	{
 		$uid = I('post.uid');
-		D('friend')->addUser($this->mid, $uid, 2);
+		if($this->mid == $uid) {
+			$this->return['code'] = 1003;
+			$this->goJson['message'] = L('follow_me');
+			$this->goJson($this->return);
+		}
+		D('friend')->addUser($this->mid, $uid, 1);
 		$this->redis->SADD('Userinfo:friend'.$this->mid, $uid);
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 关注用户列表
+	 * @return [type] [description]
+	 */
+	public function friendList()
+	{
+		$data['index'] = I('post.index') ? I('post.index') : 1;
+		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
+		$follow = $this->redis->sMembers('Userinfo:friend'.$this->mid);
+		rsort($follow);
+		if (!count($follow)) {
+			$res = D('friend')->field('to_id')->where('from_id='.$this->mid)->order('id desc')->select();
+			foreach($res as $v){
+				$follow[] = $v['to_id']; 
+				$this->redis->SADD('Userinfo:friend'.$this->mid, $v['to_id']);
+			}
+		}
+		$start = ($data['index']-1)*$data['pageSize'];
+		$end = $data['pageSize']*$data['index'];
+		for($start; $start<$end; $start++){
+			if (!$follow[$start]) {
+				break;
+			} else {
+				$tmp['uid'] = $follow[$start];
+				$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+				$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+				$tmp['location'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+				$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+				$tmp['tags'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'tags'), true);
+				$tmp['level'] = intval($tmp['language'][0]['sys_level'] ? $tmp['language'][0]['sys_level'] : $tmp['language'][0]['self_level']);
+				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+				$tmp['headimg'] = $tmp['headimg'][0]['url'];
+				$data['datalist'][] = $tmp;
+			}
+		}
+		$data['totalCount'] = count($follow);
+		$this->return['data'] = $data;
 		$this->goJson($this->return);
 	}
 
