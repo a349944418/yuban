@@ -441,3 +441,53 @@ INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
 SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
 SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18643627216" ) LIMIT 1   [ RunTime:0.0230s ]
 
+[ 2015-11-23T17:48:08+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-23T18:16:04+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+
+[ 2015-11-23T18:16:49+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-11-23T18:17:46+08:00 ] ::1 /yuban/index.php/Home/Public/uploadPicture
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: uploadPicture D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`path`,`url`,`md5`,`sha1`,`status`,`create_time` FROM `yj_picture` WHERE `md5` = 'f24b9373161bbe50ac134b2d86e42705' AND `sha1` = 'f08b9a7ce7af5f1e5920c2e321f78713bd18b34a' LIMIT 1   [ RunTime:0.0090s ]
+SQL: DELETE FROM `yj_picture` WHERE `id` = 9 [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: validate D:\Apache\htdocs\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Apache\htdocs\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `yj_picture` (`md5`,`sha1`,`path`,`status`,`create_time`) VALUES ('f24b9373161bbe50ac134b2d86e42705','f08b9a7ce7af5f1e5920c2e321f78713bd18b34a','/Uploads/Picture/2015-11-23/5652e7ca214d7.jpg','1','1448273865') [ RunTime:0.0110s ]
+
