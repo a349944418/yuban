@@ -209,6 +209,7 @@ Class UserController extends BaseController
 				$tmp['level'] = intval($tmp['language'][0]['sys_level'] ? $tmp['language'][0]['sys_level'] : $tmp['language'][0]['self_level']);
 				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 				$tmp['headimg'] = $tmp['headimg'][0]['url'];
+				$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
 				$data['datalist'][] = $tmp;
 			}
 		}
