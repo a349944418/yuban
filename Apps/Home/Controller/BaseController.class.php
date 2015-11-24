@@ -25,11 +25,11 @@ Class BaseController extends Controller
             $token = I('post.token');
             $server_token = $this->redis->GET('Token:uid'.$uid);
             if(!$server_token) {
-                $this->return['code'] = 1001;
+                $this->return['code'] = 401;
                 $this->return['message'] = L('token_lose');
                 $this->goJson($this->return);
             }elseif($server_token != $token) {
-                $this->return['code'] = 1002;
+                $this->return['code'] = 401;
                 $this->return['message'] = L('token_error');
                 $this->goJson($this->return);
             }            

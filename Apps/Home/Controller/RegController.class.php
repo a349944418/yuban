@@ -118,6 +118,8 @@ Class RegController extends BaseController
         $post['password'] = md5(md5($post['password']).$post['login_salt']);
 
         $post['ctime'] = time();
+        $post['level'] = $post['self_level'];
+        $post['cur_language'] = $post['lid'];
         
         $uid = D('userinfo')->add($post);
         if(!$uid) {

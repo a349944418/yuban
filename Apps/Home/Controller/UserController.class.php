@@ -97,21 +97,14 @@ Class UserController extends BaseController
 			$info['city'] = $post['city'];
 			$info['location'] = $post['location'];
 		}
-
-		if(count($info)){
-			D('userinfo')->where('uid='.$this->mid)->save($info);
-			unset($info['video_profile'], $info['headimg'], $info['audio_profile']);
-			foreach($info as $k=>$v) {
-				$this->redis->HSET('Userinfo:uid'.$this->mid ,$k ,$v);
-			}
-		}
-
 		//语言 更改
 		$o_language = json_decode($o_info['language'], true) ? json_decode($o_info['language'], true) : array();
-		if($post['language']['lid'] != $o_language['lid'])
-			$language['lid'] = $post['language']['lid'];
+		if($post['language']['lid'] != $o_language['lid']) {
+			$info['cur_language'] = $language['lid'] = $post['language']['lid'];			
+		}
+			
 		if($post['language']['self_level'] != $o_language['self_level'])
-			$language['self_level'] = $post['language']['self_level'];
+			$info['level'] = $language['self_level'] = $post['language']['self_level'];
 		
 		if(count($language)) {
 			D('userLanguage')->where('uid='.$this->mid)->save($language);
@@ -122,6 +115,16 @@ Class UserController extends BaseController
 			}
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'language', json_encode($language, JSON_UNESCAPED_UNICODE));
 		}
+
+		if(count($info)){
+			D('userinfo')->where('uid='.$this->mid)->save($info);
+			unset($info['video_profile'], $info['headimg'], $info['audio_profile']);
+			foreach($info as $k=>$v) {
+				$this->redis->HSET('Userinfo:uid'.$this->mid ,$k ,$v);
+			}
+		}
+
+		
 
 		//标签
 		$o_tags = json_decode($o_info['tags']) ? json_decode($o_info['tags'], true) : array();
@@ -203,10 +206,12 @@ Class UserController extends BaseController
 				$tmp['uid'] = $follow[$start];
 				$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
 				$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
-				$tmp['location'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+				$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+				$location = explode('/', $location);
+				$tmp['location'] = $location[0].' '.$location[1];
 				$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
 				$tmp['tags'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'tags'), true);
-				$tmp['level'] = intval($tmp['language'][0]['sys_level'] ? $tmp['language'][0]['sys_level'] : $tmp['language'][0]['self_level']);
+				$tmp['level'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level');
 				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 				$tmp['headimg'] = $tmp['headimg'][0]['url'];
 				$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
@@ -223,7 +228,7 @@ Class UserController extends BaseController
 	 * @param  [int] $uid [description]
 	 * @return [array]     [description]
 	 */
-	private function getUserinfoData($uid)
+	public function getUserinfoData($uid)
 	{
 		$res = $this->redis->HGETALL('Userinfo:uid'.$uid);
         if(!$res) {
@@ -235,7 +240,7 @@ Class UserController extends BaseController
         $res['headimg'] = json_decode($res['headimg'], true);
         $res['video_profile'] = json_decode($res['video_profile'], true);
         $res['audio_profile'] = json_decode($res['audio_profile'], true);
-        unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt'], $res['datecreated'], $res['lati'], $res['longi']);
+        unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt'], $res['datecreated'], $res['lati'], $res['longi'], $res['level'], $res['cur_language']);
         return $res;
 	}
 }

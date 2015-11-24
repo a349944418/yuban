@@ -229,3 +229,198 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
 NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 200 行.
 
+[ 2015-11-24T14:55:29+08:00 ] ::1 /yuban/index.php/Home/User/friendList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 200 行.
+
+[ 2015-11-24T14:59:21+08:00 ] ::1 /yuban/index.php/Home/User/friendList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 200 行.
+
+[ 2015-11-24T17:22:28+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0210s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile > 0  ) LIMIT 1   [ RunTime:0.0410s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile > 0  ) LIMIT 0,10   [ RunTime:0.0180s ]
+
+[ 2015-11-24T17:23:08+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile > 0  ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile > 0  ) LIMIT 0,10   [ RunTime:0.0090s ]
+
+[ 2015-11-24T17:24:07+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0210s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0140s ]
+
+[ 2015-11-24T17:25:05+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0110s ]
+NOTIC: [8] Undefined variable: follow D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 110 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 115 行.
+NOTIC: [8] Undefined variable: follow D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 110 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 115 行.
+NOTIC: [8] Undefined variable: follow D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 110 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 115 行.
+
+[ 2015-11-24T17:25:54+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0190s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0120s ]
+NOTIC: [8] Undefined variable: follow D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 110 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 115 行.
+NOTIC: [8] Undefined variable: follow D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 110 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 115 行.
+NOTIC: [8] Undefined variable: follow D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 110 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 115 行.
+
+[ 2015-11-24T17:26:40+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0390s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0070s ]
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 114 行.
+
+[ 2015-11-24T17:30:55+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0240s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0200s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+ERR: Think\Controller:getUserinfoData方法不存在！
+
+[ 2015-11-24T17:31:30+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0150s ]
+
+[ 2015-11-24T17:32:02+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0310s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0100s ]
+
+[ 2015-11-24T17:32:26+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0400s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SELECT * FROM `yj_userinfo` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0140s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0100s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0110s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0070s ]
+
+[ 2015-11-24T17:33:17+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Square D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0180s ]
+SQL: SELECT COUNT(uid) AS tp_count FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE (  level >=1 and level <=10 and city = 372 and cur_language=1 and audio_profile != 0  ) LIMIT 0,10   [ RunTime:0.0100s ]
+
