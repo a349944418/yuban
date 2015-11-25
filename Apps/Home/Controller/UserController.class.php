@@ -204,6 +204,9 @@ Class UserController extends BaseController
 				break;
 			} else {
 				$tmp['uid'] = $follow[$start];
+				if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+					$this->getUserinfoData($tmp['uid']);
+				}
 				$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
 				$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
 				$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
