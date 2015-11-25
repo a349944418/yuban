@@ -248,3 +248,478 @@ INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
 
+[ 2015-11-25T14:53:16+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0110s ]
+SQL: SELECT `id` FROM `yj_friend` WHERE ( from_id=2 and to_id=9 ) LIMIT 1   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT * FROM `yj_shunjian` WHERE ( uid=9 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=9 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0250s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0090s ]
+
+[ 2015-11-25T14:59:54+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined variable: o_photo D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0120s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0110s ]
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 109 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 110 行.
+NOTIC: [2] Missing argument 1 for PinYin::Pinyin(), called in D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php on line 129 and defined D:\Apache\htdocs\yuban\Apps\Common\Util\PinYin.class.php 第 10 行.
+NOTIC: [8] Undefined variable: _String D:\Apache\htdocs\yuban\Apps\Common\Util\PinYin.class.php 第 59 行.
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0110s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_shunjian` (`type`,`url`,`uid`) VALUES ('2','2015','2') [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 182 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 186 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0090s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0410s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: UPDATE `yj_userinfo` SET `headimg`='4,3,2',`uname`='子木',`first_letter`='Z',`search_key`='子木 zimu',`intro`='',`video_profile`='3',`cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0320s ]
+
+[ 2015-11-25T15:10:27+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined variable: o_photo D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 95 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0170s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0150s ]
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 109 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 112 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 185 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0130s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0220s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0140s ]
+SQL: UPDATE `yj_userinfo` SET `headimg`='4,3',`cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0200s ]
+
+[ 2015-11-25T15:11:07+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 185 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0140s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0260s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0210s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0140s ]
+SQL: UPDATE `yj_userinfo` SET `cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0420s ]
+
+[ 2015-11-25T15:11:33+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 109 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 112 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 185 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 189 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0100s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0400s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0290s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0140s ]
+SQL: UPDATE `yj_userinfo` SET `headimg`='2,4,3',`cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0190s ]
+
+[ 2015-11-25T15:12:59+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 187 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 191 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0120s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0280s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0120s ]
+SQL: UPDATE `yj_userinfo` SET `cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0230s ]
+
+[ 2015-11-25T15:13:46+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0100s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0130s ]
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 111 行.
+NOTIC: [8] Use of undefined constant o_headimg_ids - assumed 'o_headimg_ids' D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 111 行.
+NOTIC: [2] array_diff(): Argument #2 is not an array D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 114 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 187 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 191 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0140s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0240s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: UPDATE `yj_userinfo` SET `headimg`='5',`cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0290s ]
+
+[ 2015-11-25T15:14:59+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0100s ]
+SQL: INSERT INTO `yj_shunjian` (`uid`,`type`,`url`) VALUES ('2','1','http://www.spokenplus.com/Uploads/Picture/2015-11-17/564aded1dd105.png') [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 187 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 191 行.
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0090s ]
+SQL: UPDATE `yj_user_language` SET `lid`='7',`self_level`='3.5' WHERE ( uid=2 ) [ RunTime:0.0210s ]
+SQL: SELECT `lid`,`type`,`sys_level`,`self_level` FROM `yj_user_language` WHERE ( uid=2 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: UPDATE `yj_userinfo` SET `headimg`='4',`cur_language`='7',`level`='3' WHERE ( uid=2 ) [ RunTime:0.0180s ]
+
+[ 2015-11-25T15:16:57+08:00 ] ::1 /yuban/index.php/Home/User/getUserinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+
+[ 2015-11-25T15:17:17+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SELECT * FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0080s ]
+
+[ 2015-11-25T15:20:57+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT * FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `yj_userinfo` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0130s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0080s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=1 )  [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0080s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=1 )  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_tags` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0080s ]
+
+[ 2015-11-25T15:22:26+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0260s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.1180s ]
+SQL: SELECT * FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0780s ]
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0260s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0330s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0430s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0180s ]
+
+[ 2015-11-25T15:36:33+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `url`,`type` FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0070s ]
+
+[ 2015-11-25T15:40:27+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0120s ]
+SQL: SELECT `id` FROM `yj_friend` WHERE ( from_id=2 and to_id=9 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `url`,`type` FROM `yj_shunjian` WHERE ( uid=9 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=9 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0160s ]
+
+[ 2015-11-25T15:50:09+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0130s ]
+SQL: SELECT `id` FROM `yj_friend` WHERE ( from_id=2 and to_id=9 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT `url`,`type` FROM `yj_shunjian` WHERE ( uid=9 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=9 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0170s ]
+
+[ 2015-11-25T16:00:57+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0100s ]
+SQL: SELECT `id` FROM `yj_friend` WHERE ( from_id=2 and to_id=9 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `url`,`type` FROM `yj_shunjian` WHERE ( uid=9 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=9 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0090s ]
+
+[ 2015-11-25T16:39:27+08:00 ] ::1 /yuban/index.php/Home/User/commentlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+ERR: 非法操作:commentlist
+
+[ 2015-11-25T16:40:12+08:00 ] ::1 /yuban/index.php/Home/User/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0130s ]
+
+[ 2015-11-25T16:40:44+08:00 ] ::1 /yuban/index.php/Home/User/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0080s ]
+
+[ 2015-11-25T17:03:25+08:00 ] ::1 /yuban/index.php/Home/User/followlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0290s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0140s ]
+
+[ 2015-11-25T17:16:24+08:00 ] ::1 /yuban/index.php/Home/User/shunjian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 91 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `url`,`type`,`cover` FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc LIMIT 0,10   [ RunTime:0.0100s ]
+
+[ 2015-11-25T17:21:22+08:00 ] ::1 /yuban/index.php/Home/User/followlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.2530s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0250s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0140s ]
+
+[ 2015-11-25T17:21:29+08:00 ] ::1 /yuban/index.php/Home/User/shunjian
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0170s ]
+NOTIC: [8] Undefined variable: shuanjian D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 93 行.
+SQL: SELECT `url`,`type`,`cover` FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc  [ RunTime:0.0140s ]
+
+[ 2015-11-25T17:23:14+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0100s ]
+SQL: SELECT `id` FROM `yj_friend` WHERE ( from_id=2 and to_id=9 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `url`,`type`,`cover` FROM `yj_shunjian` WHERE ( uid=9 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=9 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=9 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0100s ]
+
+[ 2015-11-25T17:23:58+08:00 ] ::1 /yuban/index.php/Home/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0360s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_shunjian` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0570s ]
+SQL: SELECT `url`,`type`,`cover` FROM `yj_shunjian` WHERE ( uid=2 ) ORDER BY rid desc LIMIT 6   [ RunTime:0.0830s ]
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_friend` WHERE ( to_id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `from_id` FROM `yj_friend` WHERE ( to_id=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yj_comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `ctime`,`from_id`,`content` FROM `yj_comment` WHERE ( uid=2 ) ORDER BY id desc LIMIT 10   [ RunTime:0.0100s ]
+

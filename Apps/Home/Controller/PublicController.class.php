@@ -24,7 +24,7 @@ Class PublicController extends BaseController
      * @return [type] [description]
      */
     public function getTags() {
-        //$this->return['data']['tags'] = F('tags');
+        $this->return['data']['tags'] = F('tags');
         if(!$this->return['data']['tags']) {
             $this->return['data']['tags'] = D('tags')->field('tid, tag_name')->select();
             F('tags', $this->return['data']['tags']);

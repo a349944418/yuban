@@ -19,9 +19,19 @@ Class UserController extends BaseController
 		}		
 		$res['friendflag'] = $friendflag ? 1 : 0; 
 		//瞬间
-		
+		$res['shunjian']['totalCount'] = D('shunjian')->where('uid='.$uid)->count();
+		$shunjianlist = D('shunjian')->field('url, type, cover')->where('uid='.$uid)->order('rid desc')->limit(6)->select();
+		if($shunjianlist) {
+			foreach ($shunjianlist as $key => $value) {
+				$shunjianlist[$key]['url'] = C('WEBSITE_URL').$value['url'];
+				if($value['cover']) {
+					$shunjianlist[$key]['cover'] = C('WEBSITE_URL').$value['cover'];
+				}
+			}
+			$res['shunjian']['datalist'] = $shunjianlist; 
+		}
 		//粉丝
-        $res['follow']['count'] = D('friend')->where('to_id='.$uid)->count();
+        $res['follow']['totalCount'] = D('friend')->where('to_id='.$uid)->count();
         $followlist = D('friend')->field('from_id')->where('to_id='.$uid)->order('id desc')->limit(10)->select();
         if($followlist) {
         	foreach ($followlist as $v) {
@@ -35,11 +45,143 @@ Class UserController extends BaseController
         	}
         }
 		//评论
-		
+		$res['comment']['totalCount'] = D('comment')->where('uid='.$uid)->count();
+		$commentlist = D('comment')->field('ctime, from_id, content')->where('uid='.$uid)->order('id desc')->limit(10)->select();
+		if($commentlist) {
+			foreach ($commentlist as $k=>$v) {
+				unset($tmp);
+				$tmp['uid'] = $v['from_id'];
+				$tmp['ctime'] = $v['ctime'];
+				$tmp['content'] = $v['content'];
+				if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+					$this->getUserinfoData($tmp['uid']);
+				}
+				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+				$tmp['headimg'] = $tmp['headimg'][0]['url'];
+				$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+				$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+				$location = explode('/', $location);
+				$tmp['location'] = $location[0].' '.$location[1];
+				$res['comment']['datalist'][] = $tmp;
+			}
+		}
+		$tmp_location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+		$tmp_location = explode('/', $tmp_location);
+		$res['country'] = $tmp_location[0];
+		unset($res['voippwd'], $res['subaccountid'], $res['subtoken'], $res['province'], $res['city'], $res['location'], $res['first_letter']);
+
         $this->return['data'] = $res;
         $this->goJson($this->return);
 	}
 
+	/**
+	 * 获取瞬间 分页
+	 * @return [type] [description]
+	 */
+	public function shunjian()
+	{
+		$shunjian['index'] = I('post.index') ? I('post.index') : 1;
+		$shunjian['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 6;
+		$uid = I('post.uid');
+		if(!$uid) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('param_error');
+			$this->goJson($this->return);
+		}
+		$start = ($shunjian['index']-1)*$shunjian['pageSize'];
+		$shunjian['totalCount'] = D('shunjian')->where('uid='.$uid)->count();
+		$shunjianlist = D('shunjian')->field('url, type, cover')->where('uid='.$uid)->order('rid desc')->limit($start, $shuanjian['pageSize'])->select();
+		if($shunjianlist) {
+			foreach ($shunjianlist as $key => $value) {
+				$shunjianlist[$key]['url'] = C('WEBSITE_URL').$value['url'];
+				if($value['cover']) {
+					$shunjianlist[$key]['cover'] = C('WEBSITE_URL').$value['cover'];
+				}
+			}
+			$shunjian['datalist'] = $shunjianlist; 
+		}
+		$this->return['data'] = $shunjian;
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 获取评论列表 分页
+	 * @return [type] [description]
+	 */
+	public function comment()
+	{
+		$comment['index'] = I('post.index') ? I('post.index') : 1;
+		$comment['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
+		$uid = I('post.uid');
+		if(!$uid) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('param_error');
+			$this->goJson($this->return);
+		}
+		$start = ($comment['index']-1)*$comment['pageSize'];
+		$comment['totalCount'] = D('comment')->where('uid='.$uid)->count();
+		$commentlist = D('comment')->field('ctime, from_id, content')->where('uid='.$uid)->order('id desc')->limit($start, $comment['pageSize'])->select();
+		if($commentlist) {
+			foreach ($commentlist as $k=>$v) {
+				unset($tmp);
+				$tmp['uid'] = $v['from_id'];
+				$tmp['ctime'] = $v['ctime'];
+				$tmp['content'] = $v['content'];
+				if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+					$this->getUserinfoData($tmp['uid']);
+				}
+				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+				$tmp['headimg'] = $tmp['headimg'][0]['url'];
+				$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+				$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+				$location = explode('/', $location);
+				$tmp['location'] = $location[0].' '.$location[1];
+				$comment['datalist'][] = $tmp;
+			}
+		}
+		$this->return['data'] = $comment;
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 获取粉丝列表 分页
+	 * @return [type] [description]
+	 */
+	public function followlist(){
+		$follow['index'] = I('post.index') ? I('post.index') : 1;
+		$follow['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
+		$uid = I('post.uid');
+		if(!$uid) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('param_error');
+			$this->goJson($this->return);
+		}
+		$start = ($follow['index']-1)*$follow['pageSize'];
+		$follow['totalCount'] = D('friend')->where('to_id='.$uid)->count();
+        $followlist = D('friend')->field('from_id')->where('to_id='.$uid)->order('id desc')->limit(10)->select();
+        if($followlist) {
+        	foreach ($followlist as $v) {
+        		$tmp['uid'] = $v['from_id'];
+				if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+					A('Home/User')->getUserinfoData($tmp['uid']);
+				}
+				$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+				$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+				$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+				$location = explode('/', $location);
+				$tmp['location'] = $location[0].' '.$location[1];
+				$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+				$tmp['tags'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'tags'), true);
+				$tmp['level'] = intval($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level'));
+				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+				$tmp['headimg'] = $tmp['headimg'][0]['url'];
+				$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+				$follow['datalist'][] = $tmp;
+        	}
+        }
+		$this->return['data'] = $follow;
+		$this->goJson($this->return);
+	}
 
 	/**
 	 * 获取用户数据Api
@@ -65,7 +207,7 @@ Class UserController extends BaseController
 		$info = array();
 		//头像
 		$o_headimg = json_decode($o_info['headimg'], true) ? json_decode($o_info['headimg'], true) : array();
-		$o_headimg_ids = getSubByKey($o_photo, 'rid');
+		$o_headimg_ids = getSubByKey($o_headimg, 'rid');
 		$o_headimg_str = $o_headimg_ids ? implode(',', $o_headimg_ids) : '';
 		if($o_headimg_str != trim($post['headimg'],',')) {
 			$info['headimg'] = trim($post['headimg'],',');
@@ -79,8 +221,17 @@ Class UserController extends BaseController
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'headimg', json_encode($photo, JSON_UNESCAPED_UNICODE));
 
 			$new_photo = explode(',', trim($post['headimg'], ',')) ? explode(',', trim($post['headimg'], ',')) : array();
-			$o_headimg_ids = o_headimg_ids ? o_headimg_ids : array();
-
+			$o_headimg_ids = $o_headimg_ids ? $o_headimg_ids : array();
+			$add_photo = array_diff($new_photo, $o_headimg_ids);
+			if($add_photo){
+				$sj_log['uid'] = $this->mid;
+				$sj_log['type'] = 1;
+				foreach($add_photo as $v){
+					$sj_log['url'] = C('WEBSITE_URL').D('picture')->where('id='.$v)->getField('path');
+					D('shunjian')->add($sj_log);
+				}
+			}
+			
 		}
 		//昵称
 		if ($post['uname'] != $o_info['uname']) {
@@ -112,6 +263,11 @@ Class UserController extends BaseController
 			$video_profile['rid'] = $post['video_profile'];
 			$video_profile['url'] =  C('WEBSITE_URL').'/Uploads/File/'.$video['savepath'].$video['savename'];
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'video_profile', json_encode($video_profile, JSON_UNESCAPED_UNICODE));
+			$video_profile_data['type'] = 2;
+			$video_profile_data['url'] = $video['savepath'].$video['savename'];
+			$video_profile_data['uid'] = $this->mid;
+			D('shunjian')->add($video_profile_data);
+			unset($video_profile_data);
 		}
 		// 音频介绍
 		$o_info['audio_profile'] = json_decode($o_info['audio_profile'], true) ? json_decode($o_info['audio_profile'], true) : array();
