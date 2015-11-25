@@ -15,7 +15,7 @@ class IndexController extends BaseController
     public function test()
     {
         // echo $this->redis->FLUSHALL();
-        // dump($this->redis->del('Userinfo:uid2'));
+        dump($this->redis->del('Userinfo:uid4'));
         dump(A('Home/User')->getUserinfoData(2));
         dump($this->redis->get('Token:uid3'));
     }
