@@ -6,6 +6,41 @@ namespace Home\Controller;
 
 Class UserController extends BaseController
 {
+	//用户个人主页
+	public function index()
+	{
+		$uid = I('post.uid');
+		$res = $this->getUserinfoData($uid);
+		//是否已关注
+		if($this->mid != $uid) {
+			$friendflag = D('friend')->where('from_id='.$this->mid.' and to_id='.$uid)->getField('id');
+		} else {
+			$friendflag = 1;
+		}		
+		$res['friendflag'] = $friendflag ? 1 : 0; 
+		//瞬间
+		
+		//粉丝
+        $res['follow']['count'] = D('friend')->where('to_id='.$uid)->count();
+        $followlist = D('friend')->field('from_id')->where('to_id='.$uid)->order('id desc')->limit(10)->select();
+        if($followlist) {
+        	foreach ($followlist as $v) {
+        		$tmp['uid'] = $v['from_id'];
+        		if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+					$this->getUserinfoData($tmp['uid']);
+				}
+				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+				$tmp['headimg'] = $tmp['headimg'][0]['url'];
+				$res['follow']['datalist'][] = $tmp;
+        	}
+        }
+		//评论
+		
+        $this->return['data'] = $res;
+        $this->goJson($this->return);
+	}
+
+
 	/**
 	 * 获取用户数据Api
 	 * @return [type] [description]
@@ -42,6 +77,10 @@ Class UserController extends BaseController
 				$photo[] = $photo_res;
 			}
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'headimg', json_encode($photo, JSON_UNESCAPED_UNICODE));
+
+			$new_photo = explode(',', trim($post['headimg'], ',')) ? explode(',', trim($post['headimg'], ',')) : array();
+			$o_headimg_ids = o_headimg_ids ? o_headimg_ids : array();
+
 		}
 		//昵称
 		if ($post['uname'] != $o_info['uname']) {
