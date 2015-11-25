@@ -238,8 +238,8 @@ Class UserController extends BaseController
         $res['tags'] = json_decode($res['tags'], true);
         $res['language'] = json_decode($res['language'], true);
         $res['headimg'] = json_decode($res['headimg'], true);
-        $res['video_profile'] = json_decode($res['video_profile'], true);
-        $res['audio_profile'] = json_decode($res['audio_profile'], true);
+        $res['video_profile'] = json_decode($res['video_profile']);
+        $res['audio_profile'] = json_decode($res['audio_profile']);
         unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt'], $res['datecreated'], $res['lati'], $res['longi'], $res['level'], $res['cur_language']);
         return $res;
 	}
