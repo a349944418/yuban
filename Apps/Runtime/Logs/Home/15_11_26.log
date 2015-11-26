@@ -403,3 +403,69 @@ NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller
 NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 304 行.
 NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 307 行.
 
+[ 2015-11-26T16:38:32+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined index: headimg D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 213 行.
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 238 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 257 行.
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 275 行.
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 275 行.
+NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 299 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 299 行.
+NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 303 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 303 行.
+NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 306 行.
+
+[ 2015-11-26T16:39:57+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined index: headimg D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 213 行.
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 238 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 257 行.
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 275 行.
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 275 行.
+NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 299 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 299 行.
+NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 303 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 303 行.
+NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 306 行.
+
+[ 2015-11-26T16:40:38+08:00 ] ::1 /yuban/index.php/Home/User/saveInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined index: headimg D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 213 行.
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 238 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 257 行.
+SQL: SHOW COLUMNS FROM `yj_file` [ RunTime:0.0130s ]
+SQL: SELECT `savepath`,`savename` FROM `yj_file` WHERE ( id=8 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_shunjian` [ RunTime:0.0080s ]
+SQL: INSERT INTO `yj_shunjian` (`type`,`url`,`uid`) VALUES ('2','2015-11-25/5655c4b3d5895.mp4','2') [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 275 行.
+NOTIC: [8] Undefined index: audio_profile D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 275 行.
+NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 299 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 299 行.
+NOTIC: [8] Undefined index: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 303 行.
+NOTIC: [8] Undefined index: self_level D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 303 行.
+NOTIC: [8] Undefined variable: language D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 306 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: UPDATE `yj_userinfo` SET `video_profile`='8' WHERE ( uid=2 ) [ RunTime:0.0210s ]
+

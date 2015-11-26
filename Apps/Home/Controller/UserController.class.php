@@ -236,6 +236,11 @@ Class UserController extends BaseController
 		}
 		//昵称
 		if ($post['uname'] != $o_info['uname'] && isset($post['uname'])) {
+			if($post['uname'] == ''){
+				$this->return['code'] == 1004;
+				$this->return['message'] == L('uname_null');
+				$this->goJson($this->return);
+			}
 			$info['uname'] = $post['uname'];
 			load("@.user");
 	        $info['first_letter'] = getFirstLetter($post['uname']);
@@ -251,8 +256,14 @@ Class UserController extends BaseController
 	        }
 		}
 		// 性别
-		if ($post['sex'] != $o_info['sex'] && isset($post['sex'])) 
+		if ($post['sex'] != $o_info['sex'] && isset($post['sex'])) {
+			if($info['sex'] != 1 && $info['sex'] != 2) {
+				$this->return['code'] == 1003;
+				$this->return['message'] == L('sex_error');
+				$this->goJson($this->return);
+			}
 			$info['sex'] = $post['sex'];
+		}
 		// 个性签名
 		if ($post['intro'] != $o_info['intro'] && isset($post['intro'])) 
 			$info['intro'] = $post['intro'];
@@ -312,7 +323,7 @@ Class UserController extends BaseController
 			}
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'language', json_encode($language, JSON_UNESCAPED_UNICODE));
 		}
-
+		dump($info);
 		if(count($info)){
 			D('userinfo')->where('uid='.$this->mid)->save($info);
 			unset($info['video_profile'], $info['headimg'], $info['audio_profile']);

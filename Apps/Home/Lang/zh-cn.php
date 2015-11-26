@@ -7,6 +7,7 @@
 		'pwd_null'		=> '密码不能为空',
 		'reg_error'		=> '注册失败',
 		'reg_success' 	=> '注册成功',
+		'sex_error'		=> '性别出错',
 		'regSubAccount_error' => '容联注册失败',
 		'no_register'	=> '该手机号尚未注册',
 		'login_error'	=> '手机号或密码错误',
