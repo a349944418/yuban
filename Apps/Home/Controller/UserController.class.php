@@ -202,6 +202,7 @@ Class UserController extends BaseController
 	public function saveInfo() 
 	{
 		$post = I('post.');
+		dump($post);
 		$o_info = $this->redis->HGETALL('Userinfo:uid'.$this->mid);
 
 		$info = array();
@@ -209,7 +210,8 @@ Class UserController extends BaseController
 		$o_headimg = json_decode($o_info['headimg'], true) ? json_decode($o_info['headimg'], true) : array();
 		$o_headimg_ids = getSubByKey($o_headimg, 'rid');
 		$o_headimg_str = $o_headimg_ids ? implode(',', $o_headimg_ids) : '';
-		if($o_headimg_str != trim($post['headimg'],',')) {
+		
+		if($o_headimg_str != trim($post['headimg'],',') && isset($post['headimg']) ) {
 			$info['headimg'] = trim($post['headimg'],',');
 			$headimg_arr = explode(',', $info['headimg']);
 			foreach($headimg_arr as $v) {
@@ -234,7 +236,7 @@ Class UserController extends BaseController
 			
 		}
 		//昵称
-		if ($post['uname'] != $o_info['uname']) {
+		if ($post['uname'] != $o_info['uname'] && isset($post['uname'])) {
 			$info['uname'] = $post['uname'];
 			load("@.user");
 	        $info['first_letter'] = getFirstLetter($post['uname']);
@@ -250,14 +252,14 @@ Class UserController extends BaseController
 	        }
 		}
 		// 性别
-		if ($post['sex'] != $o_info['sex']) 
+		if ($post['sex'] != $o_info['sex'] && isset($post['sex'])) 
 			$info['sex'] = $post['sex'];
 		// 个性签名
-		if ($post['intro'] != $o_info['intro']) 
+		if ($post['intro'] != $o_info['intro'] && isset($post['intro'])) 
 			$info['intro'] = $post['intro'];
 		// 视频介绍
 		$o_info['video_profile'] = json_decode($o_info['video_profile'], true) ? json_decode($o_info['video_profile'], true) : array();
-		if ($post['video_profile'] != $o_info['video_profile']['rid']) {
+		if ($post['video_profile'] != $o_info['video_profile']['rid'] && isset($post['video_profile'])) {
 			$info['video_profile'] = $post['video_profile'];
 			$video = D('file')->field('savepath, savename')->where('id='.$post['video_profile'])->find();
 			$video_profile['rid'] = $post['video_profile'];
@@ -271,7 +273,7 @@ Class UserController extends BaseController
 		}
 		// 音频介绍
 		$o_info['audio_profile'] = json_decode($o_info['audio_profile'], true) ? json_decode($o_info['audio_profile'], true) : array();
-		if ($post['audio_profile'] != $o_info['audio_profile']['rid']) {
+		if ($post['audio_profile'] != $o_info['audio_profile']['rid'] && $post['audio_profile']) {
 			$info['audio_profile'] = $post['audio_profile'];
 			$audio = D('file')->field('savepath, savename')->where('id='.$post['audio_profile'])->find();
 			$audio_profile['rid'] = $post['audio_profile'];
@@ -279,26 +281,27 @@ Class UserController extends BaseController
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'audio_profile', json_encode($audio_profile, JSON_UNESCAPED_UNICODE));
 		}			
 		// 国家,省,城市信息
-		if ($post['country'] != $o_info['country']) {
+		if ($post['country'] != $o_info['country'] && isset($post['country'])) {
 			$info['country'] = $post['country'];
 			$info['province'] = $post['province'];
 			$info['city'] = $post['city'];
 			$info['location'] = $post['location'];
-		} elseif ($post['province'] != $o_info['province']) {
+		} elseif ($post['province'] != $o_info['province'] && isset($post['province'])) {
 			$info['province'] = $post['province'];
 			$info['city'] = $post['city'];
 			$info['location'] = $post['location'];
-		} elseif ($post['city'] != $o_info['city']) {
+		} elseif ($post['city'] != $o_info['city'] && isset($post['city'])) {
 			$info['city'] = $post['city'];
 			$info['location'] = $post['location'];
 		}
+
 		//语言 更改
 		$o_language = json_decode($o_info['language'], true) ? json_decode($o_info['language'], true) : array();
-		if($post['language']['lid'] != $o_language['lid']) {
+		if($post['language']['lid'] != $o_language['lid'] && isset($post['language']['lid'])) {
 			$info['cur_language'] = $language['lid'] = $post['language']['lid'];			
 		}
 			
-		if($post['language']['self_level'] != $o_language['self_level'])
+		if($post['language']['self_level'] != $o_language['self_level'] && isset($post['language']['self_level']))
 			$info['level'] = $language['self_level'] = $post['language']['self_level'];
 		
 		if(count($language)) {
@@ -322,36 +325,38 @@ Class UserController extends BaseController
 		
 
 		//标签
-		$o_tags = json_decode($o_info['tags']) ? json_decode($o_info['tags'], true) : array();
-		$o_tag_ids = getSubByKey($o_tags, 'tid');
-		$tags_post = explode(',', $post['tags']);
-		if(!count($tags_post)){
-			D('userTags')->where('uid='.$this->mid)->delete();
-		} else {
-			$tags['uid'] = $this->mid;
-			//有新增标签
-			$add_tags = array_diff($tags_post, $o_tag_ids);
-			if(count($add_tags)) {
-				foreach($add_tags as $v) {
-					$tags['tid'] = $v;
-					D('userTags')->add($tags);
+		if(isset($post['tags'])){
+			$o_tags = json_decode($o_info['tags']) ? json_decode($o_info['tags'], true) : array();
+			$o_tag_ids = getSubByKey($o_tags, 'tid');
+			$tags_post = explode(',', $post['tags']);
+			if(!count($tags_post)){
+				D('userTags')->where('uid='.$this->mid)->delete();
+			} else {
+				$tags['uid'] = $this->mid;
+				//有新增标签
+				$add_tags = array_diff($tags_post, $o_tag_ids);
+				if(count($add_tags)) {
+					foreach($add_tags as $v) {
+						$tags['tid'] = $v;
+						D('userTags')->add($tags);
+					}
 				}
-			}
-			//有删除标签
-			$delete_tags = array_diff($o_tag_ids, $tags_post);
-			if(count($delete_tags)) {
-				foreach($delete_tags as $v) {
-					D('userTags')->where('uid='.$this->mid.' and tid='.$v)->delete();
+				//有删除标签
+				$delete_tags = array_diff($o_tag_ids, $tags_post);
+				if(count($delete_tags)) {
+					foreach($delete_tags as $v) {
+						D('userTags')->where('uid='.$this->mid.' and tid='.$v)->delete();
+					}
 				}
-			}
-			//如果有变化，取出该用户全部标签进行缓存
-			if(count($delete_tags) || count($add_tags)) {
-				$allTags = D('tags')->getAllTags();
-				$tags_res = D('userTags')->field('tid')->where('uid='.$this->mid)->select();
-				foreach($tags_res as $k=>$val) {
-					$tags_res[$k]['tag_name'] = $allTags[ $val['tid'] ];
+				//如果有变化，取出该用户全部标签进行缓存
+				if(count($delete_tags) || count($add_tags)) {
+					$allTags = D('tags')->getAllTags();
+					$tags_res = D('userTags')->field('tid')->where('uid='.$this->mid)->select();
+					foreach($tags_res as $k=>$val) {
+						$tags_res[$k]['tag_name'] = $allTags[ $val['tid'] ];
+					}
+					$this->redis->HSET('Userinfo:uid'.$this->mid, 'tags', json_encode($tags_res, JSON_UNESCAPED_UNICODE));
 				}
-				$this->redis->HSET('Userinfo:uid'.$this->mid, 'tags', json_encode($tags_res, JSON_UNESCAPED_UNICODE));
 			}
 		}
 		//$this->return['data'] = $this->getUserinfoData($this->mid);
