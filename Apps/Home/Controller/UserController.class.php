@@ -291,19 +291,22 @@ Class UserController extends BaseController
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'audio_profile', json_encode($audio_profile, JSON_UNESCAPED_UNICODE));
 		}			
 		// 国家,省,城市信息
-		if ($post['country'] != $o_info['country'] && isset($post['country'])) {
-			$info['country'] = $post['country'];
-			$info['province'] = $post['province'];
-			$info['city'] = $post['city'];
-			$info['location'] = $post['location'];
-		} elseif ($post['province'] != $o_info['province'] && isset($post['province'])) {
-			$info['province'] = $post['province'];
-			$info['city'] = $post['city'];
-			$info['location'] = $post['location'];
-		} elseif ($post['city'] != $o_info['city'] && isset($post['city'])) {
-			$info['city'] = $post['city'];
-			$info['location'] = $post['location'];
+		if(isset($post['country']) && $post['country'] != 0){
+			if ($post['country'] != $o_info['country'] ) {
+				$info['country'] = $post['country'];
+				$info['province'] = $post['province'];
+				$info['city'] = $post['city'];
+				$info['location'] = $post['location'];
+			} elseif ($post['province'] != $o_info['province'] && isset($post['province'])) {
+				$info['province'] = $post['province'];
+				$info['city'] = $post['city'];
+				$info['location'] = $post['location'];
+			} elseif ($post['city'] != $o_info['city'] && isset($post['city'])) {
+				$info['city'] = $post['city'];
+				$info['location'] = $post['location'];
+			}
 		}
+		
 
 		//语言 更改
 		$o_language = json_decode($o_info['language'], true) ? json_decode($o_info['language'], true) : array();
@@ -323,7 +326,6 @@ Class UserController extends BaseController
 			}
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'language', json_encode($language, JSON_UNESCAPED_UNICODE));
 		}
-		dump($info);
 		if(count($info)){
 			D('userinfo')->where('uid='.$this->mid)->save($info);
 			unset($info['video_profile'], $info['headimg'], $info['audio_profile']);
