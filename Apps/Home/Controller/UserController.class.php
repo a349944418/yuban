@@ -263,6 +263,9 @@ Class UserController extends BaseController
 				$this->goJson($this->return);
 			}
 			$info['sex'] = $post['sex'];
+			$sex_flag = $post['sex'] == 1 ? 2 : 1;
+			$this->redis->sRem('User:sex'.$sex_flag,$this->mid);
+			$this->redis->sAdd('User:sex'.$info['sex'],$this->mid);
 		}
 		// 个性签名
 		if ($post['intro'] != $o_info['intro'] && isset($post['intro'])) 

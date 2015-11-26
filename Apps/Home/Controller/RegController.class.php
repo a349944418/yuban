@@ -95,6 +95,12 @@ Class RegController extends BaseController
             $this->return['message'] = L('uname_null');
             $this->goJson($this->return);
         }
+        // 验证性别
+        if($post['sex'] != 1 && $post['sex'] != 2) {
+            $this->return['code'] = 1004;
+            $this->return['message'] = L('sex_error');
+            $this->goJson($this->return);
+        }
 
         load("@.user");
         $post['first_letter'] = getFirstLetter($post['uname']);
@@ -134,6 +140,7 @@ Class RegController extends BaseController
             D('userLanguage')->add($language_info);
             /*$location = explode('/', $post['location']);
             $info = array('uid'=>$uid, 'uname'=>$post['uname'], 'mobile'=>$post['mobile'], 'sex'=>$post['sex'], 'country'=>$post['country'], 'province'=>$post['province'], 'city'=>$post['city'], 'country_name'=>$location[0], 'province_name'=>$location[1], 'city_name'=>$location[2]);*/
+            $this->redis->Sadd('User:sex'.$post['sex'], $uid);
             $this->createSubAccount('yujia'.$uid, $uid);
         }
         
