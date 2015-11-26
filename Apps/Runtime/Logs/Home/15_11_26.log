@@ -1,0 +1,10 @@
+[ 2015-11-26T15:27:56+08:00 ] ::1 /yuban/index.php/Home/Square/topic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Use of undefined constant tags - assumed 'tags' D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 182 行.
+

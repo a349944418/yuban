@@ -130,4 +130,114 @@ Class SquareController extends BaseController
 		$this->return['data'] = $data;
 		$this->goJson($this->return);
 	}
+
+	/**
+	 * 排行榜
+	 * @return [type] [description]
+	 */
+	public function charts()
+	{
+		$data['index'] = I('post.index') ? I('post.index') : 1;
+		$data['pageSize'] = I('post.pageSize');
+		$start = ($data['index']-1)*$data['pageSize'];
+		$data['totalCount'] = D('userinfo')->count('uid');
+		$data['totalCount'] = $data['totalCount'] >= 100 ? 100 : $data['totalCount'];
+		$limit = $start+$data['pageSize']-1 > 99 ? 99-$start : $data['pageSize'];
+		$res = D('userinfo')->field('uid')->order('level desc')->limit($start, $limit)->select();
+		if($res) {
+			foreach( $res as $v){
+				if($v) {
+					$tmp['uid'] = $v['uid'];
+					if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+						A('Home/User')->getUserinfoData($tmp['uid']);
+					}
+					$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+					$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+					$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+					$location = explode('/', $location);
+					$tmp['location'] = $location[0].' '.$location[1];
+					$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+					$tmp['tags'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'tags'), true);
+					$tmp['level'] = intval($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level'));
+					$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+					$tmp['headimg'] = $tmp['headimg'][0]['url'];
+					$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+					$data['datalist'][] = $tmp;
+				} else {
+					break;
+				}
+			}
+		}
+		$this->return['data'] = $data;
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 话题广场
+	 * @return [type] [description]
+	 */
+	public function topic()
+	{
+		$tags = F('tags');
+		if(!tags) {
+            $tags = D('tags')->field('tid, tag_name')->select();
+            F('tags', $tags);
+		}
+		if($this->mid) {
+			if(!$this->redis->HLEN('Userinfo:uid'.$this->mid)) {
+				A('Home/User')->getUserinfoData($this->mid);
+			}
+			$topic = json_decode($this->redis->HGET('Userinfo:uid'.$this->mid, 'tags'));
+			if(!$topic) {
+				$topic = $tags;
+			}
+		}else{
+
+			$topic = $tags;
+			
+        }
+		$this->return['data']['topic'] = $topic;
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 获取话题用户
+	 * @return [type] [description]
+	 */
+	public function topicUser()
+	{
+		$data['tid'] = I('post.tid') ? I('post.tid') : 1;
+		$data['index'] = I('post.index') ? I('post.index') : 1;
+		$data['pageSize'] = I('post.pageSize');
+		$start = ($data['index']-1)*$data['pageSize'];
+		$where = $this->mid ? ' and uid!='.$this->mid : '';
+		$data['totalCount'] = D('userTags')->where('tid='.$data['tid'].$where)->count('ut_id');
+		$res = D('userTags')->field('uid')->where('tid='.$data['tid'].$where)->limit($start, $data['pageSize'])->select();
+		if($res) {
+			foreach( $res as $v) {
+				if($v) {
+					$tmp['uid'] = $v['uid'];
+					if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+						A('Home/User')->getUserinfoData($tmp['uid']);
+					}
+					$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+					$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+					$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+					$location = explode('/', $location);
+					$tmp['location'] = $location[0].' '.$location[1];
+					$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+					$tmp['tags'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'tags'), true);
+					$tmp['level'] = intval($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level'));
+					$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+					$tmp['headimg'] = $tmp['headimg'][0]['url'];
+					$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+					$data['datalist'][] = $tmp;
+				} else {
+					break;
+				}
+			}
+		}
+		$this->return['data'] = $data;
+		$this->goJson($this->return);
+	}
 }
