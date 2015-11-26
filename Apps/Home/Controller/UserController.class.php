@@ -202,7 +202,6 @@ Class UserController extends BaseController
 	public function saveInfo() 
 	{
 		$post = I('post.');
-		dump($post);
 		$o_info = $this->redis->HGETALL('Userinfo:uid'.$this->mid);
 
 		$info = array();
