@@ -179,7 +179,7 @@ Class SquareController extends BaseController
 	public function topic()
 	{
 		$tags = F('tags');
-		if(!tags) {
+		if(!$tags) {
             $tags = D('tags')->field('tid, tag_name')->select();
             F('tags', $tags);
 		}
