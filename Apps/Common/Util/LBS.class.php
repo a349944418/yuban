@@ -48,7 +48,7 @@ class LBS
         //索引
         $index_key = substr($hashdata, 0, $this->index_len);
         //存入
-        //dump($index_key);
+        dump($index_key);
         $this->redis->sAdd($index_key,$user_id);
         return true;
     }

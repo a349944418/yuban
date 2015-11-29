@@ -909,3 +909,86 @@ SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.9
 SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0110s ]
 NOTIC: [8] Undefined variable: tmp D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 52 行.
 
+[ 2015-11-29T14:44:25+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0100s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914139','116.403397','1448779465','1') [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined variable: lati D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: longi D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 46 行.
+NOTIC: [8] Undefined index: lati D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 46 行.
+NOTIC: [8] Undefined index: longi D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: tmp D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 52 行.
+
+[ 2015-11-29T14:45:26+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914139','116.403397','1448779526','1') [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined variable: lati D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 46 行.
+NOTIC: [8] Undefined variable: longi D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 46 行.
+
+[ 2015-11-29T14:46:04+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0110s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914139','116.403397','1448779564','1') [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined variable: lati D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 47 行.
+NOTIC: [8] Undefined variable: longi D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 47 行.
+
+[ 2015-11-29T14:47:02+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-29T14:47:16+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0080s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914139','116.403397','1448779635','1') [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0090s ]
+
+[ 2015-11-29T14:48:59+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914046','116.40156','1448779739','1') [ RunTime:0.0240s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0110s ]
+
