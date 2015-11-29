@@ -48,7 +48,7 @@ Class SquareController extends BaseController
 		    $data['uid'] = $val;
 		    $data['uname'] = $tmp_userinfo['uname'];
 		    $data['sex'] = $tmp_userinfo['sex'];
-		    $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+		    $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$val, 'headimg'), true);
 		    $data['headimg_src'] = $tmp['headimg'][0]['url'];
 		    $data['lname'] = $allLanguage[$tmp_userinfo['cur_language']];
 		    $data['level'] = $tmp_userinfo['level'];
@@ -56,7 +56,7 @@ Class SquareController extends BaseController
 		    $data['price'] = $tmp_userinfo['price'];
 		    $data['location']['lati'] = $zposition['lati'];
 		    $data['location']['longi'] = $zposition['longi'];
- 
+
 		    //距离米
 		    // $data[$key]['distance'] = $distance;
 		    //排序列
