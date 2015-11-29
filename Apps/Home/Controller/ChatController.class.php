@@ -48,6 +48,11 @@ Class ChatController extends BaseController
 		$this->redis->SREM('Userinfo:chating', $res['to_id']);
 		//将聊天时长分别加入两人信息中
 		D('userinfo')->where('uid='.$res['from_id'].' or uid='.$res['to_id'])->setInc('spoken_long', ($info['etime']-$res['stime']));
+		//更新redis缓存
+		$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'spoken_long', ($info['etime']-$res['stime']));
+		$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'spoken_long', ($info['etime']-$res['stime']));
+		$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'spoken_num', 1);
+		$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'spoken_num', 1);
 		//写入得分记录
 		$timelong = floor(($info['etime']-$res['stime'])/60);
 		$score = json_decode($this->redis->GET('score_setting'), true);
