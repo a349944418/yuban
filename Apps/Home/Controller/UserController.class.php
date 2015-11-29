@@ -451,7 +451,10 @@ Class UserController extends BaseController
 		$res = $this->redis->HGETALL('Userinfo:uid'.$uid);
         if(!$res) {
             $res = D('userinfo')->getUserInfo($uid);
-            $this->redis->HMSET('Userinfo:uid'.$uid, $res);
+            if($res['sex'] == 1 || $res['sex'] == 2){
+	            $this->redis->Sadd('User:sex'.$res['sex'], $uid);
+	        }
+	        $this->redis->HMSET('Userinfo:uid'.$uid, $res);
         }
         $res['tags'] = json_decode($res['tags'], true);
         $res['language'] = json_decode($res['language'], true);

@@ -24,9 +24,6 @@ class UserinfoModel extends Model
 	public function getUserInfo($uid)
 	{
 		$res = $this->where('uid='.$uid)->find();
-        if($res['sex'] == 1 || $res['sex'] == 2){
-            $this->redis->Sadd('User:sex'.$res['sex'], $uid);
-        }
         //音频介绍介绍   
         if($res['audio_profile']) {
             $audio_profile['rid'] = $res['audio_profile'];
