@@ -23,14 +23,16 @@ Class SquareController extends BaseController
         $data['ctime'] = time();
         $data['uid'] = $this->mid;
         D('userPosition')->add($data);
-        $data = array();
         import("Common.Util.LBS");
-        $this->lbs = new \LBS($this->redis);
-        $this->lbs->upinfo('Position:uid'.$this->mid, $data['lati'], $data['longi'] );
+        import("Common.Util.Geohash");
+        $geohash = new \Geohash();
+        $this->lbs = new \LBS($this->redis, $geohash);
+        $this->lbs->upinfo($this->mid, $data['lati'], $data['longi'] );
 		$re = $this->lbs->serach($data['lati'],$data['longi']);
 		$stime = time()-7200;  //两小时过期，时间早于该时刻的都不算
 		//取出全部语言
 		$allLanguage = D('language')->getAllLanguage();
+		$data = array();
 		//取出基础信息和算出实际距离
 		foreach($re as $key=>$val) {
 			$tmp_userinfo = array();
@@ -44,26 +46,27 @@ Class SquareController extends BaseController
 		    // $distance = getDistance($lati, $longi, $tmp_userinfo['lati'], $tmp_userinfo['longi']);
 		    //基础信息
 		    $tmp_userinfo = $this->redis->HGETALL('Userinfo:uid'.$val);
-		    $data[$key]['uid'] = $val;
-		    $data[$key]['uname'] = $tmp_userinfo['uname'];
-		    $data[$key]['sex'] = $tmp_userinfo['sex'];
+		    $data['uid'] = $val;
+		    $data['uname'] = $tmp_userinfo['uname'];
+		    $data['sex'] = $tmp_userinfo['sex'];
 		    $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
-		    $data[$key]['headimg_src'] = $tmp['headimg'][0]['url'];
-		    $data[$key]['lname'] = $allLanguage[$tmp_userinfo['cur_language']];
-		    $data[$key]['level'] = $tmp_userinfo['level'];
-		    $data[$key]['price'] = $tmp_userinfo['price'];
-		    $data[$key]['location']['lati'] = $zposition['lati'];
-		    $data[$key]['location']['longi'] = $zposition['longi'];  
+		    $data['headimg_src'] = $tmp['headimg'][0]['url'];
+		    $data['lname'] = $allLanguage[$tmp_userinfo['cur_language']];
+		    $data['level'] = $tmp_userinfo['level'];
+		    $data['price'] = $tmp_userinfo['price'];
+		    $data['location']['lati'] = $zposition['lati'];
+		    $data['location']['longi'] = $zposition['longi'];  
  
 		    //距离米
 		    // $data[$key]['distance'] = $distance;
 		    //排序列
 		    // $sortdistance[$key] = $distance;
+		    $this->return['data']['list'][] = $data;
 		}
 		//距离排序
 		// array_multisort($sortdistance,SORT_ASC,$data);
 
-		$this->return['data']['list'] = $data;
+		
 		$this->goJson($this->return);		
 	}
 

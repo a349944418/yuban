@@ -15,13 +15,17 @@ class IndexController extends BaseController
     public function test()
     {
         // echo $this->redis->FLUSHALL();
-        // dump($this->redis->del('Userinfo:uid4'));
+        //dump($this->redis->del('Userinfo:uid1'));
         // dump(A('Home/User')->getUserinfoData(2));
         dump($this->redis->get('Token:uid2'));
-        dump($this->redis->HGetall('Userinfo:uid2'));
+        // dump($this->redis->HGetall('Userinfo:uid2'));
         // dump($this->redis->del('Userinfo:uid3'));
         // dump(A('Home/User')->getUserinfoData(3));
         // dump($this->redis->del('Userinfo:uid9'));
         // dump(A('Home/User')->getUserinfoData(9));
+        // dump($this->redis->del('wx4f8h'));
+        // dump($this->redis->del('wx4f8k'));
+        dump($this->redis->sMembers('wx4f8h'));
+        dump($this->redis->sMembers('wx4f8k'));
     }
 }

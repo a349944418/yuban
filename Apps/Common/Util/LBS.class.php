@@ -3,7 +3,6 @@
   * LBS核心类
   * @author name <simplephp@163.com>
   */
-include_once('./Geohash.class.php');
  
 class LBS 
 {
@@ -12,12 +11,12 @@ class LBS
     protected $redis;
     protected $geohash;
  
-    public function __construct($redis) 
+    public function __construct($redis, $geohash) 
     {
         //redis
         $this->redis = $redis;
         //geohash
-        $this->geohash = new \Geohash();
+        $this->geohash = $geohash;
     }
 
     /**
@@ -38,17 +37,18 @@ class LBS
         }
         //新数据处理
         //纬度
-        $this->redis->hSet($user_id,'lati',$latitude);
+        $this->redis->hSet('Position:uid'.$user_id,'lati',$latitude);
         //经度
-        $this->redis->hSet($user_id,'longi',$longitude);
+        $this->redis->hSet('Position:uid'.$user_id,'longi',$longitude);
 
-        $this->redis->hSet($user_id, 'ctime', time());
+        $this->redis->hSet('Position:uid'.$user_id, 'ctime', time());
         //Geohash
         $hashdata = $this->geohash->encode($latitude,$longitude);
-        $this->redis->hSet($user_id,'geo',$hashdata);
+        $this->redis->hSet('Position:uid'.$user_id,'geo',$hashdata);
         //索引
         $index_key = substr($hashdata, 0, $this->index_len);
         //存入
+        //dump($index_key);
         $this->redis->sAdd($index_key,$user_id);
         return true;
     }
