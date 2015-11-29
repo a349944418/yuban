@@ -461,4 +461,28 @@ Class UserController extends BaseController
         unset($res['password'], $res['pwd'], $res['search_key'], $res['login_salt'], $res['datecreated'], $res['lati'], $res['longi'], $res['level'], $res['cur_language']);
         return $res;
 	}
+
+	/**
+	 * 充值取现记录
+	 * @return [type] [description]
+	 */
+	public function mlog()
+	{
+		//账户余额
+		$data = D('umoney')->field('totalmoney, not_tixian')->where('uid='.$this->mid)->find();
+		$data['totalmoney'] = $data['totalmoney'] ? $data['totalmoney'] : 0;
+		$data['not_tixian'] = $data['not_tixian'] ? $data['not_tixian'] : 0;
+		$data['can_use'] = $data['totalmoney']-$data['not_tixian'];
+		//取现，充值记录
+		$data['type'] = I('post.type') ? I('post.type') : 1;
+		$data['index'] = I('post.index') ? I('post.index') : 1;
+		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
+		$start = ($data['index']-1)*$data['pageSize'];
+		$data['totalCount'] = D('mlog')->where('type='.$data['type'].' and uid='.$this->mid )->count('id');
+		$res = D('mlog')->field('money, ctime, note')->where('type='.$data['type'].' and uid='.$this->mid )->order('id desc')->limit($start, $data['pageSize'])->select();
+		$data['datalist'] = $res;
+
+		$this->return['data'] = $data;
+		$this->goJson($this->return);
+	}
 }

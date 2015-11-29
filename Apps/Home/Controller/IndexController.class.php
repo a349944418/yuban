@@ -18,5 +18,6 @@ class IndexController extends BaseController
         // dump($this->redis->del('Userinfo:uid4'));
         // dump(A('Home/User')->getUserinfoData(2));
         dump($this->redis->get('Token:uid2'));
+        dump($this->redis->SRANDMEMBER("Userinfo:online"));
     }
 }

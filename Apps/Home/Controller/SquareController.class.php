@@ -240,4 +240,39 @@ Class SquareController extends BaseController
 		$this->return['data'] = $data;
 		$this->goJson($this->return);
 	}
+
+	/**
+	 * 语加首页
+	 * @return [type] [description]
+	 */
+	public function yujia()
+	{
+		$uid = $this->randuid($this->mid);
+		$tmp['uid'] = $uid;
+		if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+			A('Home/User')->getUserinfoData($tmp['uid']);
+		}
+		$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+		$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+		$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+		$location = explode('/', $location);
+		$tmp['location'] = $location[0].' '.$location[1];
+		$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+		$tmp['level'] = intval($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level'));
+		$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+		$tmp['headimg'] = $tmp['headimg'][0]['url'];
+		$tmp['voipaccount'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'voipaccount');
+		$this->return['data'] = $tmp;
+		$this->goJson($this->return);
+	}
+
+	private function randuid($uid)
+	{
+		$rand = $this->redis->SRANDMEMBER("Userinfo:online");
+		if($rand == $uid){
+			$rand = $this->randuid($uid);
+		}
+		return $rand;
+
+	}
 }

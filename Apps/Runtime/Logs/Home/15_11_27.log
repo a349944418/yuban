@@ -1,0 +1,464 @@
+[ 2015-11-27T11:31:33+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+
+[ 2015-11-27T11:31:49+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+
+[ 2015-11-27T11:32:03+08:00 ] ::1 /yuban/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.025002s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.025002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T11:32:08+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-27T11:34:01+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+
+[ 2015-11-27T11:34:25+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0200s ]
+SQL: SELECT `from_id`,`to_id`,`type` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0080s ]
+
+[ 2015-11-27T11:37:03+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0070s ]
+SQL: SELECT `from_id`,`to_id`,`comment` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0080s ]
+
+[ 2015-11-27T11:37:56+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T11:38:22+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0100s ]
+SQL: SELECT `from_id`,`to_id`,`comment` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0110s ]
+SQL: SELECT `id` FROM `yj_comment` WHERE ( cid=1 and from_id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_comment` (`cid`,`from_id`,`score`,`content`,`ctime`,`uid`) VALUES ('1','2','4','测试评论','1448595502','9') [ RunTime:0.0090s ]
+SQL: UPDATE `yj_chat` SET `comment`='1' WHERE ( cid=1 ) [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0060s ]
+SQL: SELECT `self_level`,`sys_level` FROM `yj_user_language` WHERE ( type=4 and uid=9 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: UPDATE `yj_user_language` SET `sys_level`='2' WHERE ( type=4 and uid=9 ) [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0120s ]
+SQL: UPDATE `yj_userinfo` SET `level`='2' WHERE ( uid=9 ) [ RunTime:0.0360s ]
+
+[ 2015-11-27T11:38:28+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T11:38:30+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T11:38:31+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T11:40:15+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0100s ]
+SQL: SELECT `from_id`,`to_id`,`comment` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0190s ]
+SQL: SELECT `id` FROM `yj_comment` WHERE ( cid=1 and from_id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_comment` (`cid`,`from_id`,`score`,`content`,`ctime`) VALUES ('1','2','4','测试评论','1448595615') [ RunTime:0.0070s ]
+SQL: UPDATE `yj_chat` SET `comment`='3' WHERE ( cid=1 ) [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: uid D:\Apache\htdocs\yuban\Apps\Home\Controller\ChatController.class.php 第 114 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `self_level`,`sys_level` FROM `yj_user_language` WHERE ( type=4 and uid= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `self_level`,`sys_level` FROM `yj_user_language` WHERE ( type=4 and uid= ) LIMIT 1  
+
+[ 2015-11-27T11:42:27+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0150s ]
+SQL: SELECT `from_id`,`to_id`,`comment` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0080s ]
+SQL: SELECT `id` FROM `yj_comment` WHERE ( cid=1 and from_id=2 ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: INSERT INTO `yj_comment` (`cid`,`from_id`,`score`,`content`,`ctime`,`uid`) VALUES ('1','2','4','测试评论','1448595747','9') [ RunTime:0.0110s ]
+SQL: UPDATE `yj_chat` SET `comment`='3' WHERE ( cid=1 ) [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0110s ]
+SQL: SELECT `self_level`,`sys_level` FROM `yj_user_language` WHERE ( type=4 and uid=9 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: UPDATE `yj_user_language` SET `sys_level`='3' WHERE ( type=4 and uid=9 ) [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: UPDATE `yj_userinfo` SET `level`='3' WHERE ( uid=9 ) [ RunTime:0.0200s ]
+
+[ 2015-11-27T11:43:00+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T11:43:52+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0100s ]
+SQL: SELECT `from_id`,`to_id`,`comment` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0090s ]
+SQL: SELECT `id` FROM `yj_comment` WHERE ( cid=1 and from_id=2 ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: INSERT INTO `yj_comment` (`cid`,`from_id`,`score`,`content`,`ctime`,`uid`) VALUES ('1','2','4','测试评论','1448595831','9') [ RunTime:0.0090s ]
+SQL: UPDATE `yj_chat` SET `comment`='3' WHERE ( cid=1 ) [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0090s ]
+SQL: SELECT `self_level`,`sys_level` FROM `yj_user_language` WHERE ( type=4 and uid=9 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: UPDATE `yj_user_language` SET `sys_level`='3.5' WHERE ( type=4 and uid=9 ) [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: UPDATE `yj_userinfo` SET `level`='3' WHERE ( uid=9 ) [ RunTime:0.0400s ]
+
+[ 2015-11-27T11:44:27+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-27T11:46:25+08:00 ] ::1 /yuban/index.php/Home/Chat/comment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Chat D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_chat` [ RunTime:0.0090s ]
+SQL: SELECT `from_id`,`to_id`,`comment` FROM `yj_chat` WHERE ( cid=1 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_comment` [ RunTime:0.0100s ]
+SQL: SELECT `id` FROM `yj_comment` WHERE ( cid=1 and from_id=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: INSERT INTO `yj_comment` (`cid`,`from_id`,`score`,`content`,`ctime`,`uid`) VALUES ('1','2','4','测试评论','1448595985','9') [ RunTime:0.0110s ]
+SQL: UPDATE `yj_chat` SET `comment`='3' WHERE ( cid=1 ) [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0110s ]
+SQL: SELECT `self_level`,`sys_level` FROM `yj_user_language` WHERE ( type=4 and uid=9 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: UPDATE `yj_user_language` SET `sys_level`='3.75' WHERE ( type=4 and uid=9 ) [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: UPDATE `yj_userinfo` SET `level`='7' WHERE ( uid=9 ) [ RunTime:0.0210s ]
+
+[ 2015-11-27T11:47:51+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-27T14:19:57+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+
+[ 2015-11-27T14:20:04+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T14:21:07+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_umoney` [ RunTime:0.0090s ]
+SQL: SELECT `totalmoney`,`not_tixian` FROM `yj_umoney` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0070s ]
+
+[ 2015-11-27T14:21:22+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_umoney` [ RunTime:0.0080s ]
+SQL: SELECT `totalmoney`,`not_tixian` FROM `yj_umoney` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0100s ]
+
+[ 2015-11-27T14:22:19+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T14:23:14+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_umoney` [ RunTime:0.0090s ]
+SQL: SELECT `totalmoney`,`not_tixian` FROM `yj_umoney` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `yj_mlog` WHERE ( type=1 and uid=2 ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined variable: res D:\Apache\htdocs\yuban\Apps\Home\Controller\UserController.class.php 第 483 行.
+
+[ 2015-11-27T14:24:09+08:00 ] ::1 /yuban/index.php/Home/User/mlog
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: User D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_umoney` [ RunTime:0.0170s ]
+SQL: SELECT `totalmoney`,`not_tixian` FROM `yj_umoney` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `yj_mlog` WHERE ( type=1 and uid=2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `money`,`ctime`,`note` FROM `yj_mlog` WHERE ( type=1 and uid=2 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0140s ]
+
+[ 2015-11-27T15:51:23+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-11-27T15:51:59+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T15:52:46+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T17:07:18+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-11-27T17:07:22+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2015-11-27T17:08:06+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: yujia D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 259 行.
+
+[ 2015-11-27T17:08:39+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: yujia D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 259 行.
+
+[ 2015-11-27T17:09:07+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: yujia D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 259 行.
+
+[ 2015-11-27T17:12:12+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: yujia D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 259 行.
+
+[ 2015-11-27T17:13:13+08:00 ] ::1 /yuban/index.php/Home/Square/yujia
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: yujia D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+NOTIC: [8] Undefined offset: 1 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 260 行.
+

@@ -18,5 +18,11 @@
 		'token_error'	=> 'token错误',
 		'FILE_FORMAT'   => '文件格式: {$format},文件大小：{$size}',
 		'follow_me'		=> '不能关注自己',
+		'cid_error'		=> '聊天id错误',
+		'from_id_error' => '评论发起人错误',
+		'score_error'   => '评分错误',
+		'content_null'  => '评论内容为空',
+		'comment_has'   => '已经评论过',
+		
 	);
 ?>

@@ -57,4 +57,68 @@ Class ChatController extends BaseController
 
 		$this->goJson($this->return);
 	}
+
+	/**
+	 * 评论接口
+	 * @return [type] [description]
+	 */
+	public function comment()
+	{
+		$data['cid'] = I('post.cid');
+		$res = D('chat')->field('from_id, to_id, comment')->where('cid='.$data['cid'])->find();
+		if(!$data['cid'] || !is_numeric($data['cid']) || !$res) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('cid_error');
+			$this->goJson($this->return);
+		}
+		$data['from_id'] = $this->mid;
+		if($res['from_id'] != $data['from_id'] && $res['to_id'] != $data['from_id']) {
+			$this->return['code'] = 1004;
+			$this->return['message'] = L('from_id_error');
+			$this->goJson($this->return);
+		}
+		$data['score'] = intval(I('post.score') );
+		if(!$data['score'] || $data['score']>5 || $data['score']<1 || !is_numeric($data['score'])) {
+			$this->return['code'] = 1005;
+			$this->return['message'] = L('score_error');
+			$this->goJson($this->return);
+		}
+		$data['content'] = trim(I('post.content'));
+		if(!$data['content']) {
+			$this->return['code'] = 1006;
+			$this->return['message'] = L('content_null');
+			$this->goJson($this->return);
+		}
+		$id = D('comment')->where('cid='.$data['cid'].' and from_id='.$data['from_id'])->getField('id');
+		if($id) {
+			$this->return['code'] = 1007;
+			$this->return['message'] = L('comment_has');
+			$this->goJson($this->return);
+		}
+		$data['ctime'] = time();
+		$data['uid'] = $res['from_id'] == $data['from_id'] ? $res['to_id'] : $res['from_id'];
+		if($res['comment'] == 0){
+			if($res['from_id'] == $data['from_id']) {
+				$info['comment'] = 1;
+			} else {
+				$info['comment'] = 2;
+			}
+		} else {
+			$info['comment'] = 3;
+		}
+		D('comment') -> add($data);
+		D('chat')->where('cid='.$data['cid'])->save($info);
+		//重新计算等级
+		$level = D('userLanguage')->field('self_level, sys_level')->where('type=4 and uid='.$data['uid'])->find();
+		if($level) {
+			$levelInfo['sys_level'] = ($level['sys_level']+$data['score'])/2;
+			D('userLanguage')->where('type=4 and uid='.$data['uid'])->save($levelInfo);
+			$userLevel['level'] = ($level['self_level'])/2+$levelInfo['sys_level'];
+			D('userinfo')->where('uid='.$data['uid'])->save($userLevel);
+			$userLevel['level'] = round($userLevel['level']);
+			$this->redis->HSET('Userinfo:uid'.$data['uid'], 'level', $userLevel['level']);
+		} 
+
+		$this->goJson($this->return);
+	}
 }
