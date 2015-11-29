@@ -203,7 +203,7 @@ Class UserController extends BaseController
 	{
 		$post = I('post.');
 		$o_info = $this->redis->HGETALL('Userinfo:uid'.$this->mid);
-
+		
 		$info = array();
 		//头像
 		$o_headimg = json_decode($o_info['headimg'], true) ? json_decode($o_info['headimg'], true) : array();
@@ -228,7 +228,7 @@ Class UserController extends BaseController
 				$sj_log['uid'] = $this->mid;
 				$sj_log['type'] = 1;
 				foreach($add_photo as $v){
-					$sj_log['url'] = C('WEBSITE_URL').D('picture')->where('id='.$v)->getField('path');
+					$sj_log['url'] = D('picture')->where('id='.$v)->getField('path');
 					D('shunjian')->add($sj_log);
 				}
 			}
@@ -257,7 +257,7 @@ Class UserController extends BaseController
 		}
 		// 性别
 		if ($post['sex'] != $o_info['sex'] && isset($post['sex'])) {
-			if($info['sex'] != 1 && $info['sex'] != 2) {
+			if($post['sex'] != 1 && $post['sex'] != 2) {
 				$this->return['code'] == 1003;
 				$this->return['message'] == L('sex_error');
 				$this->goJson($this->return);
@@ -268,8 +268,9 @@ Class UserController extends BaseController
 			$this->redis->sAdd('User:sex'.$info['sex'],$this->mid);
 		}
 		// 个性签名
-		if ($post['intro'] != $o_info['intro'] && isset($post['intro'])) 
+		if ($post['intro'] != $o_info['intro'] && isset($post['intro'])) {
 			$info['intro'] = $post['intro'];
+		}
 		// 视频介绍
 		$o_info['video_profile'] = json_decode($o_info['video_profile'], true) ? json_decode($o_info['video_profile'], true) : array();
 		if ($post['video_profile'] != $o_info['video_profile']['rid'] && isset($post['video_profile'])) {
@@ -279,7 +280,7 @@ Class UserController extends BaseController
 			$video_profile['url'] =  C('WEBSITE_URL').'/Uploads/File/'.$video['savepath'].$video['savename'];
 			$this->redis->HSET('Userinfo:uid'.$this->mid, 'video_profile', json_encode($video_profile, JSON_UNESCAPED_UNICODE));
 			$video_profile_data['type'] = 2;
-			$video_profile_data['url'] = $video['savepath'].$video['savename'];
+			$video_profile_data['url'] = '/Uploads/File/'.$video['savepath'].$video['savename'];
 			$video_profile_data['uid'] = $this->mid;
 			D('shunjian')->add($video_profile_data);
 			unset($video_profile_data);
