@@ -23,6 +23,6 @@
 		'score_error'   => '评分错误',
 		'content_null'  => '评论内容为空',
 		'comment_has'   => '已经评论过',
-		
+		'suggest_null'  => '意见/建议为空',
 	);
 ?>

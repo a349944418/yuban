@@ -338,8 +338,6 @@ Class UserController extends BaseController
 			}
 		}
 
-		
-
 		//标签
 		if(isset($post['tags'])){
 			$o_tags = json_decode($o_info['tags']) ? json_decode($o_info['tags'], true) : array();
@@ -487,6 +485,25 @@ Class UserController extends BaseController
 		$data['datalist'] = $res;
 
 		$this->return['data'] = $data;
+		$this->goJson($this->return);
+	}
+
+
+	/**
+	 * 意见反馈内容
+	 * @return [type] [description]
+	 */
+	public function suggest()
+	{
+		$data['content'] = I('post.content');
+		if($data['content'] == '') {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('suggest_null');
+			$this->goJson($this->return);
+		}
+		$data['uid'] = $this->mid;
+		$data['ctime'] = time();
+		D('suggest')->add($data);
 		$this->goJson($this->return);
 	}
 }
