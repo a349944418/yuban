@@ -298,4 +298,91 @@ Class SquareController extends BaseController
 		return $rand;
 
 	}
+
+	/**
+	 * 语加搜索结果
+	 * @return [type] [description]
+	 */
+	public function yujiaSearch()
+	{
+		$where = '';
+		//性别筛选
+		if (I('post.sex')) {
+			$where .= ' sex='.I('post.sex').' and';
+		}
+		//等级筛选
+		if (I('post.min_level')) {
+			$where .= ' level >='.I('post.min_level').' and';
+		} 
+		if (I('post.max_level')) {
+			$where .= ' level <='.I('post.max_level').' and';
+		}
+
+		//地区筛选
+		if (I('post.city')) {
+			$where .= ' city = '.I('post.city').' and';
+		} elseif (I('post.province')) {
+			$where .= ' province ='.I('post.province').' and';
+		} elseif (I('post.country')) {
+			$where .= ' country ='.I('post.country').' and';
+		}
+
+		//语言筛选
+		if (I('post.lid')) {
+			$where .= ' cur_language='.I('post.lid').' and';
+		}
+
+		//时长筛选
+		if (I('post.time')) {
+			$where .= ' spoken_long >='.I('post.time').' and';
+		}
+
+		//付费筛选
+		if (I('post.price')) {
+			$where .= ' spoken_long >= 0.1 and';
+		}
+
+		//音频视频筛选
+		if (I('post.intro') == 1) {
+			$where .= ' audio_profile != 0 and';
+		} else {
+			$where .= ' video_profile != 0 and';
+		}
+
+		$whereRand = ' uid>='.$this->randuid($this->mid);
+
+		$pageSize = 20;
+		$start = 0;
+		$res = D('userinfo')->field('uid')->where($where.$whereRand)->limit($start, $pageSize)->select();
+		if(!$res) {
+			$where = rtrim($where, 'and');
+			$res = D('userinfo')->field('uid')->where($where)->limit($start, $pageSize)->select(); 
+		}
+		if($res) {
+			foreach( $res as $v){
+				if($v && $v['uid'] != $this->mid) {
+					$tmp['uid'] = $v['uid'];
+					if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+						A('Home/User')->getUserinfoData($tmp['uid']);
+					}
+					$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+					$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+					$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+					$location = explode('/', $location);
+					$tmp['location'] = $location[0].' '.$location[1];
+					$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+					$tmp['level'] = intval($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level'));
+					$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+					$tmp['headimg'] = $tmp['headimg'][0]['url'];
+					$tmp['voipaccount'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'voipaccount');
+					$data['datalist'][] = $tmp;
+				} else {
+					break;
+				}
+			}
+		} 
+		$data['totalCount'] = count($data['datalist']);
+		$this->return['data'] = $data;
+		$this->goJson($this->return);
+	}
 }
