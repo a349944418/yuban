@@ -17,7 +17,7 @@ class LBS
         //redis
         $this->redis = $redis;
         //geohash
-        $this->geohash = new Geohash();
+        $this->geohash = new \Geohash();
     }
 
     /**
@@ -41,6 +41,8 @@ class LBS
         $this->redis->hSet($user_id,'lati',$latitude);
         //经度
         $this->redis->hSet($user_id,'longi',$longitude);
+
+        $this->redis->hSet($user_id, 'ctime', time());
         //Geohash
         $hashdata = $this->geohash->encode($latitude,$longitude);
         $this->redis->hSet($user_id,'geo',$hashdata);

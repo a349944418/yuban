@@ -13,34 +13,55 @@ Class SquareController extends BaseController
 	 */
 	public function nearBy()
 	{
-		$lati = I('post.lati');
-		$longi = I('post.longi');
-		$re = $this->lbs->serach($lati,$longi);
-		//算出实际距离
+		//更新经纬度
+        $data['lati'] = I('post.lati');
+        $data['longi'] = I('post.longi');
+        if(!$data['lati'] || !$data['longi']) {               
+            $this->return['code'] = 1003;
+            $this->return['message'] = L('latng_error');
+        }
+        $data['ctime'] = time();
+        $data['uid'] = $this->mid;
+        D('userPosition')->add($data);
+        $data = array();
+        import("Common.Util.LBS");
+        $this->lbs = new \LBS($this->redis);
+        $this->lbs->upinfo('Position:uid'.$this->mid, $data['lati'], $data['longi'] );
+		$re = $this->lbs->serach($data['lati'],$data['longi']);
+		$stime = time()-7200;  //两小时过期，时间早于该时刻的都不算
+		//取出全部语言
+		$allLanguage = D('language')->getAllLanguage();
+		//取出基础信息和算出实际距离
 		foreach($re as $key=>$val) {
 			$tmp_userinfo = array();
 			if($val == $this->mid) {
 				continue;
 			}
-			$tmp_userinfo = $this->redis->HGETALL('Userinfo:uid'.$val);
-		    $distance = getDistance($lati, $longi, $tmp_userinfo['lati'], $tmp_userinfo['longi']);
+			$zposition = $this->redis->HGETALL('Position:uid'.$val);
+			if($zposition['ctime'] < $stime) {
+				continue;
+			}
+		    // $distance = getDistance($lati, $longi, $tmp_userinfo['lati'], $tmp_userinfo['longi']);
 		    //基础信息
+		    $tmp_userinfo = $this->redis->HGETALL('Userinfo:uid'.$val);
 		    $data[$key]['uid'] = $val;
 		    $data[$key]['uname'] = $tmp_userinfo['uname'];
 		    $data[$key]['sex'] = $tmp_userinfo['sex'];
-		    $data[$key]['headimg_src'] = $tmp_userinfo['headimg_src'];
-		    $tmp_language = json_decode($tmp_userinfo['language'], true);
-		    $data[$key]['lname'] = $tmp_language[0]['lname'];
-		    $data[$key]['level'] = $tmp_language[0]['sys_level'] ? $tmp_language[0]['sys_level'] : $tmp_language[0]['self_level'];
-		    $data[$key]['price'] = $tmp_language[0]['price'];
+		    $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+		    $data[$key]['headimg_src'] = $tmp['headimg'][0]['url'];
+		    $data[$key]['lname'] = $allLanguage[$tmp_userinfo['cur_language']];
+		    $data[$key]['level'] = $tmp_userinfo['level'];
+		    $data[$key]['price'] = $tmp_userinfo['price'];
+		    $data[$key]['location']['lati'] = $zposition['lati'];
+		    $data[$key]['location']['longi'] = $zposition['longi'];  
  
 		    //距离米
-		    $data[$key]['distance'] = $distance;
+		    // $data[$key]['distance'] = $distance;
 		    //排序列
-		    $sortdistance[$key] = $distance;
+		    // $sortdistance[$key] = $distance;
 		}
 		//距离排序
-		array_multisort($sortdistance,SORT_ASC,$data);
+		// array_multisort($sortdistance,SORT_ASC,$data);
 
 		$this->return['data']['list'] = $data;
 		$this->goJson($this->return);		
