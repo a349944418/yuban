@@ -13,9 +13,8 @@ Class SquareController extends BaseController
 	 */
 	public function nearBy()
 	{
-		//更新经纬度
-        $lati = $data['lati'] = I('post.lati');
-        $longi = $data['longi'] = I('post.longi');
+		$data['lati'] = I('post.lati');
+        $data['longi'] = I('post.longi');
         if(!$data['lati'] || !$data['longi']) {               
             $this->return['code'] = 1003;
             $this->return['message'] = L('latng_error');
@@ -43,29 +42,29 @@ Class SquareController extends BaseController
 			if($zposition['ctime'] < $stime) {
 				continue;
 			}
-		    $distance = getDistance($lati, $longi, $zposition['lati'], $zposition['longi']);
+		    // $distance = getDistance($lati, $longi, $tmp_userinfo['lati'], $tmp_userinfo['longi']);
 		    //基础信息
 		    $tmp_userinfo = $this->redis->HGETALL('Userinfo:uid'.$val);
 		    $data['uid'] = $val;
 		    $data['uname'] = $tmp_userinfo['uname'];
 		    $data['sex'] = $tmp_userinfo['sex'];
-		    $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$val, 'headimg'), true);
+		    $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 		    $data['headimg_src'] = $tmp['headimg'][0]['url'];
 		    $data['lname'] = $allLanguage[$tmp_userinfo['cur_language']];
 		    $data['level'] = $tmp_userinfo['level'];
+		    $data['intro'] = $tmp_userinfo['intro'];
 		    $data['price'] = $tmp_userinfo['price'];
 		    $data['location']['lati'] = $zposition['lati'];
-		    $data['location']['longi'] = $zposition['longi'];  
+		    $data['location']['longi'] = $zposition['longi'];
  
 		    //距离米
-		    $data['distance'] = $distance;
+		    // $data[$key]['distance'] = $distance;
 		    //排序列
 		    // $sortdistance[$key] = $distance;
 		    $this->return['data']['list'][] = $data;
 		}
 		//距离排序
 		// array_multisort($sortdistance,SORT_ASC,$data);
-
 		
 		$this->goJson($this->return);		
 	}
