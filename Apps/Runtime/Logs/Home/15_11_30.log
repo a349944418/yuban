@@ -31,3 +31,29 @@ INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
 SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0080s ]
 SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18643627216" ) LIMIT 1   [ RunTime:0.0110s ]
 
+[ 2015-11-30T14:06:26+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914091','116.402086','1448863586','1') [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0080s ]
+
+[ 2015-11-30T14:21:31+08:00 ] ::1 /yuban/index.php/Home/Square/nearBy
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: nearBy D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `yj_user_position` [ RunTime:0.0510s ]
+SQL: INSERT INTO `yj_user_position` (`lati`,`longi`,`ctime`,`uid`) VALUES ('39.914091','116.402086','1448864490','1') [ RunTime:0.0350s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0130s ]
+

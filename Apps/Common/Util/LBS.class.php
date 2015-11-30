@@ -65,6 +65,12 @@ class LBS
         $index_key = substr($hashdata, 0, $this->index_len);
         //取得
         $user_id_array = $this->redis->sMembers($index_key);
+        //取出周边8个区块
+        $neighbors = $this->geohash->neighbors($index_key);
+        foreach($neighbors as $v){
+            $tmp_user = $this->redis->sMembers($v) ? $this->redis->sMembers($v) : array();
+            $user_id_array = array_merge($user_id_array, $tmp_user);
+        }
         return $user_id_array;
     }
 }
