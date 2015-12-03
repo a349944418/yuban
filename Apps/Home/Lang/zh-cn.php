@@ -25,5 +25,8 @@
 		'comment_has'   => '已经评论过',
 		'suggest_null'  => '意见/建议为空',
 		'latng_error'	=> '经纬度不存在',
+		'otype_error'	=> '第三方登录类型错误',
+		'unionid_null'	=> 'unionid为空',
+		'access_token_null'  => 'access_token为空',
 	);
 ?>

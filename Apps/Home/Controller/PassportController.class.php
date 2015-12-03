@@ -103,6 +103,68 @@ Class PassportController extends BaseController
     }
 
     /**
+     * 第三方登录
+     * @return [type] [description]
+     */
+    public function ologin() 
+    {
+        $post = I('post.');
+        if(!$post['unionid']) {
+            $this->return['code'] = 1003;
+            $this->return['message'] = L('unionid null');
+            $this->goJson($this->return);
+        }
+        if(!$post['access_token']) {
+            $this->return['code'] = 1004;
+            $this->return['message'] = L('access_token null');
+            $this->goJson($this->return);
+        }
+        if(!$post['type'] || !in_array($post['type'], array('wx', 'wb', 'qq'))) {
+            $this->return['code'] = 1005;
+            $this->return['message'] = L('type error');
+            $this->goJson($this->return);
+        }
+        $uid = D('userOlogin') -> where('type="'.$post['type'].'" and unionid="'.$post['unionid'].'"') -> getField('uid');
+        if(!$uid) {
+            $flag = 1;
+            $info['ctime'] = time();
+            $uid = D('userinfo')->add($info);
+
+            $post['uid'] = $uid;
+            D('userOlogin')->add($post);
+        } 
+        $res = $this->redis->HGETALL('Userinfo:uid'.$uid);
+        if(!$res) {
+            $res = D('userinfo')->getUserInfo($uid);
+            $this->redis->HMSET('Userinfo:uid'.$uid, $res);
+        }
+
+        $res['token'] = $this->create_unique($uid);
+        $this->redis->SETEX('Token:uid'.$uid, 2592000, $res['token']);
+
+        
+        if($flag == 1) {
+            $return = array('uid'=>$uid, 'token'=>$res['token'], 'uname'=>'');
+        } else {
+            $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$uid, 'headimg'), true);
+            $tmp['headimg'] = $tmp['headimg'][0]['url'];
+            $return = array('uid'=>$uid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile'], 'sex'=>$res['sex'],'headimg'=>$tmp['headimg']);
+        }
+        
+        
+
+        $this->redis->SADD('Userinfo:online', $uid);    //在线用户列表
+        if($res['sex'] == 1){
+            $this->redis->SADD('Userinfo:sex', $uid);  //男性用户列表 
+        }       
+        $this->redis->SADD('Userinfo:country'.$res['country'], $uid);   //用户国籍列表
+        unset($res);
+
+        $this->return['data'] = $return;
+        $this->goJson($this->return);
+    }
+
+    /**
      * 退出登录
      * @return [type] [description]
      */

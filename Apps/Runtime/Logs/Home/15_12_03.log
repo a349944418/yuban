@@ -1,0 +1,29 @@
+[ 2015-12-03T17:25:31+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.011001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017001s ]
+NOTIC: [8] Undefined index: ologin D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 24 行.
+
+[ 2015-12-03T17:26:07+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:0.0090s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="2" ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0140s ]
+SQL: INSERT INTO `yj_userinfo` (`ctime`) VALUES ('1449134767') [ RunTime:0.0690s ]
+SQL: INSERT INTO `yj_user_ologin` (`unionid`,`type`,`access_token`,`uid`) VALUES ('2','wx','b1106970db92d033aeddc8213d2e1da98729e837','10') [ RunTime:0.0200s ]
+SQL: SELECT * FROM `yj_userinfo` WHERE ( uid=10 ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0300s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=10 )  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0080s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=10 )  [ RunTime:0.0070s ]
+
