@@ -103,7 +103,7 @@ Class PassportController extends BaseController
     }
 
     /**
-     * 第三方登录
+     * 第三方登录 (step1)
      * @return [type] [description]
      */
     public function ologin() 
@@ -151,8 +151,6 @@ Class PassportController extends BaseController
             $return = array('uid'=>$uid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile'], 'sex'=>$res['sex'],'headimg'=>$tmp['headimg']);
         }
         
-        
-
         $this->redis->SADD('Userinfo:online', $uid);    //在线用户列表
         if($res['sex'] == 1){
             $this->redis->SADD('Userinfo:sex', $uid);  //男性用户列表 

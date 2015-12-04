@@ -187,6 +187,24 @@ Class RegController extends BaseController
     }
 
     /**
+     * 检测手机号是否注册过
+     * @return [type] [description]
+     */
+    public function checkMobileUser()
+    {
+        $mobile = I('post.mobile');
+        if(strlen($mobile) != 11) {
+            $this->return['code'] = 1001;
+            $this->return['message'] = L('mobile_error');
+            $this->goJson($this->return);
+        }
+        
+        $res = $this->checkMobile($mobile);
+        $this->return['data']['isUser'] = $res ? 1 : 0;
+        $this->goJson($this->return);
+    }
+
+    /**
      * 检测手机号是否已经注册过
      * @param  [type] $mobile 手机号
      * @return [type]         [description]
