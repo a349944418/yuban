@@ -133,15 +133,16 @@ Class PassportController extends BaseController
             $post['uid'] = $uid;
             D('userOlogin')->add($post);
         } 
-        $res = $this->redis->HGETALL('Userinfo:uid'.$uid);
-        if(!$res) {
-            $res = D('userinfo')->getUserInfo($uid);
-            $this->redis->HMSET('Userinfo:uid'.$uid, $res);
-        }
+        if($flag != 1){
+            $res = $this->redis->HGETALL('Userinfo:uid'.$uid);
+            if(!$res) {
+                $res = D('userinfo')->getUserInfo($uid);
+                $this->redis->HMSET('Userinfo:uid'.$uid, $res);
+            }
+        }       
 
         $res['token'] = $this->create_unique($uid);
         $this->redis->SETEX('Token:uid'.$uid, 2592000, $res['token']);
-
         
         if($flag == 1) {
             $return = array('uid'=>$uid, 'token'=>$res['token'], 'uname'=>'');

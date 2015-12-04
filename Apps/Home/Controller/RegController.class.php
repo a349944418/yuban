@@ -142,6 +142,7 @@ Class RegController extends BaseController
             $info = array('uid'=>$uid, 'uname'=>$post['uname'], 'mobile'=>$post['mobile'], 'sex'=>$post['sex'], 'country'=>$post['country'], 'province'=>$post['province'], 'city'=>$post['city'], 'country_name'=>$location[0], 'province_name'=>$location[1], 'city_name'=>$location[2]);*/
             $this->redis->Sadd('User:sex'.$post['sex'], $uid);
             $this->createSubAccount('yujia'.$uid, $uid);
+            $this->goJson($this->return);
         }
         
     }
@@ -182,9 +183,87 @@ Class RegController extends BaseController
             D('userinfo')->where('uid='.$uid)->save($info);
 
             $this->return['message'] = L('reg_success');
-            $this->goJson($this->return);
         }      
     }
+
+    /**
+     * 完善第三方登录用户信息
+     * @return [type] [description]
+     */
+    public function ologinPrefect()
+    {
+
+        $post = I('post.');
+        // 验证手机号
+        $mobile = I('post.mobile');
+        if(strlen($mobile) != 11) {
+            $this->return['code'] = 1001;
+            $this->return['message'] = L('mobile_error');
+            $this->goJson($this->return);
+        }
+        if($this->checkMobile($mobile)) {
+            $this->return['code'] = 1002;
+            $this->return['message'] = L('mobile_has');
+            $this->goJson($this->return);
+        }
+        // 验证昵称
+        if(!$post['uname']) {
+            $this->return['code'] = 1003;
+            $this->return['message'] = L('uname_null');
+            $this->goJson($this->return);
+        }
+        // 验证性别
+        if($post['sex'] != 1 && $post['sex'] != 2) {
+            $this->return['code'] = 1004;
+            $this->return['message'] = L('sex_error');
+            $this->goJson($this->return);
+        }
+
+        load("@.user");
+        $post['first_letter'] = getFirstLetter($post['uname']);
+        //如果包含中文将中文翻译成拼音
+        if ( preg_match('/[\x7f-\xff]+/', $post['uname'] ) ){
+            import("Common.Util.PinYin");
+            $pinyinClass = new \PinYin();
+            $pinyin = $pinyinClass->Pinyin( $post['uname'] );
+            //昵称和呢称拼音保存到搜索字段
+            $post['search_key'] = $post['uname'].' '.$pinyin;
+        } else {
+            $post['search_key'] = $post['uname'];
+        }
+        // 密码
+        if(!$post['password']) {
+            $this->return['code'] = 1004;
+            $this->return['message'] = L('pwd_null');
+            $this->goJson($this->return);
+        }
+        $post['login_salt'] = rand(11111, 99999);
+        $post['password'] = md5(md5($post['password']).$post['login_salt']);
+
+        $post['ctime'] = time();
+        $post['level'] = $post['self_level'];
+        $post['cur_language'] = $post['lid'];
+        D('userinfo')->where('uid='.$this->mid)->save($post);
+        $language_info['uid'] = $this->mid;
+        $language_info['lid'] = $post['lid'];
+        $language_info['type'] = 4;
+        $language_info['self_level'] = $post['self_level'];
+        D('userLanguage')->add($language_info);
+        $this->redis->Sadd('User:sex'.$post['sex'], $this->mid);
+        $this->redis->SADD('Userinfo:online', $this->mid);    //在线用户列表
+        $this->createSubAccount('yujia'.$this->mid, $this->mid);
+
+        $res = D('userinfo')->getUserInfo($this->mid);
+        $this->redis->HMSET('Userinfo:uid'.$this->mid, $res);
+
+        $res['token'] = I('post.token');
+        $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$this->mid, 'headimg'), true);
+        $tmp['headimg'] = $tmp['headimg'][0]['url'];
+        $return = array('uid'=>$this->mid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile'], 'sex'=>$res['sex'],'headimg'=>$tmp['headimg']);
+        $this->return['data'] = $return;
+        $this->goJson($this->return);
+    }
+
 
     /**
      * 检测手机号是否注册过
