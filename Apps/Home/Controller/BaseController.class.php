@@ -23,7 +23,6 @@ Class BaseController extends Controller
         );
         if(!$not_login[CONTROLLER_NAME][ACTION_NAME]) {
             $this->mid = I('post.userId');
-            dump($this->mid);
             $token = I('post.token');
             $server_token = $this->redis->GET('Token:uid'.$this->mid);
             if(!$server_token) {
