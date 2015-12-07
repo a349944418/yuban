@@ -17,7 +17,6 @@ class AdModel extends Model
 				$return[$k]['pic'] = C('WEBSITE').D('Picture') -> where('id='.$v['pic']) -> getField('path');
 			}			
 		}
-
 		return $return;
 	}
 }
