@@ -11,10 +11,10 @@ class AdModel extends Model
 	 */
 	public function getAd($post)
 	{
-		$return = D('ad')->field('pic, url')->where('is_del = 0 and type='.$post['type'])->order('sort Desc aid Desc')->limit($post['limit'])->select();
+		$return = D('ad')->field('pic, url')->where('is_del = 0 and type="'.$post['type'].'"')->order('sort Desc, aid Desc')->limit($post['limit'])->select();
 		foreach($return as $k=>$v) {
 			if($v['pic']) {
-				$return[$k]['pic'] = C('WEBSITE').D('Picture') -> where('id='.$v['pic']) -> getField('path');
+				$return[$k]['pic'] = C('WEBSITE_URL').D('Picture') -> where('id='.$v['pic']) -> getField('path');
 			}			
 		}
 		return $return;

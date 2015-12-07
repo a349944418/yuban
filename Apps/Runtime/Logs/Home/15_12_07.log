@@ -153,3 +153,73 @@ ERR: 1064:You have an error in your SQL syntax; check the manual that correspond
 ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'aid Desc LIMIT 10' at line 1
  [ SQL语句 ] : SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type=yuban_slide ) ORDER BY sort Desc aid Desc LIMIT 10  
 
+[ 2015-12-07T15:38:48+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yj_ad` [ RunTime:0.0320s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'aid Desc LIMIT 10' at line 1
+ [ SQL语句 ] : SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type=yuban_slide ) ORDER BY sort Desc aid Desc LIMIT 10  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'aid Desc LIMIT 10' at line 1
+ [ SQL语句 ] : SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type=yuban_slide ) ORDER BY sort Desc aid Desc LIMIT 10  
+
+[ 2015-12-07T15:41:50+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_ad` [ RunTime:0.0800s ]
+ERR: 1054:Unknown column 'yuban_slide' in 'where clause'
+ [ SQL语句 ] : SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type=yuban_slide ) ORDER BY sort Desc, aid Desc LIMIT 10  
+ERR: 1054:Unknown column 'yuban_slide' in 'where clause'
+ [ SQL语句 ] : SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type=yuban_slide ) ORDER BY sort Desc, aid Desc LIMIT 10  
+
+[ 2015-12-07T15:42:21+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_ad` [ RunTime:0.0100s ]
+SQL: SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type="yuban_slide" ) ORDER BY sort Desc, aid Desc LIMIT 10   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0070s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=39 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0080s ]
+
+[ 2015-12-07T15:44:02+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_ad` [ RunTime:0.0100s ]
+SQL: SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type="yuban_slide" ) ORDER BY sort Desc, aid Desc LIMIT 10   [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0110s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=39 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0120s ]
+
+[ 2015-12-07T15:49:52+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_ad` [ RunTime:0.0100s ]
+SQL: SELECT `pic`,`url` FROM `yj_ad` WHERE ( is_del = 0 and type="yuban_slide" ) ORDER BY sort Desc, aid Desc LIMIT 10   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `yj_picture` [ RunTime:0.0120s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=39 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `path` FROM `yj_picture` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.0080s ]
+

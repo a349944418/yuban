@@ -28,5 +28,6 @@
 		'otype_error'	=> '第三方登录类型错误',
 		'unionid_null'	=> 'unionid为空',
 		'access_token_null'  => 'access_token为空',
+		'Adtype_null'   => '广告位置出错',
 	);
 ?>
