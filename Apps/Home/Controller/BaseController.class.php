@@ -20,6 +20,7 @@ Class BaseController extends Controller
             'Passport'  => array('login'=>1, 'changePwd'=>1, 'ologin'=>1),
             'Reg'       => array('getMobileCode'=>1, 'register'=>1),
             'Square'    => array('topic'=>1, 'nearby'=>1, 'topicUser'=>1),
+            'Ad'        => array('getAd'=>1),
         );
         if(!$not_login[CONTROLLER_NAME][ACTION_NAME]) {
             $this->mid = I('post.userId');
