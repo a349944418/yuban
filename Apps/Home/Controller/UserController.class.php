@@ -13,11 +13,11 @@ Class UserController extends BaseController
 		$res = $this->getUserinfoData($uid);
 		//是否已关注
 		if($this->mid != $uid) {
-			$friendflag = D('friend')->where('from_id='.$this->mid.' and to_id='.$uid)->getField('id');
+			$friendtype = D('friend')->where('from_id='.$this->mid.' and to_id='.$uid)->getField('type');
+			$res['friendflag'] = in_array($friendtype, array(1, 3)) ? 1 : 0;
 		} else {
-			$friendflag = 1;
-		}		
-		$res['friendflag'] = $friendflag ? 1 : 0; 
+			$res['friendflag'] = 1;
+		}
 		//瞬间
 		$res['shunjian']['totalCount'] = D('shunjian')->where('uid='.$uid)->count();
 		$shunjianlist = D('shunjian')->field('url, type, cover')->where('uid='.$uid)->order('rid desc')->limit(6)->select();
@@ -390,7 +390,7 @@ Class UserController extends BaseController
 			$this->goJson($this->return);
 		}
 		D('friend')->addUser($this->mid, $uid, 1);
-		$this->redis->SADD('Userinfo:friend'.$this->mid, $uid);
+		$this->redis->SADD('Userinfo:friend1'.$this->mid, $uid);
 		$this->goJson($this->return);
 	}
 
@@ -402,13 +402,15 @@ Class UserController extends BaseController
 	{
 		$data['index'] = I('post.index') ? I('post.index') : 1;
 		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
-		$follow = $this->redis->sMembers('Userinfo:friend'.$this->mid);
+		$follow = $this->redis->sMembers('Userinfo:friend2'.$this->mid);
 		rsort($follow);
 		if (!count($follow)) {
-			$res = D('friend')->field('to_id')->where('from_id='.$this->mid)->order('id desc')->select();
+			$map['from_id'] = array('eq',$this->mid);
+			$map['type'] = array('in', array(2,3));
+			$res = D('friend')->getFriend($map);
 			foreach($res as $v){
 				$follow[] = $v['to_id']; 
-				$this->redis->SADD('Userinfo:friend'.$this->mid, $v['to_id']);
+				$this->redis->SADD('Userinfo:friend2'.$this->mid, $v['to_id']);
 			}
 		}
 		$start = ($data['index']-1)*$data['pageSize'];
