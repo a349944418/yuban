@@ -19,7 +19,7 @@ Class AdController extends BaseController
 			$this->return['message'] = L('Adtype_null');
 			$this->goJson($this->return);
 		}
-		$post['limit'] = I('post.limit') : I('post.limit') : 10;
+		$post['limit'] = I('post.limit') ? I('post.limit') : 10;
 
 		$res = D('ad')->getAd($post);
 

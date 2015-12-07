@@ -119,3 +119,23 @@ SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMI
 NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 148 行.
 NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 152 行.
 
+[ 2015-12-07T15:33:42+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-07T15:34:07+08:00 ] ::1 /yuban/index.php/Home/Ad/getAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_ad` [ RunTime:0.0200s ]
+ERR: Think\Model:getAd方法不存在！
+
