@@ -108,6 +108,7 @@ Class PassportController extends BaseController
      */
     public function ologin() 
     {
+
         $post = I('post.');
         if(!$post['unionid']) {
             $this->return['code'] = 1003;
@@ -125,22 +126,22 @@ Class PassportController extends BaseController
             $this->goJson($this->return);
         }
         $uid = D('userOlogin') -> where('type="'.$post['type'].'" and unionid="'.$post['unionid'].'"') -> getField('uid');
-        if(!$uid) {
-            $flag = 1;
-            $info['ctime'] = time();
-            $uid = D('userinfo')->add($info);
-
-            $post['uid'] = $uid;
-            D('userOlogin')->add($post);
-        } 
-        if($flag != 1){
+        
+        if($uid) {
             $res = $this->redis->HGETALL('Userinfo:uid'.$uid);
             if(!$res) {
                 $res = D('userinfo')->getUserInfo($uid);
                 $this->redis->HMSET('Userinfo:uid'.$uid, $res);
             }
-        }       
+        } else {
+            $flag = 1;
+            $info['ctime'] = time();
+            $info['mobile'] = time();
+            $uid = D('userinfo')->add($info);
 
+            $post['uid'] = $uid;
+            D('userOlogin')->add($post);
+        }     
         $res['token'] = $this->create_unique($uid);
         $this->redis->SETEX('Token:uid'.$uid, 2592000, $res['token']);
         
@@ -151,12 +152,12 @@ Class PassportController extends BaseController
             $tmp['headimg'] = $tmp['headimg'][0]['url'];
             $return = array('uid'=>$uid, 'token'=>$res['token'], 'voipaccount'=>$res['voipaccount'], 'voippwd'=>$res['voippwd'], 'subaccountid'=>$res['subaccountid'], 'subtoken'=>$res['subtoken'], 'uname'=>$res['uname'], 'mobile'=>$res['mobile'], 'sex'=>$res['sex'],'headimg'=>$tmp['headimg']);
         }
-        
         $this->redis->SADD('Userinfo:online', $uid);    //在线用户列表
-        if($res['sex'] == 1){
+
+        if($res['sex'] == 1 && $flag != 1){
             $this->redis->SADD('Userinfo:sex', $uid);  //男性用户列表 
-        }       
-        $this->redis->SADD('Userinfo:country'.$res['country'], $uid);   //用户国籍列表
+            $this->redis->SADD('Userinfo:country'.$res['country'], $uid);   //用户国籍列表
+        }              
         unset($res);
 
         $this->return['data'] = $return;

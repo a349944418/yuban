@@ -1,0 +1,121 @@
+[ 2015-12-07T10:39:59+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: Redis server went away
+
+[ 2015-12-07T10:40:25+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-07T10:42:08+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:0.1840s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMIT 1   [ RunTime:0.0090s ]
+
+[ 2015-12-07T10:43:55+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:0.0300s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMIT 1   [ RunTime:0.0120s ]
+NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 138 行.
+NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 149 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 153 行.
+NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 159 行.
+
+[ 2015-12-07T10:45:25+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-12-07T10:45:44+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:15.0609s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 136 行.
+NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 147 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 151 行.
+
+[ 2015-12-07T10:46:38+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-12-07T10:47:05+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2015-12-07T10:47:26+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:0.7690s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMIT 1   [ RunTime:0.0180s ]
+
+[ 2015-12-07T10:47:57+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:0.0120s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2015-12-07T10:49:33+08:00 ] ::1 /yuban/index.php/Home/Passport/ologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_ologin` [ RunTime:0.7180s ]
+SQL: SELECT `uid` FROM `yj_user_ologin` WHERE ( type="wx" and unionid="3" ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined variable: flag D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 148 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\PassportController.class.php 第 152 行.
+
