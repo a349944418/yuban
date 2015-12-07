@@ -133,6 +133,10 @@ Class PassportController extends BaseController
                 $res = D('userinfo')->getUserInfo($uid);
                 $this->redis->HMSET('Userinfo:uid'.$uid, $res);
             }
+            if( !$res['uname'] ) {
+                $flag = 1;
+                $this->redis->DEL('Userinfo:uid'.$uid);
+            }
         } else {
             $flag = 1;
             $info['ctime'] = time();
