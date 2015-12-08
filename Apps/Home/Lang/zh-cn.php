@@ -29,5 +29,9 @@
 		'unionid_null'	=> 'unionid为空',
 		'access_token_null'  => 'access_token为空',
 		'Adtype_null'   => '广告位置出错',
+		'chongzhi'		=> '语加充值',
+		'chongzhi_des'  => '为{$uname}充值{$money}元',
+		'money_error'	=> '充值金额有误',
+		'opera_error'	=> '操作失败',
 	);
 ?>

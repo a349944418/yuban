@@ -83,5 +83,125 @@ class UserinfoModel extends Model
         $res['level'] = round($res['level']);
 		return $res;
 	}
+
+    /**
+     * 搜索用户
+     * @return [type] [description]
+     */
+    public function getSearchList($field = '*', $search = '')
+    {
+        $where = $join = '';
+        //昵称筛选
+        if ($search['uname']) {
+            $where .= ' u.search_key like "%'.$search['uname'].'%" and';
+        }
+
+        //性别筛选
+        if ($search['sex']) {
+            $where .= ' u.sex='.I($search['sex']).' and';
+        }
+        //等级筛选
+        if ($search['min_level']) {
+            $where .= ' u.level >='.$search['min_level'].' and';
+        } 
+        if ($search['max_level']) {
+            $where .= ' u.level <='.$search['max_level'].' and';
+        }
+
+        //地区筛选
+        if ($search['city']) {
+            $where .= ' u.city = '.$search['city'].' and';
+        } elseif ($search['province']) {
+            $where .= ' u.province ='.$search['province'].' and';
+        } elseif ($search['country']) {
+            $where .= ' u.country ='.$search['country'].' and';
+        }
+
+        //语言筛选
+        if ($search['lid']) {
+            $where .= ' u.cur_language='.$search['lid'].' and';
+        }
+
+        //时长筛选
+        if ($search['time']) {
+            $where .= ' u.spoken_long >='.$search['time'].' and';
+        }
+
+        //付费筛选
+        if ($search['price']) {
+            $where .= ' u.price >= 0.1 and';
+        }
+
+        //音频视频筛选
+        if ($search['intro'] == 1) {
+            $where .= ' u.audio_profile != 0 and';
+        } else {
+            $where .= ' u.video_profile != 0 and';
+        }
+        //标签搜索
+        if ($search['tid']) {
+            $where .= ' ut.tid = '.$search['tid'].' and';
+            $join .= '__USER_TAGS__ as ut ON u.uid = ut.uid';
+        }
+        //范围搜索
+        if ($search['range'] == 'yuban') {
+            if(isset(search['isfriend'])) {
+                if($search['isfriend']) {
+                    $map['from_id'] = array('eq',$this->mid);
+                    $map['type'] = array('eq', 3);
+                } else {
+                    $map['from_id'] = array('eq',$this->mid);
+                    $map['type'] = array('eq', 2);
+                }
+                $res = D('friend')->getFriend($map);
+                foreach($res as $v){
+                    $follow[] = $v['to_id']; 
+                }
+            } else {
+                $follow = $this->redis->sMembers('Userinfo:friend2'.$this->mid);
+                if (!count($follow)) {
+                    $map['from_id'] = array('eq',$this->mid);
+                    $map['type'] = array('in', array(2,3));
+                    $res = D('friend')->getFriend($map);
+                    foreach($res as $v){
+                        $follow[] = $v['to_id']; 
+                        $this->redis->SADD('Userinfo:friend2'.$this->mid, $v['to_id']);
+                    }
+                }               
+            }
+            $uids = join(',', $follow);
+            $where .= ' u.uid in ("'.$uids.'") and';
+        } else {
+            $follow = $this->redis->sMembers('Userinfo:friend1'.$this->mid);
+            if (!count($follow)) {
+                $map['from_id'] = array('eq',$this->mid);
+                $map['type'] = array('in', array(1,3));
+                $res = D('friend')->getFriend($map);
+                foreach($res as $v){
+                    $follow[] = $v['to_id']; 
+                    $this->redis->SADD('Userinfo:friend2'.$this->mid, $v['to_id']);
+                }
+            }
+            $uids = join(',', $follow);
+            $where .= ' u.uid not  in ("'.$uids.'") and';
+        }
+
+
+        $where .= ' u.uname != ""' ;
+
+        if($search['pageSize']) {
+            $data['index'] = $search['index'] ? $search['index'] : 1;
+            $data['pageSize'] = $search['pageSize'];
+            $start = ($data['index']-1)*$data['pageSize'];
+            $limit = $start.','.$data['pageSize'];
+        } else {
+            $limit = 0;
+        } 
+
+        $data['totalCount'] = M('userinfo as u')->where($where)->count('u.uid');
+        $data['ulist'] = M('userinfo as u')->join($join)->field($field)->where($where)->limit($limit)->select();
+
+        return $data;
+    }
 }
 ?>

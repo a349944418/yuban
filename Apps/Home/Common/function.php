@@ -44,4 +44,12 @@ function getDistance($lat1, $lng1, $lat2, $lng2) {
     $s = round($s* 10000)/10000;
     return  round($s);
 }
+
+/**
+ * 生成唯一订单号
+ * @return [type] [description]
+ */
+function build_order_no(){
+    return date('Ymd').substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 8);
+}
 ?>

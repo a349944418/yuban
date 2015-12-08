@@ -1,0 +1,299 @@
+[ 2015-12-08T10:52:32+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 1146:Table 'yujia.tj_user_tags' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tj_user_tags`
+ERR: 1146:Table 'yujia.tj_user_tags' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `tj_user_tags`
+
+[ 2015-12-08T10:53:12+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0080s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,5) and u.sex=1 ) LIMIT 1   [ RunTime:0.0090s ]
+
+[ 2015-12-08T10:53:42+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0100s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) LIMIT 1   [ RunTime:0.0120s ]
+
+[ 2015-12-08T10:53:54+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0130s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) LIMIT 1   [ RunTime:0.0110s ]
+
+[ 2015-12-08T10:53:56+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0090s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) LIMIT 1   [ RunTime:0.0090s ]
+
+[ 2015-12-08T10:54:20+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0130s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0080s ]
+
+[ 2015-12-08T10:59:47+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0090s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0110s ]
+
+[ 2015-12-08T11:00:10+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0130s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0100s ]
+
+[ 2015-12-08T11:00:12+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0100s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0080s ]
+
+[ 2015-12-08T11:00:18+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0160s ]
+SQL: SELECT u.uid FROM yj_user_tags as ut INNER JOIN yj_userinfo as u ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0200s ]
+
+[ 2015-12-08T11:01:51+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0080s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0110s ]
+
+[ 2015-12-08T11:01:52+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0080s ]
+
+[ 2015-12-08T11:01:53+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0170s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0080s ]
+
+[ 2015-12-08T11:01:59+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+ERR: 1146:Table 'yujia.yj_usertags' doesn't exist
+ [ SQL语句 ] : SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_usertags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+ERR: 1146:Table 'yujia.yj_usertags' doesn't exist
+ [ SQL语句 ] : SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_usertags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+
+[ 2015-12-08T11:05:45+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+ERR: 1054:Unknown column 'u.uid' in 'field list'
+ [ SQL语句 ] : SELECT u.uid FROM `yj_userinfo` INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+ERR: 1054:Unknown column 'u.uid' in 'field list'
+ [ SQL语句 ] : SELECT u.uid FROM `yj_userinfo` INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+
+[ 2015-12-08T11:05:47+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+ERR: 1054:Unknown column 'u.uid' in 'field list'
+ [ SQL语句 ] : SELECT u.uid FROM `yj_userinfo` INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+ERR: 1054:Unknown column 'u.uid' in 'field list'
+ [ SQL语句 ] : SELECT u.uid FROM `yj_userinfo` INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+
+[ 2015-12-08T11:06:22+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+ERR: Think\Model:getSearchList方法不存在！
+
+[ 2015-12-08T11:06:42+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0400s ]
+ERR: 1054:Unknown column 'u.uid' in 'field list'
+ [ SQL语句 ] : SELECT u.uid FROM `yj_userinfo` INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+ERR: 1054:Unknown column 'u.uid' in 'field list'
+ [ SQL语句 ] : SELECT u.uid FROM `yj_userinfo` INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) 
+
+[ 2015-12-08T11:07:13+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0120s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0110s ]
+
+[ 2015-12-08T11:25:08+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 ) LIMIT 10   [ RunTime:0.0110s ]
+
+[ 2015-12-08T11:25:17+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0100s ]
+
+[ 2015-12-08T11:25:18+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0080s ]
+
+[ 2015-12-08T11:27:13+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0120s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0100s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0070s ]
+
+[ 2015-12-08T16:06:32+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-08T16:06:45+08:00 ] ::1 /yuban/index.php/Home/Order/getOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-08T16:09:19+08:00 ] ::1 /yuban/index.php/Home/Order/getOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0090s ]
+SQL: INSERT INTO `yj_mlog` (`money`,`orderId`,`ctime`,`type`,`uid`,`note`) VALUES ('100','2015120810251102','1449562159','1','2','充值') [ RunTime:0.0100s ]
+
