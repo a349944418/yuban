@@ -25,7 +25,7 @@ class OrderController extends BaseController
 		if($id) {
 			$data['notifyUrl'] = C('WEBSITE_URL').'/index.php/Home/Order/ali_status';
 			$data['title'] = L('chongzhi');
-			$data['description'] = L('chongzhi_des',array('uname' => $this->redis->Hget('Userinfo:uid'.$this->mid, 'uname'),'money' => $info['money']));
+			$data['des'] = L('chongzhi_des',array('uname' => $this->redis->Hget('Userinfo:uid'.$this->mid, 'uname'),'money' => $info['money']));
 			$this->return['data'] = $data;
 		} else {
 			$this->return['code'] = 1004;
@@ -44,4 +44,12 @@ class OrderController extends BaseController
 		F('alipay', $info);
 	}
 
+	/**
+	 * [orderSuccess description]
+	 * @return [type] [description]
+	 */
+	public function orderSuccess()
+	{
+
+	}
 }
