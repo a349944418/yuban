@@ -297,3 +297,131 @@ NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\Ba
 SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0090s ]
 SQL: INSERT INTO `yj_mlog` (`money`,`orderId`,`ctime`,`type`,`uid`,`note`) VALUES ('100','2015120810251102','1449562159','1','2','充值') [ RunTime:0.0100s ]
 
+[ 2015-12-08T17:18:58+08:00 ] ::1 /yuban/index.php/Home/Order/orderSuccess
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-08T17:19:19+08:00 ] ::1 /yuban/index.php/Home/Order/orderSuccess
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+
+[ 2015-12-08T17:19:27+08:00 ] ::1 /yuban/index.php/Home/Order/orderSuccess
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+
+[ 2015-12-08T17:19:34+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0150s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0080s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0130s ]
+
+[ 2015-12-08T17:19:37+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0100s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0090s ]
+
+[ 2015-12-08T17:20:14+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-12-08T17:20:21+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-08T17:20:59+08:00 ] ::1 /yuban/index.php/Home/Passport/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT `uid` FROM `yj_userinfo` WHERE ( mobile="18643627216" ) LIMIT 1   [ RunTime:0.0060s ]
+
+[ 2015-12-08T17:21:18+08:00 ] ::1 /yuban/index.php/Home/Order/orderSuccess
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0120s ]
+SQL: SELECT `id`,`uid`,`money`,`type` FROM `yj_mlog` WHERE ( orderId="2015120810251102" ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: UPDATE `yj_mlog` SET `type`='2' WHERE ( id=3 ) [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `yj_umoney` [ RunTime:0.0100s ]
+SQL: UPDATE `yj_umoney` SET `totalmoney`=totalmoney+100.00 WHERE ( uid=2 ) [ RunTime:0.0120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015000s ]
+
+[ 2015-12-08T17:27:30+08:00 ] ::1 /yuban/index.php/Home/Order/orderSuccess
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0740s ]
+SQL: SELECT `id`,`uid`,`money`,`type` FROM `yj_mlog` WHERE ( orderId="2015120810251102" ) LIMIT 1   [ RunTime:0.0180s ]
+
+[ 2015-12-08T17:31:45+08:00 ] ::1 /yuban/index.php/Home/Order/orderSuccess
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: Order D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_mlog` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`uid`,`money`,`status` FROM `yj_mlog` WHERE ( orderId="2015120810251102" ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: UPDATE `yj_mlog` SET `status`='2' WHERE ( id=3 ) [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `yj_umoney` [ RunTime:0.0120s ]
+SQL: SELECT `totalmoney`,`id` FROM `yj_umoney` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: INSERT INTO `yj_umoney` (`uid`,`totalmoney`) VALUES ('2','100') [ RunTime:0.0830s ]
+

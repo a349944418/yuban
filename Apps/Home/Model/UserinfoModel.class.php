@@ -145,7 +145,7 @@ class UserinfoModel extends Model
         }
         //范围搜索
         if ($search['range'] == 'yuban') {
-            if(isset(search['isfriend'])) {
+            if(isset($search['isfriend'])) {
                 if($search['isfriend']) {
                     $map['from_id'] = array('eq',$this->mid);
                     $map['type'] = array('eq', 3);

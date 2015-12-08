@@ -33,5 +33,8 @@
 		'chongzhi_des'  => '为{$uname}充值{$money}元',
 		'money_error'	=> '充值金额有误',
 		'opera_error'	=> '操作失败',
+		'orderType_error' => '订单类型出错',
+		'user_error'	=> '用户出错',
+		'orderId_null'	=> '订单id不存在',
 	);
 ?>
