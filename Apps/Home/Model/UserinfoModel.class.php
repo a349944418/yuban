@@ -165,28 +165,28 @@ class UserinfoModel extends Model
                     $follow[] = $v['to_id']; 
                 }
             } else {
-                $follow = $this->redis->sMembers('Userinfo:friend2'.$uid);
+                $follow = $this->redis->sMembers('Userinfo:friend2:'.$uid);
                 if (!count($follow)) {
                     $map['from_id'] = array('eq',$uid);
                     $map['type'] = array('in', array(2,3));
                     $res = D('friend')->getFriend($map);
                     foreach($res as $v){
                         $follow[] = $v['to_id']; 
-                        $this->redis->SADD('Userinfo:friend2'.$uid, $v['to_id']);
+                        $this->redis->SADD('Userinfo:friend2:'.$uid, $v['to_id']);
                     }
                 }               
             }
             $uids = join(',', $follow);
             $where .= ' u.uid in ("'.$uids.'") and';
         } else {
-            $follow = $this->redis->sMembers('Userinfo:friend1'.$uid);
+            $follow = $this->redis->sMembers('Userinfo:friend1:'.$uid);
             if (!count($follow)) {
                 $map['from_id'] = array('eq',$uid);
                 $map['type'] = array('in', array(1,3));
                 $res = D('friend')->getFriend($map);
                 foreach($res as $v){
                     $follow[] = $v['to_id']; 
-                    $this->redis->SADD('Userinfo:friend2'.$uid, $v['to_id']);
+                    $this->redis->SADD('Userinfo:friend1:'.$uid, $v['to_id']);
                 }
             }
             $uids = join(',', $follow);
