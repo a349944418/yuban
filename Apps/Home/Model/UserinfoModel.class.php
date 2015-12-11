@@ -4,6 +4,13 @@ use Think\Model;
 
 class UserinfoModel extends Model 
 {
+    protected $redis = '';
+
+    public function _initialize()
+    {
+        import("Common.Util.RedisPool");
+        $this->redis = \RedisPool::getconnect();
+    }
 
 	/**
 	 * 获取uid
@@ -88,7 +95,7 @@ class UserinfoModel extends Model
      * 搜索用户
      * @return [type] [description]
      */
-    public function getSearchList($field = '*', $search = '')
+    public function getSearchList($uid, $field = '*', $search = '', $whereRand = '')
     {
         $where = $join = '';
         //昵称筛选
@@ -135,7 +142,7 @@ class UserinfoModel extends Model
         //音频视频筛选
         if ($search['intro'] == 1) {
             $where .= ' u.audio_profile != 0 and';
-        } else {
+        } elseif ($search['intro'] == 2) {
             $where .= ' u.video_profile != 0 and';
         }
         //标签搜索
@@ -147,10 +154,10 @@ class UserinfoModel extends Model
         if ($search['range'] == 'yuban') {
             if(isset($search['isfriend'])) {
                 if($search['isfriend']) {
-                    $map['from_id'] = array('eq',$this->mid);
+                    $map['from_id'] = array('eq',$uid);
                     $map['type'] = array('eq', 3);
                 } else {
-                    $map['from_id'] = array('eq',$this->mid);
+                    $map['from_id'] = array('eq',$uid);
                     $map['type'] = array('eq', 2);
                 }
                 $res = D('friend')->getFriend($map);
@@ -158,28 +165,28 @@ class UserinfoModel extends Model
                     $follow[] = $v['to_id']; 
                 }
             } else {
-                $follow = $this->redis->sMembers('Userinfo:friend2'.$this->mid);
+                $follow = $this->redis->sMembers('Userinfo:friend2'.$uid);
                 if (!count($follow)) {
-                    $map['from_id'] = array('eq',$this->mid);
+                    $map['from_id'] = array('eq',$uid);
                     $map['type'] = array('in', array(2,3));
                     $res = D('friend')->getFriend($map);
                     foreach($res as $v){
                         $follow[] = $v['to_id']; 
-                        $this->redis->SADD('Userinfo:friend2'.$this->mid, $v['to_id']);
+                        $this->redis->SADD('Userinfo:friend2'.$uid, $v['to_id']);
                     }
                 }               
             }
             $uids = join(',', $follow);
             $where .= ' u.uid in ("'.$uids.'") and';
         } else {
-            $follow = $this->redis->sMembers('Userinfo:friend1'.$this->mid);
+            $follow = $this->redis->sMembers('Userinfo:friend1'.$uid);
             if (!count($follow)) {
-                $map['from_id'] = array('eq',$this->mid);
+                $map['from_id'] = array('eq',$uid);
                 $map['type'] = array('in', array(1,3));
                 $res = D('friend')->getFriend($map);
                 foreach($res as $v){
                     $follow[] = $v['to_id']; 
-                    $this->redis->SADD('Userinfo:friend2'.$this->mid, $v['to_id']);
+                    $this->redis->SADD('Userinfo:friend2'.$uid, $v['to_id']);
                 }
             }
             $uids = join(',', $follow);
@@ -187,7 +194,7 @@ class UserinfoModel extends Model
         }
 
 
-        $where .= ' u.uname != ""' ;
+        $where .= ' u.uname != "" and u.uid != '.$uid.$whereRand ;
 
         if($search['pageSize']) {
             $data['index'] = $search['index'] ? $search['index'] : 1;
@@ -200,6 +207,11 @@ class UserinfoModel extends Model
 
         $data['totalCount'] = M('userinfo as u')->where($where)->count('u.uid');
         $data['ulist'] = M('userinfo as u')->join($join)->field($field)->where($where)->limit($limit)->select();
+        if($search['index']) {
+            $data['index'] = $search['index'];
+            $data['pageSize'] = $search['pageSize'];
+        }
+        //dump(M('userinfo as u')->getLastSql());
 
         return $data;
     }

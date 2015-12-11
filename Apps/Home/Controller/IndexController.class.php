@@ -14,7 +14,7 @@ class IndexController extends BaseController
         // echo $this->redis->FLUSHALL();
         //dump($this->redis->del('Userinfo:uid1'));
         // dump(A('Home/User')->getUserinfoData(2));
-        dump($this->redis->del('Userinfo:uid11'));
+        //dump($this->redis->del('Userinfo:uid11'));
         dump($this->redis->get('Token:uid2'));
         // dump($this->redis->HGetall('Userinfo:uid2'));
         // dump($this->redis->del('Userinfo:uid3'));

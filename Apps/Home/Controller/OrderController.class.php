@@ -40,7 +40,7 @@ class OrderController extends BaseController
 	 */
 	public function ali_status()
 	{
-		$info = I('post.');
+		$info = $_REQUEST;
 		F('alipay', $info);
 	}
 

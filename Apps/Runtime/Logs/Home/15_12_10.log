@@ -1,0 +1,296 @@
+[ 2015-12-10T15:52:30+08:00 ] ::1 /yuban/index.php/Home/Index/test
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.024001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.025001s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: SELECT u.uid FROM yj_userinfo as u INNER JOIN yj_user_tags as ut ON u.uid = ut.uid  WHERE ( ut.tid = 1 and u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0070s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.uid in (1,3,2,4,9) and u.sex=1 )  [ RunTime:0.0060s ]
+
+[ 2015-12-10T15:53:31+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+ERR: Think\Model:getUserList方法不存在！
+
+[ 2015-12-10T15:58:13+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 95 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 142 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 147 行.
+
+[ 2015-12-10T16:02:20+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 102 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0350s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.level >=1 and u.level <=10 and u.city = 372 and u.cur_language=1 and u.audio_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.level >=1 and u.level <=10 and u.city = 372 and u.cur_language=1 and u.audio_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 0,10   [ RunTime:0.0140s ]
+
+[ 2015-12-10T16:04:02+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0590s ]
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 102 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0120s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.level >=1 and u.level <=10 and u.city = 372 and u.cur_language=1 and u.audio_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.level >=1 and u.level <=10 and u.city = 372 and u.cur_language=1 and u.audio_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 0,10   [ RunTime:0.0220s ]
+
+[ 2015-12-10T16:04:25+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0468s ]
+NOTIC: [8] Undefined index: uname D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 102 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0000s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.level >=1 and u.level <=10 and u.cur_language=1 and u.audio_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.level >=1 and u.level <=10 and u.cur_language=1 and u.audio_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 0,10   [ RunTime:0.0980s ]
+
+[ 2015-12-10T16:07:32+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+
+[ 2015-12-10T16:07:55+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0478s ]
+NOTIC: [8] Undefined index: sex D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 107 行.
+NOTIC: [8] Undefined index: min_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 111 行.
+NOTIC: [8] Undefined index: max_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 128 行.
+NOTIC: [8] Undefined index: time D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 133 行.
+NOTIC: [8] Undefined index: price D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 138 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 143 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.2536s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0780s ]
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 199 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0156s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.video_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0624s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.video_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 )  [ RunTime:0.0834s ]
+
+[ 2015-12-10T16:09:04+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: sex D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 107 行.
+NOTIC: [8] Undefined index: min_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 111 行.
+NOTIC: [8] Undefined index: max_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 128 行.
+NOTIC: [8] Undefined index: time D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 133 行.
+NOTIC: [8] Undefined index: price D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 138 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 143 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0140s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 199 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.video_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.video_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0080s ]
+
+[ 2015-12-10T16:09:23+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: sex D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 107 行.
+NOTIC: [8] Undefined index: min_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 111 行.
+NOTIC: [8] Undefined index: max_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 128 行.
+NOTIC: [8] Undefined index: time D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 133 行.
+NOTIC: [8] Undefined index: price D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 138 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 143 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0120s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 199 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.video_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.video_profile != 0 and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 )  [ RunTime:0.0120s ]
+
+[ 2015-12-10T16:15:01+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0160s ]
+NOTIC: [8] Undefined index: sex D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 107 行.
+NOTIC: [8] Undefined index: min_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 111 行.
+NOTIC: [8] Undefined index: max_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 128 行.
+NOTIC: [8] Undefined index: time D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 133 行.
+NOTIC: [8] Undefined index: price D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 138 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0110s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 199 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 )  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 97 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 97 行.
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SELECT * FROM `yj_userinfo` WHERE ( uid=11 ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `yj_user_language` [ RunTime:0.0120s ]
+SQL: SELECT `lid`,`type`,`self_level`,`sys_level` FROM `yj_user_language` WHERE ( uid=11 )  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `yj_language` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `yj_user_tags` [ RunTime:0.0120s ]
+SQL: SELECT `tid` FROM `yj_user_tags` WHERE ( uid=11 )  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 97 行.
+
+[ 2015-12-10T17:09:30+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0190s ]
+NOTIC: [8] Undefined index: sex D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 107 行.
+NOTIC: [8] Undefined index: min_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 111 行.
+NOTIC: [8] Undefined index: max_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 128 行.
+NOTIC: [8] Undefined index: time D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 133 行.
+NOTIC: [8] Undefined index: price D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 138 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 143 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 145 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: range D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `yj_friend` [ RunTime:0.0120s ]
+SQL: SELECT `to_id` FROM `yj_friend` WHERE `from_id` = '2' AND `type` IN (1,3) ORDER BY id desc  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 199 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.uid not  in ("1,4,3") and u.uname != "" and u.uid != 2 )  [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: index D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 210 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 97 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 97 行.
+NOTIC: [8] Undefined offset: 0 D:\Apache\htdocs\yuban\Apps\Home\Controller\SquareController.class.php 第 97 行.
+
+[ 2015-12-10T17:13:01+08:00 ] ::1 /yuban/index.php/Home/Square/search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\Apache\htdocs\yuban\Apps\Home\Controller\BaseController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: sex D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 107 行.
+NOTIC: [8] Undefined index: min_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 111 行.
+NOTIC: [8] Undefined index: max_level D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: city D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 119 行.
+NOTIC: [8] Undefined index: province D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 121 行.
+NOTIC: [8] Undefined index: country D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 123 行.
+NOTIC: [8] Undefined index: lid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 128 行.
+NOTIC: [8] Undefined index: time D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 133 行.
+NOTIC: [8] Undefined index: price D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 138 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 143 行.
+NOTIC: [8] Undefined index: intro D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 145 行.
+NOTIC: [8] Undefined index: tid D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 149 行.
+NOTIC: [8] Undefined index: pageSize D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 199 行.
+SQL: SHOW COLUMNS FROM `yj_userinfo` [ RunTime:0.0170s ]
+SQL: SELECT COUNT(u.uid) AS tp_count FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.uid in ("1,3,4,13") and u.uname != "" and u.uid != 2 ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT u.uid FROM yj_userinfo as u WHERE (  u.search_key like "%zi%" and u.uid in ("1,3,4,13") and u.uname != "" and u.uid != 2 )  [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: index D:\Apache\htdocs\yuban\Apps\Home\Model\UserinfoModel.class.php 第 210 行.
+
