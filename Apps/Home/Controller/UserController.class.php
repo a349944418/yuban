@@ -390,7 +390,7 @@ Class UserController extends BaseController
 			$this->goJson($this->return);
 		}
 		D('friend')->addUser($this->mid, $uid, 1);
-		$this->redis->SADD('Userinfo:friend1'.$this->mid, $uid);
+		$this->redis->SADD('Userinfo:friend1:'.$this->mid, $uid);
 		$this->goJson($this->return);
 	}
 
@@ -401,16 +401,19 @@ Class UserController extends BaseController
 	public function friendList()
 	{
 		$data['index'] = I('post.index') ? I('post.index') : 1;
+		$ftype = I('post.type') == 1 ? 1 : 2;  //1为关注的人，2为聊天过的人
 		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
-		$follow = $this->redis->sMembers('Userinfo:friend2'.$this->mid);
+		$follow = $this->redis->sMembers('Userinfo:friend'.$ftype.':'.$this->mid);
 		rsort($follow);
 		if (!count($follow)) {
 			$map['from_id'] = array('eq',$this->mid);
-			$map['type'] = array('in', array(2,3));
+			$uArray = array(3);
+			$uArray[] = $ftype;
+			$map['type'] = array('in', $uArray);
 			$res = D('friend')->getFriend($map);
 			foreach($res as $v){
 				$follow[] = $v['to_id']; 
-				$this->redis->SADD('Userinfo:friend2'.$this->mid, $v['to_id']);
+				$this->redis->SADD('Userinfo:friend'.$ftype.':'.$this->mid, $v['to_id']);
 			}
 		}
 		$start = ($data['index']-1)*$data['pageSize'];

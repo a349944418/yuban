@@ -19,8 +19,8 @@ Class ChatController extends BaseController
 		//将对方加入关注表
 		D('friend')->addUser($post['from_id'], $post['to_id'], 2);
 		D('friend')->addUser($post['to_id'], $post['from_id'], 2);
-		$this->redis->SADD('Userinfo:friend2'.$post['from_id'], $post['to_id']);
-		$this->redis->SADD('Userinfo:friend2'.$post['to_id'], $post['from_id']);
+		$this->redis->SADD('Userinfo:friend2:'.$post['from_id'], $post['to_id']);
+		$this->redis->SADD('Userinfo:friend2:'.$post['to_id'], $post['from_id']);
 		//将对方加入聊过的列表，然后进行聊天次数累加
 		$res1 = $this->redis->SADD('Userinfo:spoken'.$post['from_id'], $post['to_id']);
 		if($res1){
