@@ -437,6 +437,9 @@ Class UserController extends BaseController
 				$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 				$tmp['headimg'] = $tmp['headimg'][0]['url'];
 				$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+				$tmp['first_letter'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'first_letter');
+				$tmp['voipaccount'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'voipaccount');
+				$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
 				$data['datalist'][] = $tmp;
 			}
 		}

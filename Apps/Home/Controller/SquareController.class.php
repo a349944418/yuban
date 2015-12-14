@@ -96,6 +96,7 @@ Class SquareController extends BaseController
                     $tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
                     $tmp['headimg'] = $tmp['headimg'][0]['url'];
                     $tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+					$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
                     $data['datalist'][] = $tmp;
                 } else {
                     break;
@@ -139,6 +140,7 @@ Class SquareController extends BaseController
 					$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 					$tmp['headimg'] = $tmp['headimg'][0]['url'];
 					$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+					$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
 					$data['datalist'][] = $tmp;
 				} else {
 					break;
@@ -208,6 +210,7 @@ Class SquareController extends BaseController
 					$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 					$tmp['headimg'] = $tmp['headimg'][0]['url'];
 					$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+					$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
 					$data['datalist'][] = $tmp;
 				} else {
 					break;
@@ -239,6 +242,7 @@ Class SquareController extends BaseController
 		$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 		$tmp['headimg'] = $tmp['headimg'][0]['url'];
 		$tmp['voipaccount'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'voipaccount');
+		$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
 		$this->return['data'] = $tmp;
 		$this->goJson($this->return);
 	}
@@ -285,6 +289,7 @@ Class SquareController extends BaseController
 					$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
 					$tmp['headimg'] = $tmp['headimg'][0]['url'];
 					$tmp['voipaccount'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'voipaccount');
+					$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
 					$data['datalist'][] = $tmp;
 				} else {
 					break;
