@@ -121,7 +121,14 @@ Class SquareController extends BaseController
 		$data['totalCount'] = D('userinfo')->count('uid');
 		$data['totalCount'] = $data['totalCount'] >= 100 ? 100 : $data['totalCount'];
 		$limit = $start+$data['pageSize']-1 > 99 ? 99-$start : $data['pageSize'];
-		$res = D('userinfo')->field('uid')->order('level desc')->limit($start, $limit)->select();
+		$sortSQL = '';
+		if( I('post.sort') == 'long' ) {
+			$sortSQL = 'spoken_long desc ,';
+		} elseif ( I('post.sort') == 'num' ) {
+			$sortSQL = 'spoken_num desc ,';
+		}
+		$sortSQL .= 'level desc';
+		$res = D('userinfo')->field('uid')->order($sortSQL)->limit($start, $limit)->select();
 		if($res) {
 			foreach( $res as $v){
 				if($v) {
