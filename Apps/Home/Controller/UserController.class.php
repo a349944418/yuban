@@ -386,11 +386,39 @@ Class UserController extends BaseController
 		$uid = I('post.uid');
 		if($this->mid == $uid) {
 			$this->return['code'] = 1003;
-			$this->goJson['message'] = L('follow_me');
+			$this->return['message'] = L('follow_me');
 			$this->goJson($this->return);
 		}
 		D('friend')->addUser($this->mid, $uid, 1);
 		$this->redis->SADD('Userinfo:friend1:'.$this->mid, $uid);
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 取消关注接口
+	 * @return [type] [description]
+	 */
+	public function unFriend()
+	{
+		$uid = I('post.uid');
+		if($this->mid == $uid) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('unfollow_me');
+			$this->goJson($this->return);
+		}
+		$res = D('friend')->field('id, type')->where('from_id='.$this->mid.' and to_id='.$uid)->find();
+		if($res['type'] == 3) {
+			$info['type'] = 2;
+			D('friend') -> where('id='.$res['id'])->save($info);
+			$this->redis->sRem('Userinfo:friend1:'.$this->mid,$uid);
+		} elseif($res['type'] == 1) {
+			D('friend')->where('id='.$res['id']) ->delete();
+			$this->redis->sRem('Userinfo:friend1:'.$this->mid,$uid);
+		} else {
+			$this->return['code'] = 1004;
+			$this->return['message'] = L('param_error');
+			$this->goJson($this->return);
+		}
 		$this->goJson($this->return);
 	}
 

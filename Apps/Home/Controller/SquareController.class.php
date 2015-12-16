@@ -148,6 +148,8 @@ Class SquareController extends BaseController
 					$tmp['headimg'] = $tmp['headimg'][0]['url'];
 					$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
 					$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
+					$tmp['spoken_long'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'spoken_long');
+					$tmp['spoken_num'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'spoken_num');
 					$data['datalist'][] = $tmp;
 				} else {
 					break;
