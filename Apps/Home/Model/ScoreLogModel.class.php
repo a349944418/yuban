@@ -21,6 +21,7 @@ class ScoreLogModel extends Model
 		foreach($userList as $v) {
 			$info['uid'] = $v;
 			$this->save($info);
+			D('userinfo') -> where('uid='.$v)->setInc('grow_score', $score);
 		}
 	}
 }

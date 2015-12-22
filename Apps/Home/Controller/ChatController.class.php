@@ -60,6 +60,8 @@ Class ChatController extends BaseController
 		$score = $res['type'] == 1 ? $score['achat_score'] : $score['vchat_score'];
 		$score_value = $score*$timelong; //分值
 		D('scoreLog')->saveLog($score_value, array($res['from_id'], $res['to_id']), $res['type']);
+		$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'grow_score', $score_value);
+		$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'grow_score', $score_value);
 		//扣费
 		$price = $this->redis->HGET('Userinfo:uid'.$res['to_id'], 'price');
 		$fmoney = D('umoney')->field('id, totalmoney, not_tixian')where('uid='.$res['from_id'])->find();

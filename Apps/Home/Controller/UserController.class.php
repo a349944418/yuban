@@ -538,6 +538,27 @@ Class UserController extends BaseController
 	}
 
 	/**
+	 * 用户成长值
+	 * @return [type] [description]
+	 */
+	public function userScore()
+	{
+		$data['totalScore'] = $this->redis->HGET('Userinfo:uid'.$this->mid, 'grow_score');
+		$data['index'] = I('post.index') ? I('post.index') : 1;
+		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
+		$start = ($data['index']-1)*$data['pageSize'];
+		$data['totalCount'] = D('scoreLog')->where('uid='.$this->mid)->count('id');
+		$res = D('scoreLog')->field('ctime, type, score')->where('uid='.$this->mid)->order('id desc')->limit($start, $data['pageSize'])->select();
+		foreach($res as $k=>$v) {
+			$res[$k]['type'] = $v == 1 ? '语音聊天' : '视频聊天';
+		}
+		$data['datalist'] = $res;
+
+		$this->return['data'] = $data;
+		$this->goJson($this->return);
+	}
+
+	/**
 	 * 充值取现记录
 	 * @return [type] [description]
 	 */

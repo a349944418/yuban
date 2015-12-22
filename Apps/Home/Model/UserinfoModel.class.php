@@ -88,6 +88,7 @@ class UserinfoModel extends Model
         }
         $res['tags'] = json_encode($usertags, JSON_UNESCAPED_UNICODE);
         $res['level'] = round($res['level']);
+
 		return $res;
 	}
 
