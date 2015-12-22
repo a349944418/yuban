@@ -1,0 +1,58 @@
+<extend name="Public/base"/>
+
+<block name="sidebar"></block>
+
+<block name="style">
+    <style>
+        body{padding: 0}
+    </style>
+</block>
+
+<block name="body">
+    <!-- 主体 -->
+    <div id="indexMain" class="index-main">
+       <!-- 插件块 -->
+       <div class="container-span" style="margin-top: 100px;">
+            <div class="container-span top-columns cf">
+                <dl class="show-num-mod">
+                    <dt><i class="count-icon user-count-icon"></i></dt>
+                    <dd>
+                        <strong>{$info.user}</strong>
+                        <span>用户数</span>
+                    </dd>
+                </dl>
+                <dl class="show-num-mod">
+                    <dt><i class="count-icon doc-modal-icon"></i></dt>
+                    <dd>
+                        <strong>{$info.model}</strong>
+                        <span>文档模型</span>
+                    </dd>
+                </dl>
+                <dl class="show-num-mod">
+                    <dt><i class="count-icon category-count-icon"></i></dt>
+                    <dd>
+                        <strong>{$info.category}</strong>
+                        <span>标签数</span>
+                    </dd>
+                </dl>
+            </div>
+       </div>
+    </div>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    /* 插件块关闭操作 */
+    $(".title-opt .wm-slide").each(function(){
+        $(this).click(function(){
+            $(this).closest(".columns-mod").find(".bd").toggle();
+            $(this).find("i").toggleClass("mod-up");
+        });
+    })
+    $(function(){
+        // $('#main').attr({'id': 'indexMain','class': 'index-main'});
+        $('.copyright').html('<div class="fl">感谢使用语加管理平台</div><div class="fr">V{$Think.const.ONETHINK_VERSION}</div>');
+        $('.sidebar').remove();
+    })
+</script>
+</block>

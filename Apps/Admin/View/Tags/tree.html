@@ -1,0 +1,28 @@
+<volist name="tree" id="list">
+	<dl class="cate-item">
+		<dt class="cf">
+			<form action="{:U('edit')}" method="post">
+				<div class="btn-toolbar opt-btn cf">
+					<a title="编辑" href="{:U('edit?id='.$list['tid'].'&pid='.$list['pid'])}">编辑</a>
+					<a title="删除" href="{:U('remove?id='.$list['tid'])}" class="confirm ajax-get">删除</a>
+				</div>
+				<div class="fold"><i></i></div>
+				<div class="order">{$list['status']?'是':'否'}</div>
+				<div class="name">
+					<span class="tab-sign"></span>
+					<input type="hidden" name="tid" value="{$list.tid}">
+					<input type="text" name="tag_name" class="text" value="{$list.tag_name}">
+					<a class="add-sub-cate" title="添加子分类" href="{:U('add?pid='.$list['tid'])}">
+						<i class="icon-add"></i>
+					</a>
+					<span class="help-inline msg"></span>
+				</div>
+			</form>
+		</dt>
+		<notempty name="list['_']">
+			<dd>
+				{:R('Tags/tree', array($list['_']))}
+			</dd>
+		</notempty>
+	</dl>
+</volist>

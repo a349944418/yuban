@@ -75,6 +75,43 @@ Class UserController extends BaseController
 	}
 
 	/**
+	 * 通过voip获取用户信息
+	 * @return [type] [description]
+	 */
+	public function voipToInfo()
+	{
+		$voipaccount = I('post.voipaccount');
+		if($voipaccount) {
+			$tmp['uid'] = D('userinfo')->where('voipAccount="'.$voipaccount.'"')->getField('uid');
+		}
+
+		if(!$voipaccount || !$tmp['uid']) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('param_error');
+			$this->goJson($this->return);
+		}
+
+		$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
+		$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
+		$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
+		$location = explode('/', $location);
+		$tmp['location'] = $location[0].' '.$location[1];
+		$tmp['language'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'language'), true);
+		$tmp['tags'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'tags'), true);
+		$tmp['level'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'level');
+		$tmp['headimg'] = json_decode($this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'headimg'), true);
+		$tmp['headimg'] = $tmp['headimg'][0]['url'];
+		$tmp['intro'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'intro');
+		//$tmp['first_letter'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'first_letter');
+		//$tmp['voipaccount'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'voipaccount');
+		$tmp['sex'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'sex');
+
+		$this->return['data'] = $tmp;
+
+		$this->goJson($this->return);
+	}
+
+	/**
 	 * 获取瞬间 分页
 	 * @return [type] [description]
 	 */
