@@ -76,15 +76,15 @@ Class ChatController extends BaseController
 		$mlog['uid'] = $res['from_id'];
 		$mlog['ctime'] = time();
 		$mlog['type'] = 3；
-		$mlog['note'] = '消费';
+		$mlog['note'] = '聊天消费'.$mlog['money'].'元';
 		$mlog['orderId'] = $res['to_id'];
 		D('mlog')->add($mlog);
 		//赚钱计费
 		D('umoney') -> where('uid='.$res['to_id']) -> setInc('totalmoney', $price);
 		$mlog['uid'] = $res['to_id'];
-		$mlog['orderId'] = $res['from_id'];
+		$mlog['orderId'] = $res['from_id'].$mlog['money'].'元';
 		$mlog['type'] = 4;
-		$mlog['note'] = '聊天赚钱';
+		$mlog['note'] = '聊天收入';
 		D('mlog')->add($mlog);
 
 		$this->goJson($this->return);

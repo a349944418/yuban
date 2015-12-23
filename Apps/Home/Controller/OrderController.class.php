@@ -20,7 +20,7 @@ class OrderController extends BaseController
 		$info['ctime'] = time();
 		$info['type'] = 1;
 		$info['uid'] = $this->mid;
-		$info['note'] = '充值';
+		$info['note'] = '充值'.$info['money'].'元';
 		$id = D('mlog')->add($info);
 		if($id) {
 			$data['notifyUrl'] = C('WEBSITE_URL').'/index.php/Home/Order/ali_status';

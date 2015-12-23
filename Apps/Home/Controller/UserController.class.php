@@ -548,9 +548,9 @@ Class UserController extends BaseController
 		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
 		$start = ($data['index']-1)*$data['pageSize'];
 		$data['totalCount'] = D('scoreLog')->where('uid='.$this->mid)->count('id');
-		$res = D('scoreLog')->field('ctime, type, score')->where('uid='.$this->mid)->order('id desc')->limit($start, $data['pageSize'])->select();
+		$res = D('scoreLog')->field('ctime, type, score, info')->where('uid='.$this->mid)->order('id desc')->limit($start, $data['pageSize'])->select();
 		foreach($res as $k=>$v) {
-			$res[$k]['type'] = $v == 1 ? '语音聊天' : '视频聊天';
+			$res[$k]['score'] = $v['score'] > 0 ? '+'.$v['score'] : $v['score'];
 		}
 		$data['datalist'] = $res;
 

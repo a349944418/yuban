@@ -22,7 +22,6 @@ class QuserController extends AdminController {
     		$v['language_name'] = $all_language[$v['cur_language']];
     		$v['uname'] = $v['uname'] ? $v['uname'] : '<font style="color:red">第三方未绑定用户</font>';
     	}
-    	//dump($list);
         $this->assign('_list', $list);
         $this->meta_title = '用户列表';
         $this->display();
