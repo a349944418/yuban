@@ -570,12 +570,15 @@ Class UserController extends BaseController
 		$data['not_tixian'] = $data['not_tixian'] ? $data['not_tixian'] : 0;
 		$data['can_use'] = $data['totalmoney']-$data['not_tixian'];
 		//取现，充值记录
-		$data['type'] = I('post.type') ? I('post.type') : 1;
+		$wheretype = '';
+		if( I('post.type') ) {
+			$wheretype = ' and type ='.I('post.type');
+		}
 		$data['index'] = I('post.index') ? I('post.index') : 1;
 		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
 		$start = ($data['index']-1)*$data['pageSize'];
-		$data['totalCount'] = D('mlog')->where('type='.$data['type'].' and uid='.$this->mid )->count('id');
-		$res = D('mlog')->field('money, ctime, note')->where('type='.$data['type'].' and uid='.$this->mid )->order('id desc')->limit($start, $data['pageSize'])->select();
+		$data['totalCount'] = D('mlog')->where('uid='.$this->mid.$wheretype)->count('id');
+		$res = D('mlog')->field('money, ctime, note, type')->where('uid='.$this->mid.$wheretype )->order('id desc')->limit($start, $data['pageSize'])->select();
 		$data['datalist'] = $res;
 
 		$this->return['data'] = $data;

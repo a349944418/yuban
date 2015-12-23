@@ -6,4 +6,4 @@ Desktop.ini
 /Apps/Common/Conf/config.php
 /Apps/Home/Conf/config.php
 /Apps/Common/Util/RedisPool.class.php
-/Apps/Common/Runtime
+/Apps/Runtime
