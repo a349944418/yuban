@@ -32,10 +32,14 @@
 		'Adtype_null'   => '广告位置出错',
 		'chongzhi'		=> '语加充值',
 		'chongzhi_des'  => '为{$uname}充值{$money}元',
-		'money_error'	=> '充值金额有误',
+		'money_error'	=> '金额有误',
 		'opera_error'	=> '操作失败',
 		'orderType_error' => '订单类型出错',
 		'user_error'	=> '用户出错',
 		'orderId_null'	=> '订单id不存在',
+		'alipay_num_error' => '支付宝账号必填',
+		'alipay_name_error' => '支付宝用户名称必填',
+		'wait_moment'	=> '已提交，请等待客服审核',
+		'ali_info_error' => '支付宝信息暂未通过审核,请通过后再来提现',
 	);
 ?>

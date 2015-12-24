@@ -577,8 +577,8 @@ Class UserController extends BaseController
 		$data['index'] = I('post.index') ? I('post.index') : 1;
 		$data['pageSize'] = I('post.pageSize') ? I('post.pageSize') : 10;
 		$start = ($data['index']-1)*$data['pageSize'];
-		$data['totalCount'] = D('mlog')->where('uid='.$this->mid.$wheretype)->count('id');
-		$res = D('mlog')->field('money, ctime, note, type')->where('uid='.$this->mid.$wheretype )->order('id desc')->limit($start, $data['pageSize'])->select();
+		$data['totalCount'] = D('mlog')->where('status=2 and uid='.$this->mid.$wheretype)->count('id');
+		$res = D('mlog')->field('money, ctime, note, type')->where('status=2 and uid='.$this->mid.$wheretype )->order('id desc')->limit($start, $data['pageSize'])->select();
 		$data['datalist'] = $res;
 
 		$this->return['data'] = $data;

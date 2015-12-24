@@ -45,7 +45,7 @@ class OrderController extends BaseController
 	}
 
 	/**
-	 * [orderSuccess description]
+	 * [支付成功]
 	 * @return [type] [description]
 	 */
 	public function orderSuccess()
@@ -84,6 +84,39 @@ class OrderController extends BaseController
 			D('umoney') -> add($info);
 		}
 
+		$this->goJson($this->return);
+	}
+
+	/**
+	 * 提现订单
+	 * @return [type] [description]
+	 */
+	public function tixian()
+	{
+		$info['money'] = I('post.money');
+		$umoney = D('umoney')->field('totalmoney, not_tixian')->where('uid='.$this->mid)->find();
+		if($info['money'] < 100 || $info['money'] > ($umoney['totalmoney']-$umoney['not_tixian']) ) {
+			$this->return['code'] = 1003;
+			$this->return['message'] = L('money_error');
+			$this->goJson($this->return);
+		}
+		$map['uid'] = $this->mid;
+		$map['is_del'] = 0;
+		$ali_info = D('userAlipay') -> where($map) -> getField('id');
+		if(!$ali_info) {
+			$this->return['code'] = 1004;
+			$this->return['message'] = L('ali_info_error');
+			$this->goJson($this->return);
+		}
+
+		$info['orderId'] = build_order_no();
+		$info['ctime'] = time();
+		$info['type'] = 3;
+		$info['uid'] = $this->mid;
+		$info['note'] = '提现'.$info['money'].'元';
+		$id = D('mlog')->add($info);
+		D('umoney')->where('uid='.$this->mid)->setInc('not_tixian', $info['money']);
+		$this->return['message'] = L('wait_moment');
 		$this->goJson($this->return);
 	}
 }

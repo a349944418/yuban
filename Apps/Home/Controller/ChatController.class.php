@@ -39,53 +39,58 @@ Class ChatController extends BaseController
 	 */
 	public function chatEnd()
 	{
-		$info['etime'] = time();
 		$cid = I('post.cid');
-		//保存聊天信息,并将两人从聊天用于队列中删除
-		$res = D('chat')->field('from_id, to_id, stime, type')->where('cid='.$cid)->find();
-		D('chat')->where('cid='.$cid)->save($info);
-		$this->redis->SREM('Userinfo:chating', $res['from_id']);
-		$this->redis->SREM('Userinfo:chating', $res['to_id']);
-		$timelong_seconed = ($info['etime']-$res['stime']);  // 聊天时长（秒）
-		//将聊天时长分别加入两人信息中
-		D('userinfo')->where('uid='.$res['from_id'].' or uid='.$res['to_id'])->setInc('spoken_long', $timelong_seconed);
-		//更新redis缓存
-		$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'spoken_long', $timelong_seconed);
-		$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'spoken_long', $timelong_seconed);
-		$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'spoken_num', 1);
-		$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'spoken_num', 1);
-		//写入得分记录
-		$timelong = floor($timelong_seconed/60);
-		$score = json_decode($this->redis->GET('score_setting'), true);
-		$score = $res['type'] == 1 ? $score['achat_score'] : $score['vchat_score'];
-		$score_value = $score*$timelong; //分值
-		D('scoreLog')->saveLog($score_value, array($res['from_id'], $res['to_id']), $res['type']);
-		$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'grow_score', $score_value);
-		$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'grow_score', $score_value);
-		//扣费
-		$price = $this->redis->HGET('Userinfo:uid'.$res['to_id'], 'price');
-		$fmoney = D('umoney')->field('id, totalmoney, not_tixian')where('uid='.$res['from_id'])->find();
-		if($fmoney['totalmoney'] - $price >= $fmoney['not_tixian']) {
-			D('umoney') -> where('id='.$fmoney['id']) -> setDec('totalmoney', $price);
-		} else {
-			$fmoneyInfo['totalmoney'] = $fmoney['totalmoney'] - $price;
-			$fmoneyInfo['not_tixian'] = $fmoneyInfo['totalmoney'] > 0 ? $fmoneyInfo['totalmoney'] : 0;
-			D('umoney') -> where('id='.$fmoney['id']) -> save($fmoneyInfo);
-		}
-		$mlog['money'] = round(( $price / 60 ) * $timelong_seconed, 2);
-		$mlog['uid'] = $res['from_id'];
-		$mlog['ctime'] = time();
-		$mlog['type'] = 3；
-		$mlog['note'] = '聊天消费'.$mlog['money'].'元';
-		$mlog['orderId'] = $res['to_id'];
-		D('mlog')->add($mlog);
-		//赚钱计费
-		D('umoney') -> where('uid='.$res['to_id']) -> setInc('totalmoney', $price);
-		$mlog['uid'] = $res['to_id'];
-		$mlog['orderId'] = $res['from_id'].$mlog['money'].'元';
-		$mlog['type'] = 4;
-		$mlog['note'] = '聊天收入';
-		D('mlog')->add($mlog);
+		//判断该聊天是否已经完成，如完成，直接跳出，不做任何处理
+		$zetime = D('chat')->where('cid='.$cid)->getField('etime');
+		if(!$zetime) {
+			$info['etime'] = time();
+			//保存聊天信息,并将两人从聊天用于队列中删除
+			$res = D('chat')->field('from_id, to_id, stime, type')->where('cid='.$cid)->find();
+			D('chat')->where('cid='.$cid)->save($info);
+			$this->redis->SREM('Userinfo:chating', $res['from_id']);
+			$this->redis->SREM('Userinfo:chating', $res['to_id']);
+			$timelong_seconed = ($info['etime']-$res['stime']);  // 聊天时长（秒）
+			//将聊天时长分别加入两人信息中
+			D('userinfo')->where('uid='.$res['from_id'].' or uid='.$res['to_id'])->setInc('spoken_long', $timelong_seconed);
+			//更新redis缓存
+			$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'spoken_long', $timelong_seconed);
+			$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'spoken_long', $timelong_seconed);
+			$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'spoken_num', 1);
+			$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'spoken_num', 1);
+			//写入得分记录
+			$timelong = floor($timelong_seconed/60);
+			$score = json_decode($this->redis->GET('score_setting'), true);
+			$score = $res['type'] == 1 ? $score['achat_score'] : $score['vchat_score'];
+			$score_value = $score*$timelong; //分值
+			D('scoreLog')->saveLog($score_value, array($res['from_id'], $res['to_id']), $res['type']);
+			$this->redis->HINCRBY('Userinfo:uid'.$res['from_id'], 'grow_score', $score_value);
+			$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'grow_score', $score_value);
+			//扣费
+			$price = $this->redis->HGET('Userinfo:uid'.$res['to_id'], 'price');
+			$fmoney = D('umoney')->field('id, totalmoney, not_tixian')where('uid='.$res['from_id'])->find();
+			if($fmoney['totalmoney'] - $price >= $fmoney['not_tixian']) {
+				D('umoney') -> where('id='.$fmoney['id']) -> setDec('totalmoney', $price);
+			} else {
+				$fmoneyInfo['totalmoney'] = $fmoney['totalmoney'] - $price;
+				$fmoneyInfo['not_tixian'] = $fmoneyInfo['totalmoney'] > 0 ? $fmoneyInfo['totalmoney'] : 0;
+				D('umoney') -> where('id='.$fmoney['id']) -> save($fmoneyInfo);
+			}
+			$mlog['money'] = round(( $price / 60 ) * $timelong_seconed, 2);
+			$mlog['status'] = 2;
+			$mlog['uid'] = $res['from_id'];
+			$mlog['ctime'] = time();
+			$mlog['type'] = 3；
+			$mlog['note'] = '聊天消费'.$mlog['money'].'元';
+			$mlog['orderId'] = $cid;
+			D('mlog')->add($mlog);
+			//赚钱计费
+			D('umoney') -> where('uid='.$res['to_id']) -> setInc('totalmoney', $price);
+			$mlog['uid'] = $res['to_id'];
+			$mlog['orderId'] = $cid;
+			$mlog['type'] = 4;
+			$mlog['note'] = '聊天收入'.$mlog['money'].'元';
+			D('mlog')->add($mlog);
+		}		
 
 		$this->goJson($this->return);
 	}
