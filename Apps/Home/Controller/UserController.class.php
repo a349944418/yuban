@@ -90,7 +90,9 @@ Class UserController extends BaseController
 			$this->return['message'] = L('param_error');
 			$this->goJson($this->return);
 		}
-
+		if(!$this->redis->HLEN('Userinfo:uid'.$tmp['uid'])) {
+			$this->getUserinfoData($tmp['uid']);
+		}
 		$tmp['uname'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'uname');
 		$tmp['price'] = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'price');
 		$location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
