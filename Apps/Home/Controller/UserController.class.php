@@ -68,7 +68,7 @@ Class UserController extends BaseController
 		$tmp_location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
 		$tmp_location = explode('/', $tmp_location);
 		$res['country'] = $tmp_location[0];
-		$res['voipaccount'] = $res['voipAccount'];
+		$res['voipaccount'] = $res['voipAccount'] ? $res['voipAccount'] : $res['voipaccount'];
 		unset($res['voippwd'], $res['subaccountid'], $res['subtoken'], $res['province'], $res['city'], $res['location'], $res['first_letter'], $res['voipAccount']);
 
         $this->return['data'] = $res;
