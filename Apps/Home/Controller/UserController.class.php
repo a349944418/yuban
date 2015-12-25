@@ -68,7 +68,8 @@ Class UserController extends BaseController
 		$tmp_location = $this->redis->HGET('Userinfo:uid'.$tmp['uid'], 'location');
 		$tmp_location = explode('/', $tmp_location);
 		$res['country'] = $tmp_location[0];
-		unset($res['voippwd'], $res['subaccountid'], $res['subtoken'], $res['province'], $res['city'], $res['location'], $res['first_letter']);
+		$res['voipaccount'] = $res['voipAccount'];
+		unset($res['voippwd'], $res['subaccountid'], $res['subtoken'], $res['province'], $res['city'], $res['location'], $res['first_letter'], $res['voipAccount']);
 
         $this->return['data'] = $res;
         $this->goJson($this->return);
@@ -525,6 +526,8 @@ Class UserController extends BaseController
 		$res = $this->redis->HGETALL('Userinfo:uid'.$uid);
         if(!$res) {
             $res = D('userinfo')->getUserInfo($uid);
+            $res['voipaccount'] = $res['voipAccount'];
+            unset($res['voipAccount']);
             if($res['sex'] == 1 || $res['sex'] == 2){
 	            $this->redis->Sadd('User:sex'.$res['sex'], $uid);
 	        }
