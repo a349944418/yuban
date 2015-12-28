@@ -28,6 +28,7 @@
         }
         if ( (target = $(this).attr('href')) || (target = $(this).attr('url')) ) {
             $.get(target).success(function(data){
+                data = eval('('+data+')');
                 if (data.status==1) {
                     if (data.url) {
                         updateAlert(data.info + ' 页面即将自动跳转~','alert-success');

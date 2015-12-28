@@ -36,6 +36,7 @@ Class AliController extends BaseController
 		}
 		$data['uid'] = $this->mid;
 		$info['status'] = 3;
+		$info['ctime'] = time();
 		D('userAlipayTmp')->where('status = 1 and uid='.$this->mid)->save($info);
 		D('userAlipayTmp')->add($data);
 		$this->return['message'] = L('wait_moment');

@@ -41,6 +41,10 @@ class AdminController extends Controller {
                 $this->error('403:禁止访问');
             }
         }
+
+        import("Common.Util.RedisPool");
+        $this->redis = \RedisPool::getconnect();
+        
         // 检测访问权限
         /*$access =   $this->accessControl();
         if ( $access === false ) {
