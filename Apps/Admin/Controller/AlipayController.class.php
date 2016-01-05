@@ -78,7 +78,7 @@ class alipayController extends AdminController
 	            A('Home/User')->getUserinfoData($v['uid']);
 	        }
 	        $v['ctime'] = date('Y-m-d H:i:s', $v['ctime']);
-	        $v['smoney'] = $v['money'] * 0.9;
+	        $v['smoney'] = round($v['money']*C('ZHEKOU'), 2);
 	        $tmp = D('umoney') -> field('totalmoney, not_tixian') -> where('uid='.$v['uid']) -> find();
 	        $v = array_merge($v, $tmp);
 	    }
@@ -101,7 +101,7 @@ class alipayController extends AdminController
 				$aliInfo = D('userAlipay')->field('ali_num, ali_name')->where('is_del=0 and uid='.$info['uid'])->find();
 				//判断已绑定支付宝信息
 				if($aliInfo) {
-					$zzmoney = round($info['money']*C('ALIPAY_PARAM.ZHEKOU'), 2);
+					$zzmoney = round($info['money']*C('ZHEKOU'), 2);
 					$zzinfo = $info['orderId'].'^'.$aliInfo['ali_num'].'^'.$aliInfo['ali_name'].'^'.$zzmoney.'^提现';
 					$res = $this->zhuanzhang($zzmoney, 1, $zzinfo);
 					echo $res;
@@ -125,7 +125,7 @@ class alipayController extends AdminController
 	{
 		$parameter = array(
 			"service"        => "batch_trans_notify",
-			"partner"        => C('ALIPAY_PARAM.PARTNER'),
+			"partner"        => C('ALIPAY_PARAM.partner'),
 			"notify_url"     => C('WEBSITE_URL').U('notify'),
 			"email"          => C('ALIPAY_PARAM.EMAIL'),
 			"account_name"   => C('ALIPAY_PARAM.ACCOUNT_NAME'),
@@ -134,11 +134,52 @@ class alipayController extends AdminController
 			"batch_fee"      => $batch_fee,
 			"batch_num"      => $batch_num,
 			"detail_data"    => $detail_data,
-			"_input_charset" => C('ALIPAY_PARAM.INPUT_CHARSET')
+			"_input_charset" => C('ALIPAY_PARAM.input_charset')
 		);
 		import("Common.Util.AlipaySubmit");
 		$alipaySubmit = new \AlipaySubmit(C('ALIPAY_PARAM'));
 		$html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
 		return $html_text;
+	}
+
+	/**
+	 * 支付结果通知
+	 * @return [type] [description]
+	 */
+	public function notify()
+	{
+		import("Common.Util.alipay_notify");
+		//计算得出通知验证结果
+		$alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
+		$verify_result = $alipayNotify->verifyNotify();
+
+		if($verify_result) {//验证成功
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			//请在这里加上商户的业务逻辑程序代
+
+			
+			//——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+			
+		    //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
+			
+			//批量付款数据中转账成功的详细信息
+
+			$success_details = $_POST['success_details'];
+
+			//批量付款数据中转账失败的详细信息
+			$fail_details = $_POST['fail_details'];
+
+			F('alipaySLog', $success_details);
+			F('alipayFLog', $fail_details);
+			//判断是否在商户网站中已经做过了这次通知返回的处理
+				//如果没有做过处理，那么执行商户的业务程序
+				//如果有做过处理，那么不执行商户的业务程序
+		        
+			echo "success";		//请不要修改或删除
+		} else {
+
+		    //验证失败
+		    echo "fail";
+		}
 	}
 }

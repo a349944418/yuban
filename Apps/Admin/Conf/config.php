@@ -101,18 +101,20 @@ return array(
     'TMPL_ACTION_SUCCESS'   =>  MODULE_PATH.'View/Public/success.html', // 默认成功跳转对应的模板文件
     'TMPL_EXCEPTION_FILE'   =>  MODULE_PATH.'View/Public/exception.html',// 异常页面的模板文件
 
+    'ZHEKOU'        => '0.9',  //取现比例
+
     'ALIPAY_PARAM'  => array(
         'EMAIL'         => 'qch5laila@126.com',
         'ACCOUNT_NAME'  => '慧聚成长（北京）教育科技有限公司',
-        'PARTNER'       => '2088711133361374',
-        'KEY'           => 'vpuzosfscy8dgh7ahbtptovaynvpta4x',
+        'partner'       => '2088711133361374',
+        'key'           => 'vpuzosfscy8dgh7ahbtptovaynvpta4x',
         //签名方式 不需修改
-        'SIGN_TYPE'     => strtoupper('MD5'),
+        'sign_type'     => strtoupper('MD5'),
         //字符编码格式 目前支持 gbk 或 utf-8
-        'INPUT_CHARSET' => strtolower('utf-8'),
+        'input_charset' => strtolower('utf-8'),
         //ca证书路径地址，用于curl中ssl校验
-        'CACERT'        => __ROOT__ . '/alipay/cacert.pem',
+        'cacert'        => __ROOT__ . '/alipay/cacert.pem',
         //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
-        'TRANSPORT'     => 'http',
+        'transport'     => 'http',
     ),
 );
