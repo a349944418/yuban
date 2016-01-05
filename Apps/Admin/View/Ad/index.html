@@ -3,17 +3,12 @@
 <block name="body">
 	<!-- 标题栏 -->
 	<div class="main-title">
-		<h2>支付宝审核列表</h2>
+		<h2>提现审核</h2>
 	</div>
 	<div class="cf">
-
-        <!-- 高级搜索 -->
-		<div class="search-form fr cf">
-			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入用户昵称或者ID">
-				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
-			</div>
-		</div>
+		<td>
+			
+		</td>
     </div>
     <!-- 数据列表 -->
     <div class="data-table table-striped">
@@ -21,10 +16,11 @@
 	    <thead>
 	        <tr>
 			<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
-			<th class="">昵称</th>	
-			<th class="">支付宝账号</th>
-			<th class="">支付宝真实姓名</th>
-			<th class="">当前有效支付宝信息</th>
+			<th class="">ID</th>
+			<th class="">名称</th>
+			<th class="">标题</th>
+			<th class="">广告类型</th>
+			<th class="">广告内容数</th>
 			<th class="">操作</th>
 			</tr>
 	    </thead>
@@ -33,18 +29,17 @@
 			<volist name="_list" id="vo">
 			<tr>
 	            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}" /></td>
-				<td>{$vo.uname}</td>
-				<td>{$vo.ali_num}</td>
-				<td>{$vo.ali_name}</td>
-				<td>{$vo.alipay_name}/{$vo.alipay_num}</td>
+				<td>{$vo.id} </td>
+				<td><a href="{:U('adlist?pos='.$vo[id])}">{$vo.name}</td>
+				<td>{$vo.note}</td>
+				<td>{$vo.type}</td>
+				<td>{$vo.count}</td>
 				<td>
-					<a href="{:U('Quser/checkAlipay?id='.$vo['id'].'&status=2')}" class="confirm ajax-get">通过</a> &nbsp;&nbsp;
-					<a href="{:U('Quser/checkAlipay?id='.$vo['id'].'&status=4')}" class="confirm ajax-get" style="color:red">不通过</a>
 	            </td>
 			</tr>
 			</volist>
 			<else/>
-			<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+			<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td>
 			</notempty>
 		</tbody>
     </table>
@@ -58,7 +53,7 @@
 	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
 
 	<script type="text/javascript">
-	//搜索功能
+	/*//搜索功能
 	$("#search").click(function(){
 		var url = $(this).attr('url');
         var query  = $('.search-form').find('input').serialize();
@@ -77,8 +72,8 @@
 			$("#search").click();
 			return false;
 		}
-	});
+	});*/
     //导航高亮
-    highlight_subnav('{:U('Quser/index')}');
+    highlight_subnav('{:U('User/index')}');
 	</script>
 </block>

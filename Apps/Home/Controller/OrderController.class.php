@@ -9,8 +9,7 @@ class OrderController extends BaseController
 	 */
 	public function getOrder()
 	{
-		$info['money'] = I('post.money');
-
+		$info['money'] = number_format(I('post.money'),2);
 		if($info['money'] < 0.01) {
 			$this->return['code'] = 1003;
 			$this->return['message'] = L('money_error');

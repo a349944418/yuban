@@ -15,7 +15,12 @@ class QuserController extends AdminController {
     public function index()
     {
     	$map = array();
-    	//$count = D('userinfo')->count('uid');
+        $nickname       =   I('nickname');
+        if(is_numeric($nickname)){
+            $map['uid|search_key']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['search_key']    =   array('like', '%'.(string)$nickname.'%');
+        }
     	$list   =   $this->lists('userinfo', $map);
     	$all_language = D('Home/Language')->getAllLanguage();
     	foreach($list as &$v){
@@ -78,5 +83,38 @@ class QuserController extends AdminController {
             $res['info'] = '操作失败，请稍后重试';
         }
         die(json_encode($res));
+    }
+
+    /**
+     * 支付宝绑定记录
+     * @return [type] [description]
+     */
+    public function bindLog()
+    {
+        $list   =   $this->lists('userAlipayTmp', array());
+        foreach( $list as &$v) {
+            $v['uname'] = $this->redis->HGET('Userinfo:uid'.$v['uid'], 'uname');
+            $v['ctime'] = date('Y-m-d H:i:s', $v['ctime']);
+            switch ($v['status']) {
+                case '1':
+                    $v['status'] = '待审核';
+                    break;
+                case '2':
+                    $v['status'] = '<font style="color:green">已通过</font>';
+                    break;
+                case '3':
+                    $v['status'] = '重复提交，系统自动判定失败';
+                    break;
+                case '4':
+                    $v['status'] = '审核不通过';
+                    break;
+            }
+            if(!$v['uname']) {
+                A('Home/User')->getUserinfoData($tmp['uid']);
+            }
+        }
+        $this->assign('_list', $list);
+        $this->meta_title = '支付宝绑定记录';
+        $this->display();
     }
 }

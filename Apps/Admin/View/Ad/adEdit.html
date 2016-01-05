@@ -1,0 +1,102 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+	<div class="main-title">
+		<h2>{:isset($info['aid'])?'编辑':'新增'}广告</h2>
+	</div>
+	<div class="tab-wrap">
+		<div class="tab-content">
+			<form action="{:U('adSave')}" method="post" class="form-horizontal">
+				<!-- 基础 -->
+				<div id="tab1" class="tab-pane in tab1">
+					<div class="form-item">
+						<label class="item-label">
+							链接地址<span class="check-tips">（url）</span>
+						</label>
+						<div class="controls">
+							<input type="text" name="url" class="text input-large" value="{$info.url|default=''}">
+						</div>
+					</div>					
+					<div class="form-item">
+						<label class="item-label">可见性<span class="check-tips">（是否对用户可见，针对前台）</span></label>
+						<div class="controls">
+							<input type="radio" name="is_del" value="0"> 显示
+							<input type="radio" name="is_del" value="1"> 隐藏
+						</div>
+					</div>
+					<div class="form-item">
+						<label class="item-label">
+							排序<span class="check-tips">（仅对当前层级分类有效）</span>
+						</label>
+						<div class="controls">
+							<input type="text" name="sort" class="text input-small" value="{$info.sort|default=0}">
+						</div>
+					</div>
+					<div class="controls">
+						<label class="item-label">广告图</label>
+						<input type="file" id="upload_picture">
+						<input type="hidden" name="pic" id="icon" value="{$info['pic']|default=''}"/>
+						<div class="upload-img-box">
+						<notempty name="info['pic']">
+							<div class="upload-pre-item"><img src="__ROOT__{$info.pic|get_cover='path'}"/></div>
+						</notempty>
+						</div>
+					</div>
+					<script type="text/javascript">
+					//上传图片
+				    /* 初始化上传插件 */
+					$("#upload_picture").uploadify({
+				        "height"          : 30,
+				        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+				        "fileObjName"     : "download",
+				        "buttonText"      : "上传图片",
+				        "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+				        "width"           : 120,
+				        'removeTimeout'	  : 1,
+				        'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+				        "onUploadSuccess" : uploadPicture,
+				        'onFallback' : function() {
+				            alert('未检测到兼容版本的Flash.');
+				        }
+				    });
+					function uploadPicture(file, data){
+				    	var data = $.parseJSON(data);
+				    	var src = '';
+				        if(data.status){
+				        	$("#icon").val(data.id);
+				        	src = data.url || '__ROOT__' + data.path;
+				        	$("#icon").parent().find('.upload-img-box').html(
+				        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+				        	);
+				        } else {
+				        	updateAlert(data.info);
+				        	setTimeout(function(){
+				                $('#top-alert').find('button').click();
+				                $(that).removeClass('disabled').prop('disabled',false);
+				            },1500);
+				        }
+				    }
+					</script>
+				</div>
+
+				<div class="form-item">
+					<input type="hidden" name="aid" value="{$info.aid|default=''}">
+					<input type="hidden" name="position" value="{:isset($info['position'])?$info['position']:1}">
+					<button type="submit" id="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确 定</button>
+					<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+		<present name="info.aid">
+		Think.setValue("is_del", {$info.is_del|default=0});
+		</present>
+		//导航高亮
+		highlight_subnav('{:U('Ad/index')}');
+	</script>
+</block>

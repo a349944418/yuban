@@ -3,18 +3,15 @@
 <block name="body">
 	<!-- 标题栏 -->
 	<div class="main-title">
-		<h2>用户列表</h2>
+		<h2>{$page_title}</h2>
 	</div>
 	<div class="cf">
-		<div class="fl">
-            <a class="btn" href="{:U('User/add')}">新 增</a>
-        </div>
 
         <!-- 高级搜索 -->
 		<div class="search-form fr cf">
 			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入用户昵称或者ID">
-				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
+				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入用户ID">
+				<a class="sch-btn" href="javascript:;" id="search" url="{:U('log')}"><i class="btn-search"></i></a>
 			</div>
 		</div>
     </div>
@@ -25,14 +22,12 @@
 	        <tr>
 			<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 			<th class="">UID</th>
-			<th class="">昵称</th>	
-			<th class="">手机号</th>
-			<th class="">成长值</th>
-			<th class="">语种</th>
-			<th class="">等级</th>
-			<th class="">地区</th>
-			<th class="">语聊时长</th>
-			<th class="">语聊次数</th>
+			<th class="">用户名</th>
+			<th class="">类型</th>	
+			<th class="">金额</th>
+			<th class="">状态</th>
+			<th class="">备注</th>
+			<th class="">时间</th>
 			<th class="">操作</th>
 			</tr>
 	    </thead>
@@ -43,16 +38,12 @@
 	            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
 				<td>{$vo.uid} </td>
 				<td>{$vo.uname}</td>
-				<td>{$vo.mobile}</td>
-				<td>{$vo.grow_score}</td>
-				<td>{$vo.language_name}</td>
-				<td>{$vo.level}</td>
-				<td>{$vo.location}</td>
-				<td>{$vo.spoken_long}</td>
-				<td>{$vo.spoken_num}</td>
+				<td>{$page_title}</td>
+				<td>{$vo.money}</td>
+				<td>{$vo.status}</td>
+				<td>{$vo.note}</td>
+				<td>{$vo.ctime}</td>
 				<td>
-					<a href="{:U('alipay/log?type=1&uid='.$vo['uid'])}">充值记录</a>
-					<a href="{:U('alipay/log?type=2&uid='.$vo['uid'])}">提现记录</a>
 					<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="confirm ajax-get">删除</a>
 	            </td>
 			</tr>
