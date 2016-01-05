@@ -164,11 +164,31 @@ class alipayController extends AdminController
 			
 			//批量付款数据中转账成功的详细信息
 
-			$success_details = $_POST['success_details'];
+			$success_details = I('success_details');
+			if($success_details) {
+				$sInfo['status'] = 2;
+				$success_details_arr = explode('|', $success_details);
+				foreach($success_details_arr as $v) {
+					$tmp = explode('^', $v);
+					$tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+					D('mlog')->where('id='.$tmpRes['id'])->save($sInfo['status']);
+					D('umoney')->where('uid='.$tmpRes['uid'])->setDec('totalmoney', $tmpRes['money']);
+					D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+				}
+			}
 
 			//批量付款数据中转账失败的详细信息
 			$fail_details = $_POST['fail_details'];
-
+			if($fail_details) {
+				$sInfo['status'] = 4;
+				$fail_details_arr = explode('|', $fail_details);
+				foreach($fail_details_arr as $v) {
+					$tmp = explode('^', $v);
+					$tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+					D('mlog')->where('id='.$tmpRes['id'])->save($sInfo['status']);
+					D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+				}
+			}
 			F('alipaySLog', $success_details);
 			F('alipayFLog', $fail_details);
 			//判断是否在商户网站中已经做过了这次通知返回的处理
