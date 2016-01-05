@@ -81,4 +81,64 @@ class PublicController extends \Think\Controller {
         $verify->entry(1);
     }
 
+    /**
+     * 支付结果通知
+     * @return [type] [description]
+     */
+    public function notify()
+    {
+        import("Common.Util.alipay_notify");
+        //计算得出通知验证结果
+        $alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
+        $verify_result = $alipayNotify->verifyNotify();
+
+        if($verify_result) {//验证成功
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //请在这里加上商户的业务逻辑程序代
+
+            
+            //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+            
+            //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
+            
+            //批量付款数据中转账成功的详细信息
+
+            $success_details = I('success_details');
+            if($success_details) {
+                $sInfo['status'] = 2;
+                $success_details_arr = explode('|', $success_details);
+                foreach($success_details_arr as $v) {
+                    $tmp = explode('^', $v);
+                    $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+                    D('mlog')->where('id='.$tmpRes['id'])->save($sInfo['status']);
+                    D('umoney')->where('uid='.$tmpRes['uid'])->setDec('totalmoney', $tmpRes['money']);
+                    D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+                }
+            }
+
+            //批量付款数据中转账失败的详细信息
+            $fail_details = $_POST['fail_details'];
+            if($fail_details) {
+                $sInfo['status'] = 4;
+                $fail_details_arr = explode('|', $fail_details);
+                foreach($fail_details_arr as $v) {
+                    $tmp = explode('^', $v);
+                    $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+                    D('mlog')->where('id='.$tmpRes['id'])->save($sInfo['status']);
+                    D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+                }
+            }
+            F('alipaySLog', $success_details);
+            F('alipayFLog', $fail_details);
+            //判断是否在商户网站中已经做过了这次通知返回的处理
+                //如果没有做过处理，那么执行商户的业务程序
+                //如果有做过处理，那么不执行商户的业务程序
+                
+            echo "success";     //请不要修改或删除
+        } else {
+
+            //验证失败
+            echo "fail";
+        }
+    }
 }
