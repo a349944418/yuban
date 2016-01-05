@@ -96,7 +96,6 @@ class alipayController extends AdminController
 		$id = I('id');
 		if ($id) {
 			$info = D('mlog')->field('type, orderId, status, money, uid')->where('id='.$id)->find();
-			dump($info);
 			//判断是提现模式且未支付
 			if($info['type'] == 2 && $info['status'] == 1) {
 				$aliInfo = D('userAlipay')->field('ali_num, ali_name')->where('is_del=0 and uid='.$info['uid'])->find();
