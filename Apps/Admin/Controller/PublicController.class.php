@@ -142,6 +142,7 @@ class PublicController extends \Think\Controller {
             //验证失败
             $RES =  "fail";
         }
+        
         F('alires', $RES);
     }
 }
