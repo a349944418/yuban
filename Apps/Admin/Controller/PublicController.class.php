@@ -93,31 +93,35 @@ class PublicController extends \Think\Controller {
      */
     public function notify()
     {
-        // F('alipayPLog', $_POST);
-        // F('alipayGLog', $_GET);
+        $info['content'] = 0;
+        $info['msg'] = json_encode($_POST);
         import("Common.Util.alipay_notify");
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
         $verify_result = $alipayNotify->verifyNotify();
+        $info['content'] = $verify_result;
+        $info['msg'] = '收到数据';
+        dump($info);
         if($verify_result) {//验证成功
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //请在这里加上商户的业务逻辑程序代
-
-            
-            //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
-            
-            //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
-            
-            //批量付款数据中转账成功的详细信息
+            $info['content'] = 2;
+            $info['msg'] = '验证成功';
+            D('alilog')->add($info);
 
             $success_details = I('success_details');
             if($success_details) {
+                $info['content'] = 3;
+                $info['msg'] = '有数据';
+                D('alilog')->add($info);
                 $sInfo['status'] = 2;
                 $success_details_arr = explode('|', $success_details);
                 foreach($success_details_arr as $v) {
                     if($v) {
+                        dump($v);
                         $tmp = explode('^', $v);
                         $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+                        $info['content'] = $tmpRes['id'];
+                        $info['msg'] = 'id';
+                        D('alilog')->add($info);
                         D('mlog')->where('id='.$tmpRes['id'])->save($sInfo);
                         D('umoney')->where('uid='.$tmpRes['uid'])->setDec('totalmoney', $tmpRes['money']);
                         D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']); 
@@ -149,10 +153,10 @@ class PublicController extends \Think\Controller {
                 
             $RES = "success";     //请不要修改或删除
         } else {
-
+            $info['msg'] = '失败';
+            D('alilog')->add($info);
             //验证失败
             $RES =  "fail";
         }
-        //F('alires', $RES);
     }
 }
