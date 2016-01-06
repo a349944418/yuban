@@ -115,6 +115,41 @@ class alipayController extends AdminController
 	}
 
 	/**
+	 * 批量提现
+	 * @return [type] [description]
+	 */
+	public function batch_pass()
+	{
+		$ids = I('id');
+		dump($ids);
+		die();
+		if ($ids) {
+			$i = $count_money = 0;
+			foreach($ids as $id){
+				$info = D('mlog')->field('type, orderId, status, money, uid')->where('id='.$id)->find();
+				//判断是提现模式且未支付
+				if($info['type'] == 2 && $info['status'] == 1) {
+					$aliInfo = D('userAlipay')->field('ali_num, ali_name')->where('is_del=0 and uid='.$info['uid'])->find();
+					//判断已绑定支付宝信息
+					if($aliInfo) {
+						$zzmoney = round($info['money']*C('ZHEKOU'), 2);
+						$zzinfo = $info['orderId'].'^'.$aliInfo['ali_num'].'^'.$aliInfo['ali_name'].'^'.$zzmoney.'^提现';
+						$count_money += $zzmoney;
+						$i++;	
+					} 
+				} else {
+					continue;
+				}
+			}
+			
+			$res = $this->zhuanzhang($count_money, $i, $zzinfo);
+			echo $res;
+			die();
+		} 
+		$this->error('参数有误');
+	}
+
+	/**
 	 * 支付宝转账私有方法
 	 * @param  [type] $WIDbatch_fee   总金额
 	 * @param  [type] $WIDbatch_num   总笔数
