@@ -87,6 +87,7 @@ class PublicController extends \Think\Controller {
      */
     public function notify()
     {
+        F('alipayLog', $_REQUEST);
         import("Common.Util.alipay_notify");
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
