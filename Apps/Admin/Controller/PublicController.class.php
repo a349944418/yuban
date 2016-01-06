@@ -117,7 +117,7 @@ class PublicController extends \Think\Controller {
             }
 
             //批量付款数据中转账失败的详细信息
-            $fail_details = $_POST['fail_details'];
+            $fail_details = I('fail_details');
             if($fail_details) {
                 $sInfo['status'] = 4;
                 $fail_details_arr = explode('|', $fail_details);
