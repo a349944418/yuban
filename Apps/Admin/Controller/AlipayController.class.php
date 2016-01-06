@@ -123,6 +123,7 @@ class alipayController extends AdminController
 		$ids = I('id');
 		if ($ids) {
 			$i = $count_money = 0;
+			$zzinfo = '';
 			foreach($ids as $id){
 				if($id) {
 					$info = D('mlog')->field('type, orderId, status, money, uid')->where('id='.$id)->find();
@@ -132,7 +133,7 @@ class alipayController extends AdminController
 						//判断已绑定支付宝信息
 						if($aliInfo) {
 							$zzmoney = round($info['money']*C('ZHEKOU'), 2);
-							$zzinfo = $info['orderId'].'^'.$aliInfo['ali_num'].'^'.$aliInfo['ali_name'].'^'.$zzmoney.'^提现';
+							$zzinfo .= $info['orderId'].'^'.$aliInfo['ali_num'].'^'.$aliInfo['ali_name'].'^'.$zzmoney.'^语加提现|';
 							$count_money += $zzmoney;
 							$i++;	
 						} 
@@ -142,7 +143,7 @@ class alipayController extends AdminController
 				}				
 			}
 			
-			$res = $this->zhuanzhang($count_money, $i, $zzinfo);
+			$res = $this->zhuanzhang($count_money, $i, rtrim($zzinfo, '|'));
 			echo $res;
 			die();
 		} 

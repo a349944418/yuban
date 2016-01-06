@@ -82,45 +82,27 @@ class PublicController extends \Think\Controller {
     }
 
 
-    public function test(){
-        $a = F('alipayPLog');
-        dump($a);
-    }
-
     /**
      * 支付结果通知
      * @return [type] [description]
      */
     public function notify()
     {
-        $info['content'] = 0;
-        $info['msg'] = json_encode($_POST);
         import("Common.Util.alipay_notify");
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
         $verify_result = $alipayNotify->verifyNotify();
-        $info['content'] = $verify_result;
-        $info['msg'] = '收到数据';
-        dump($info);
         if($verify_result) {//验证成功
-            $info['content'] = 2;
-            $info['msg'] = '验证成功';
-            D('alilog')->add($info);
 
             $success_details = I('success_details');
             if($success_details) {
-                $info['content'] = 3;
-                $info['msg'] = '有数据';
-                D('alilog')->add($info);
                 $sInfo['status'] = 2;
                 $success_details_arr = explode('|', $success_details);
                 foreach($success_details_arr as $v) {
                     if($v) {
-                        dump($v);
                         $tmp = explode('^', $v);
                         $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
-                        $info['content'] = $tmpRes['id'];
-                        $info['msg'] = 'id';
+                        $info['msg'] = 'id为'.$tmpRes['id'].'提现完成';
                         D('alilog')->add($info);
                         D('mlog')->where('id='.$tmpRes['id'])->save($sInfo);
                         D('umoney')->where('uid='.$tmpRes['uid'])->setDec('totalmoney', $tmpRes['money']);
@@ -139,24 +121,20 @@ class PublicController extends \Think\Controller {
                     if($v) {
                         $tmp = explode('^', $v);
                         $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+                        $info['msg'] = 'id为'.$tmpRes['id'].'提现失败';
+                        D('alilog')->add($info);
                         D('mlog')->where('id='.$tmpRes['id'])->save($sInfo);
                         D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
                     }
                     
                 }
             }
-            F('alipaySLog', $success_details);
-            F('alipayFLog', $fail_details);
             //判断是否在商户网站中已经做过了这次通知返回的处理
                 //如果没有做过处理，那么执行商户的业务程序
                 //如果有做过处理，那么不执行商户的业务程序
-                
-            $RES = "success";     //请不要修改或删除
         } else {
-            $info['msg'] = '失败';
+            $info['msg'] = json_encode($_POST, JSON_UNESCAPED_UNICODE).'失败';
             D('alilog')->add($info);
-            //验证失败
-            $RES =  "fail";
         }
     }
 }
