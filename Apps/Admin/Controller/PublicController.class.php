@@ -87,7 +87,8 @@ class PublicController extends \Think\Controller {
      */
     public function notify()
     {
-        F('alipayLog', $_REQUEST);
+        F('alipayPLog', $_POST);
+        F('alipayGLog', $_GET);
         import("Common.Util.alipay_notify");
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
@@ -135,11 +136,12 @@ class PublicController extends \Think\Controller {
                 //如果没有做过处理，那么执行商户的业务程序
                 //如果有做过处理，那么不执行商户的业务程序
                 
-            echo "success";     //请不要修改或删除
+            $RES = "success";     //请不要修改或删除
         } else {
 
             //验证失败
-            echo "fail";
+            $RES =  "fail";
         }
+        F('alires', $RES);
     }
 }
