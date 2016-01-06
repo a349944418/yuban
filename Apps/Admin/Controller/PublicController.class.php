@@ -81,19 +81,24 @@ class PublicController extends \Think\Controller {
         $verify->entry(1);
     }
 
+
+    public function test(){
+        $a = F('alipayPLog');
+        dump($a);
+    }
+
     /**
      * 支付结果通知
      * @return [type] [description]
      */
     public function notify()
     {
-        F('alipayPLog', $_POST);
-        F('alipayGLog', $_GET);
+        // F('alipayPLog', $_POST);
+        // F('alipayGLog', $_GET);
         import("Common.Util.alipay_notify");
         //计算得出通知验证结果
         $alipayNotify = new \AlipayNotify(C('ALIPAY_PARAM'));
         $verify_result = $alipayNotify->verifyNotify();
-
         if($verify_result) {//验证成功
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //请在这里加上商户的业务逻辑程序代
@@ -110,11 +115,14 @@ class PublicController extends \Think\Controller {
                 $sInfo['status'] = 2;
                 $success_details_arr = explode('|', $success_details);
                 foreach($success_details_arr as $v) {
-                    $tmp = explode('^', $v);
-                    $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
-                    D('mlog')->where('id='.$tmpRes['id'])->save($sInfo['status']);
-                    D('umoney')->where('uid='.$tmpRes['uid'])->setDec('totalmoney', $tmpRes['money']);
-                    D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+                    if($v) {
+                        $tmp = explode('^', $v);
+                        $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+                        D('mlog')->where('id='.$tmpRes['id'])->save($sInfo);
+                        D('umoney')->where('uid='.$tmpRes['uid'])->setDec('totalmoney', $tmpRes['money']);
+                        D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']); 
+                    }
+                    
                 }
             }
 
@@ -124,10 +132,13 @@ class PublicController extends \Think\Controller {
                 $sInfo['status'] = 4;
                 $fail_details_arr = explode('|', $fail_details);
                 foreach($fail_details_arr as $v) {
-                    $tmp = explode('^', $v);
-                    $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
-                    D('mlog')->where('id='.$tmpRes['id'])->save($sInfo['status']);
-                    D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+                    if($v) {
+                        $tmp = explode('^', $v);
+                        $tmpRes = D('mlog')->field('uid, money, id')->where('orderId='.$tmp[0])->find();
+                        D('mlog')->where('id='.$tmpRes['id'])->save($sInfo);
+                        D('umoney')->where('uid='.$tmpRes['uid'])->setDec('not_tixian', $tmpRes['money']);
+                    }
+                    
                 }
             }
             F('alipaySLog', $success_details);
@@ -142,7 +153,6 @@ class PublicController extends \Think\Controller {
             //验证失败
             $RES =  "fail";
         }
-        
-        F('alires', $RES);
+        //F('alires', $RES);
     }
 }
