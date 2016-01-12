@@ -231,6 +231,7 @@ Class UserController extends BaseController
 	{
 		$uid = I('post.uid');
 		$res = $this->getUserinfoData($uid);
+		$res['followCount'] = D('friend')->where('to_id='.$uid)->count();
         $this->return['data'] = $res;
         $this->goJson($this->return);
 	}
@@ -355,7 +356,7 @@ Class UserController extends BaseController
 		//语言 更改
 		$o_language = json_decode($o_info['language'], true) ? json_decode($o_info['language'], true) : array();
 		if($post['language']['lid'] != $o_language['lid'] && isset($post['language']['lid'])) {
-			$info['cur_language'] = $language['lid'] = $post['language']['lid'];			
+			$info['cur_language'] = $language['lid'] = $post['language']['lid'];
 		}
 			
 		if($post['language']['self_level'] != $o_language['self_level'] && isset($post['language']['self_level']))
