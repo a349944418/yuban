@@ -351,7 +351,6 @@ Class UserController extends BaseController
 				$info['location'] = $post['location'];
 			}
 		}
-		
 
 		//语言 更改
 		$o_language = json_decode($o_info['language'], true) ? json_decode($o_info['language'], true) : array();
