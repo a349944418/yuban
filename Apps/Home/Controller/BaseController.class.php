@@ -18,6 +18,7 @@ Class BaseController extends Controller
             'Index'     => array('index'=>1, 'test'=>1),
             'Public'    => array('getBaseLanguage'=>1, 'getTags'=>1),
             'Passport'  => array('login'=>1, 'changePwd'=>1, 'ologin'=>1),
+            'User'      => array('index'=>1),
             'Reg'       => array('getMobileCode'=>1, 'register'=>1),
             'Square'    => array('topic'=>1, 'nearby'=>1, 'topicUser'=>1, 'charts'=>1),
             'Ad'        => array('getAd'=>1),
