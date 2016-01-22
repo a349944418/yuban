@@ -79,7 +79,7 @@ Class ChatController extends BaseController
 			$mlog['status'] = 2;
 			$mlog['uid'] = $res['from_id'];
 			$mlog['ctime'] = time();
-			$mlog['type'] = 3；
+			$mlog['type'] = 3;
 			$mlog['note'] = '聊天消费'.$mlog['money'].'元';
 			$mlog['orderId'] = $cid;
 			D('mlog')->add($mlog);
