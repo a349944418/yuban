@@ -67,7 +67,7 @@ Class ChatController extends BaseController
 			$this->redis->HINCRBY('Userinfo:uid'.$res['to_id'], 'grow_score', $score_value);
 			//扣费
 			$price = $this->redis->HGET('Userinfo:uid'.$res['to_id'], 'price');
-			$fmoney = D('umoney')->field('id, totalmoney, not_tixian')where('uid='.$res['from_id'])->find();
+			$fmoney = D('umoney')->field('id, totalmoney, not_tixian')->where('uid='.$res['from_id'])->find();
 			if($fmoney['totalmoney'] - $price >= $fmoney['not_tixian']) {
 				D('umoney') -> where('id='.$fmoney['id']) -> setDec('totalmoney', $price);
 			} else {
